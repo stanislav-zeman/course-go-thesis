@@ -150,7 +150,7 @@ The project requirement can be fulfilled in 3 ways:
 
 Regarding team projects, their size should be linearly scaled with the number of team members. The recommended number is up to 4 students. This is strongly advised not to be exceeded as going above it generally negatively affects the team's performance.
 
-It should be noted that the size expectations for the open-source contributions are much lower than those for its project alternatives. Searching for an open-source project and further involving in the codebase is considered upon its evaluation. The pull requests do not need to be merged, as we cannot guarantee the maintainers' activity. One thing to note is that contributing to projects with low activity or without active maintainers should be avoided.
+It should be noted that the size expectations for the open-source contributions are much lower than those for its project alternatives. Searching for an open-source project and further involvement in the codebase are considered upon its evaluation. The pull requests do not need to be merged, as we cannot guarantee the maintainers' activity. One thing to note is that contributing to projects with low activity or without active maintainers should be avoided.
 
 As part of a bonus lecture, the students are presented with a set of technologies/libraries they can leverage in their project implementations. These primarily serve as a form of motivation.
 
@@ -158,29 +158,165 @@ The general incentive is to make students come up with their own projects. There
 
 \section{Room for improvements}
 
+This section describes some possible inefficiencies that were later perceived but not incorporated into the course because of the lack of time or space.
+
 \subsection{Auth}
+
+The course does not cover authorization or authentication in any way. It is up to debate if the course should cover this topic and, if so, to what extent. I believe that education in this regard, especially with practical application, is insufficient at our faculty. A dedicated course tackling topics like JWT, Cookies, and OAuth2 and their usage should exist instead.
 
 \subsection{APIs}
 
+The course currently covers designing and implementing REST APIs. This is still the standard for most service communication. However, during the past decade, multiple other approaches emerged that are often incorporated into systems in practice, notably gRPC and GraphQL.
+
+\subsubsection{gRPC}
+
+gRPC is an implementation of the Remote Procedure Call (RPC) protocol by Google (g). It is often used for server-to-server communication as it provides type safety, lowers latency thanks to transmitting binary data using its custom format, and performs client/server code generation.
+
+\subsubsection{GraphQL}
+
+GraphQL (GQL) is a query language that was created at Facebook. It is built on top of standard REST API. GQL is often used for APIs that operate with complicated structured data. It removes the necessity to implement numerous endpoints and instead allows GQL queries to be sent to a single endpoint that parses the query and responds only to data specified in the query. Clients can fetch all required data using a single request. This way, the process saves time and network bandwidth.
+
 \section{Catalog specification}
+
+This chapter specifies the common catalog criteria used at the Masaryk University.
 
 \subsection{Extent and Intensity}
 
+The following expression notes the intensity of lectures, seminars, and homework, plus the type of completion, respectively.
+
+(2/0/1) + 1 (colloquium)
+
 \subsection{Prerequisities}
+
+No hard requirements are enforced. However, students are expected to have a basic understanding of networking and virtualization.
 
 \subsection{Enrolment limitations}
 
+The course is intended to be run with up to 20 students. It can later be scaled to a higher number, but currently, the intent is to test the new course in practice and interact more with students, which does not scale well and would require opening a second seminar.
+
 \subsection{Course objectives}
+
+Students will understand the fundamentals of the Go programming language and its common uses in practice. They will acquire the required knowledge for entry-level Go developer positions while writing idiomatic Go code, and they will be capable of applying this knowledge to real-life projects.
 
 \subsection{Learning outcomes}
 
+Students will be able to:
+\begin{itemize}
+    \item Write idiomatic Go code.
+    \item Understand the Go concurrency model.
+    \item Inspect and optimize Go applications.
+    \item Develop REST API services.
+    \item Containerize and deploy their applications.
+    \item Implement persistence leveraging SQL databases.
+    \item Instrument applications with various types of telemetry.
+\end{itemize}
+
 \subsection{Syllabus}
+
+\begin{enumerate}
+    \item Introduction to Go
+    \begin{itemize}
+        \item Origins
+        \item Characteristics
+        \item Use cases
+        \item Environment setup
+        \item Hello World!
+    \end{itemize}
+    \item Fundamentals \#1
+    \begin{itemize}
+        \item Packages \& Visibility
+        \item Variables
+        \item Data types
+        \item Control flow
+        \item Functions
+        \item Pointers
+        \item Structures
+    \end{itemize}
+    \item Fundamentals \#2
+    \begin{itemize}
+        \item Interfaces
+        \item Errors
+        \item Arrays
+        \item Slices
+        \item Maps
+        \item Range
+    \end{itemize}
+    \item Concurrency \& parallelism
+    \begin{itemize}
+        \item Goroutines
+        \item Runtime
+        \item Channels
+        \item Select
+        \item Related packages
+    \end{itemize}
+    \item Advanced \#1
+    \begin{itemize}
+        \item Generics
+        \item Packages
+        \item Testing
+    \end{itemize}
+    \item Advanced \#2
+    \begin{itemize}
+        \item Benchmarks
+        \item Optimizations
+        \item CGo
+        \item Unsafe \& Reflect
+    \end{itemize}
+    \item REST APIs
+    \begin{itemize}
+        \item JSON
+        \item HTTP
+        \item REST API
+        \item HTTP package
+        \item Routers \& Web frameworks
+        \item OpenAPI
+        \item Templating
+    \end{itemize}
+    \item Containers
+    \begin{itemize}
+        \item Containerization
+        \item Docker
+        \item Kubernetes
+    \end{itemize}
+    \item Databases
+    \begin{itemize}
+        \item SQL
+        \item RDBMSs
+        \item Migrations
+        \item sql
+        \item sqlx
+        \item sqlc
+        \item GORM
+    \end{itemize}
+    \item Infrastructure
+    \begin{itemize}
+        \item CI/CD
+        \item Infrastructure
+        \item GCP
+    \end{itemize}
+    \item Observability
+    \begin{itemize}
+        \item Health
+        \item Logs
+        \item Metrics
+        \item Tracing
+        \item OpenTelemetry
+    \end{itemize}
+\end{enumerate}
 
 \subsection{Literature}
 
+\begin{itemize}
+    \item O'Reilly: Learning Go \cite{oreilly-learning-go}
+\end{itemize}
+
 \subsection{Teaching methods}
 
+In-person lectures with hands-on exercises and reviewed homework assignments.
+
 \subsection{Assessment methods}
+
+Multiple homework assignments (50 points) and a final project (50 points), including its defense. For a successful completion, 70 out of the 100 points are required.
 
 \chapter{The course content}
 
