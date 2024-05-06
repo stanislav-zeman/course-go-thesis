@@ -87,23 +87,74 @@ This is the introduction of my thesis.
 
 \chapter{The course design}
 
+This chapter gives high-level insight into the course design and the reasoning behind the decisions taken. Detailed explanations about particular lectures, exercises, and homework are given in the fourth chapter.
+
 \section{Elementary information}
 
-\subsection{Goals}
+The course primarily focuses on teaching the Go programming language. The main goal of the course is to equip its students with the knowledge often required in practice. As a result, the course goes beyond just teaching the fundamentals of Go.
+
+The course is intended to be taught throughout the span of 12 weeks. The first 11 weeks are regular lessons, and the last week is reserved for consultation and/or as a potential substitute class.
 
 \subsection{Licensing}
 
+The course and its materials are publicly available under the Creative Commons Share Alike (CC BY-SA 4.0 Deed) license. The motivation behind this is to keep the course in the public space. Anyone who would like to adapt or reuse this course can do so. There is no reason to keep anyone from using any of its materials, even for those with commercial intentions.
+
+The original course is also open-sourced under this license, and as it is a share-alike license, the new course had to respect it. There was an option to migrate to the GPLv3 license, which is compatible, but in the end, the CC license was preferred.
+
 \section{Overview}
+
+The course materials are structurally split into 3 major categories: lectures, exercises, and homework, to be specific, each with a dedicated git repository. All of these categories are inspected in the following subsections. The last subsection of this chapter briefly talks about the final projects.
 
 \subsection{Lectures}
 
+The lecture slides are indubitably the most vital type of material. 
+
+The first 6 lessons are adaptations of the original RedHat Go Course slides, which underwent major changes and restructuring. The changes were made to make the taught topics more cohesive and easier to follow, as some of the code samples were unnecessarily long or complex. Several lessons, specifically those on REST API and Concurrency, presented outdated principles that warranted updating.
+
+The last 5 lectures are completely new and extend the course with numerous technologies and third-party libraries. The original course focused solely on using the standard library that is generally not leveraged in practice. The new slides were designed to compensate for this fact.
+
 \subsubsection{Tooling}
+
+I considered multiple tools for creating the lecture slides. It certainly had to be a markdown-oriented technology for multiple reasons. A plain-text solution was a necessity as all materials are versioned using git. This, in turn, eases collaboration with potential open-source contributors, which can further extend the course or fix any existing mistakes.
+
+The original RedHat Go course used the Go Present tool. This solution, created by the Go team, implements an exceptional feature: it can run the Go code in your slides and immediately present the output. For solely this reason, I chose to stick with it as any other markdown-styled solution did not offer any viable alternative to this.
+
+I also considered Marp as the runner-up. This tool is used throughout the Rust course previously mentioned in the second chapter. Compared to the Go Present tool, the main benefits include much better formatting capabilities, the possibility of exporting slides to multiple data formats like PDF or HTML, and a more straightforward syntax.
 
 \subsection{Exercises}
 
+The exercises are designed to be complementary assignments to lectures. The general feedback on the first course run, as discussed in the second chapter, was a lack of hands-on experience. These exercises were designed to compensate for that. They are, by no means, an equivalent substitute for traditional standard seminars. The students are expected to spend only up to 30 minutes solving them.
+
+Each lecture is paired with a single exercise that can, in some cases, be split into up to two tasks. Both of these, in some way, relate to the topics covered in the lecture.
+
+The exercises are not intended to be reviewed or evaluated in any way. However, they can provide useful on-site insight into the student's understanding of the covered topic, which can be reflected later. These exercises should also serve as the ground for answering potential follow-up questions.
+
 \subsection{Homework}
 
+The homework exercises are a form of individual work. Their goal is to prepare students for their final projects. The homework tasks depend on each other and demonstrate building an application from the ground up.
+
+Starting from the third week, the assignments are published with a 14-day deadline followed by a 7-day review period. The review period is designed to give students feedback that they will later incorporate into their solutions.
+
+Contrary to lecture exercises, homework exercises are intended to be reviewed and graded. In the end, they should make up half of the final grade.
+
 \subsection{Projects}
+
+The projects are the final part of the course and make up the second half of the final grade. The projects are estimated to take 50 to 60 hours for each student. The size of the projects should approximately match that estimation.
+
+The project requirement can be fulfilled in 3 ways:
+\begin{itemize}
+ \item Implementing a solo project.
+ \item Implementing a team project.
+ \item Creating an open-source pull request.
+\end{itemize}
+
+Regarding team projects, their size should be linearly scaled with the number of team members. The recommended number is up to 4 students. This is strongly advised not to be exceeded as going above it generally negatively affects the team's performance.
+
+It should be noted that the size expectations for the open-source contributions are much lower than those for its project alternatives. Searching for an open-source project and further involving in the codebase is considered upon its evaluation. The pull requests do not need to be merged, as we cannot guarantee the maintainers' activity. One thing to note is that contributing to projects with low activity or without active maintainers should be avoided.
+
+As part of a bonus lecture, the students are presented with a set of technologies/libraries they can leverage in their project implementations. These primarily serve as a form of motivation.
+
+The general incentive is to make students come up with their own projects. Therefore, no "official" project assignments will be published. This was deeply considered as it may demotivate some students in the final part of the semester. However, I believe that the exploratory bonus lecture is sufficient for driving the student's projects even without predefined assignments.
 
 \section{Room for improvements}
 
