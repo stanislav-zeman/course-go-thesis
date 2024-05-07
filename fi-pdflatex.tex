@@ -85,6 +85,8 @@ This is the introduction of my thesis.
 
 \subsection{Questionnaire}
 
+\subsection{Interest}
+
 \chapter{The course design}
 
 This chapter gives high-level insight into the course design and the reasoning behind the decisions taken. Detailed explanations about particular lectures, exercises, and homework are given in the fourth chapter.
@@ -366,8 +368,50 @@ Multiple homework assignments (50 points) and a final project (50 points), inclu
 
 \section{Lecture 10}
 
+The motivation behind this lecture is to give students an insight into the CI/CD process and how this practice can be applied in the context of Go projects. The second goal is to give students a basic knowledge of how such projects can be deployed and maintained.
+
+The students are expected to understand basic software engineering practices and elementary networking.
+
+\subsubsection{Outline}
+
+\begin{itemize}
+    \item Linters
+    \item CI/CD
+    \begin{itemize}
+        \item GitLab CI/CD
+        \item GitHub Actions
+    \end{itemize}
+    \item Infrastructure
+    \item Cloud
+    \begin{itemize}
+        \item GCP
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Sections}
+
+The first section covers linters and expands on the knowledge acquired in the introductory lesson, where the built-in go-vet linter was introduced. Most of this section is dedicated to the golangci-lint tool, a linter aggregator incorporated in many projects and is the most complex tool today. Together with formatters, these tools are necessary in the continuous integration process introduced in the following section.
+
+The second section introduces the CI/CD process. The primary goal of this section is to provide students with the knowledge to be able to operate the CI/CD pipeline using both GitLab CI/CD and GitHub Actions.
+
+As the faculty operates a self-hosted GitLab instance, almost all of the git-related work is done using GitLab. Consequently, most students do not interact with GitHub throughout their studies. The secondary goal of this chapter is to familiarize students with GitHub so they can join the open-source community, as most open-source software is developed on the GitHub platform.
+
+The third section gives an introduction to infrastructure design. Introduces basic concepts such as proxying, load balancing, and application scaling. Two related technologies are introduced to leverage these concepts, namely Traefik Proxy and Caddy. This section aims to give students a basic understanding of how to provision basic infrastructure and tackle basic infrastructure design problems such as fault tolerance, scaling, or encryption.
+
+The last section introduces all major cloud providers (Amazon, Microsoft, and Google) and further develops into Google Cloud Platform (GCP). As Google offers free credits thanks to the faculty program, it is a great opportunity for students to get their hands on operating cloud infrastructure. A set of basic services that GCP offers are introduced so students can leverage these in their follow-up projects.
+
 \subsection{Exercise 10}
 
+The exercise comprises two tasks. The second task is more of a demo in which the tutor will guide the students through the GCP Console.
+
+As students generally have a basic understanding of CI, thanks to their previous experiences, it is not practiced at the seminar. Instead, the seminar time is given to the GCP. The goal of the demo/exercise is to get students familiar with the GCP so they can provision their own infrastructure.
+
+Tasks:
+\begin{itemize}
+    \item The first task involves setting up a Caddy server instance as a reverse proxy/load balancing multiple ping-pong service instances.
+    \item The second task involves setting up an automatic build and deployment using Cloud Run, provisioning a Compute Engine virtual machine and a Cloud SQL SQL server that can later be used for the student's projects.
+\end{itemize}
+    
 \section{Lecture 11}
 
 \subsection{Exercise 11}
