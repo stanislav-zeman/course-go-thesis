@@ -28,7 +28,7 @@
     keywords    = {go, golang, course, lectures, exercises, homework},
     TeXkeywords = {go, golang, course, lectures, exercises, homework},
     abstract    = {
-      This is the abstract of my thesis.
+      This thesis deals with designing a new course aimed at teaching the Go programming language. The course is designed to be taught in the academic environment. This work also puts the Faculty of Informatics of Masaryk University into context, and its design reflects some of the shortcomings of local courses.
     },
     thanks      = {
       These are the acknowledgements for my thesis.
@@ -159,25 +159,27 @@ As part of a bonus lecture, the students are presented with a set of technologie
 
 The general incentive is to make students come up with their own projects. Therefore, no "official" project assignments will be published. This was deeply considered as it may demotivate some students in the final part of the semester. However, I believe that the exploratory bonus lecture is sufficient for driving the student's projects even without predefined assignments.
 
-\section{Room for improvements}
+\section{Limitations}
 
-This section describes some possible inefficiencies that were later perceived but not incorporated into the course because of the lack of time or space.
+\subsection{Covered Topics}
 
-\subsection{Auth}
+This subsection describes some possible inefficiencies that were later perceived but not incorporated into the course because of the lack of time or space.
+
+\subsubsection{Auth}
 
 The course does not cover authorization or authentication in any way. It is up to debate if the course should cover this topic and, if so, to what extent. I believe that education in this regard, especially with practical application, is insufficient at our faculty. A dedicated course tackling topics like JWT, Cookies, and OAuth2 and their usage should exist instead.
 
-\subsection{APIs}
+\subsubsection{APIs}
 
-The course currently covers designing and implementing REST APIs. This is still the standard for most service communication. However, during the past decade, multiple other approaches emerged that are often incorporated into systems in practice, notably gRPC and GraphQL.
+The course currently covers designing and implementing REST APIs. This is still the standard for most service communication. However, during the past decade, multiple other approaches emerged that are often incorporated into systems in practice, notably gRPC and GraphQL. \\
 
-\subsubsection{gRPC}
-
-gRPC is an implementation of the Remote Procedure Call (RPC) protocol by Google (g). It is often used for server-to-server communication as it provides type safety, lowers latency thanks to transmitting binary data using its custom format, and performs client/server code generation.
-
-\subsubsection{GraphQL}
+gRPC is an implementation of the Remote Procedure Call (RPC) protocol by Google (g). It is often used for server-to-server communication as it provides type safety, lowers latency thanks to transmitting binary data using its custom format, and performs client/server code generation. \\
 
 GraphQL (GQL) is a query language that was created at Facebook. It is built on top of standard REST API. GQL is often used for APIs that operate with complicated structured data. It removes the necessity to implement numerous endpoints and instead allows GQL queries to be sent to a single endpoint that parses the query and responds only to data specified in the query. Clients can fetch all required data using a single request. This way, the process saves time and network bandwidth.
+
+\subsubsection{DevOps/Ops overlap}
+
+Some of the lectures, namely Infrastructure and Observability, overlap with the DevOps/Ops field. Although the lectures provide Go examples and try to apply the general knowledge to Go, these topics are not Go specific and could be extracted to an additional course in the future. This would free up space for other topics, such as those previously mentioned.
 
 \section{Catalog specification}
 
