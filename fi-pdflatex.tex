@@ -426,8 +426,40 @@ Tasks:
 \printbibliography[heading=bibintoc]
 
 \appendix
-\chapter{An appendix}
+\chapter{Course materials}
 
-Here you can insert the appendices of your thesis.
+All course materials are maintained under the \href{https://github.com/course-go}{course-go} GitHub organization. To preserve the current state of the materials, all relevant repositories were exported and compressed into an attachment to this thesis. Each top-level directory in the attached archive maps to a GitHub repository. The directories contain versions of materials that existed when submitting this thesis and are most likely out-of-date as you read this text. Inspect the respective GitHub repositories if you want to view the updated version.
+
+The GitHub repositories for respective directories can be found under the following URLs:
+\begin{itemize}
+    \item \href{https://github.com/course-go/lectures}{lectures}
+    \item \href{https://github.com/course-go/exercises}{exercises}
+    \item \href{https://github.com/course-go/homework}{homework}
+    \item \href{https://github.com/course-go/code}{code}
+    \item \href{https://github.com/course-go/course}{course}
+    \item \href{https://github.com/course-go/ping-pong}{ping-pong}
+\end{itemize}
+
+\section{lectures}
+
+The lectures directory contains all slides and their respective assets (images, code samples, videos, etc.). The supplied README in the directory guides you on how to run the slides.
+
+\section{exercises}
+
+The exercises directory contains all exercises with assignments and related code. Each exercise is located in a separate directory containing a README that specifies the assignment.
+
+\section{homework}
+
+The homework directory contains all homework assignments. Each homework assignment is located in its respective directory. The assignments are given in the form of a README.
+
+\section{code}
+
+The code directory contains source code that either implements solutions to some of the exercises or implements some form of functionality used throughout the exercises.
+\section{course}
+
+The course directory contains information that serves as the starting point when people want to learn more about the course.
+\section{ping-pong}
+
+The ping-pong directory contains a simple REST API project used for teaching deployments and their automation. It is split up from the code project as it simplifies the deployments.
 
 \end{document}
