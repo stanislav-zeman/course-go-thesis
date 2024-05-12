@@ -94,9 +94,9 @@ This chapter gives high-level insight into the course design and the reasoning b
 
 \section{Elementary information}
 
-The course primarily focuses on teaching the Go programming language. However, its goal is to only teach the fundamentals of Go, but the course also focuses on equipping its students with the knowledge often required in practice.
+The course primarily focuses on teaching the Go programming language. However, its goal is not only to teach the fundamentals of Go, but the course also focuses on equipping its students with the knowledge often required in practice.
 
-The course builds upon the foundations of an already existing Go Course maintained under RedHat\cite{redhat-go-course}. This course already implemented numerous lectures which were mainly reworked and restructured.
+The course builds upon the foundations of an already existing Go Course maintained under RedHat\cite{redhat-go-course}. This course already implemented numerous lectures, which were mainly reworked and restructured.
 
 The newly created course is intended to be taught throughout the span of twelve weeks. The first eleven weeks are regular lessons, and the last week is reserved for consultation and/or as a potential substitute class.
 
@@ -104,7 +104,7 @@ The newly created course is intended to be taught throughout the span of twelve 
 
 The original course is open-sourced under the Creative Commons Attribution-ShareAlike (CC BY-SA 4.0 Deed) license, and as it is a share-alike license, the new course had to respect it. There was an option to migrate to the GPLv3 license, which is compatible, but in the end, the CC license was preferred.
 
-The original idea was to keep the new course open-sourced either way so reusing and adapting the existing course was not a deterrent. The motivation behind this was to keep the course in the public space. Anyone who would like to remix or reuse the course would be free to do so. There is no reason to keep anyone from using any of its materials, even for those with commercial intentions.
+The original idea was to keep the new course open-sourced either way, so reusing and adapting the existing course was not a deterrent. The motivation behind this was to keep the course in the public space. Anyone who would like to remix or reuse the course would be free to do so. There is no reason to keep anyone from using any of its materials, even for those with commercial intentions.
 
 \section{Overview}
 
@@ -116,13 +116,13 @@ The lecture slides are indubitably the most vital type of material.
 
 The first six lessons are adaptations of the original RedHat Go Course slides, which underwent major changes and restructuring. The changes were made to make the taught topics more cohesive and easier to follow, as some of the code samples were unnecessarily long or complex. Several lessons, specifically those on REST API and Concurrency, presented outdated principles that warranted updating. Multiple lectures, such as Math \& Go or Python \& Go, were removed altogether as I did not deem them important.
 
-The last five lectures are completely new and extend the course with numerous technologies and third-party libraries. The original course focused solely on using the standard library. Some of the parts of the standard library, notably the HTTP web router, are generally not leveraged in practice. The new lectures give more focus to practical usage; therefore, they are not limited in this way.
+The last five lectures are completely new and extend the course with numerous technologies and third-party libraries. The original course focused solely on using the standard library. Some of the parts of the standard library, notably the HTTP web router, are generally not leveraged in practice. The new lectures focus more on practical usage; therefore, they are not limited in this way.
 
 \subsubsection{Tooling}
 
 I considered multiple tools for creating the lecture slides. It certainly had to be a markdown-oriented technology for multiple reasons. A plain-text solution was a necessity as all materials are versioned using git. This, in turn, eases collaboration with potential open-source contributors, which can further extend the course or fix any existing mistakes.
 
-The original RedHat Go course used the Go Present tool. This solution, created by the Go team, implements an exceptional feature: it can run the Go code in your slides and immediately present the output. For solely this reason, I made a decision to continue using it for the new lectures as well as any other markdown-styled solution did not offer any similar viable alternative.
+The original RedHat Go course used the Go Present tool. This solution, created by the Go team, implements an exceptional feature: it can run the Go code in your slides and immediately present the output. For this reason, I decided to continue using it for the new lectures as any other markdown-styled solution did not offer any similar viable alternative.
 
 I also considered Marp as the runner-up. This tool is used throughout the Rust course previously mentioned in the second chapter. Compared to the Go Present tool, the main benefits include much better formatting capabilities, the possibility of exporting slides to multiple data formats like PDF or HTML, and a more straightforward syntax.
 
@@ -577,7 +577,7 @@ The students are expected to understand basic software engineering practices and
 
 The first section covers linters and expands on the knowledge acquired in the introductory lesson, where the built-in go-vet linter was introduced. Most of this section is dedicated to the golangci-lint tool, a linter aggregator incorporated in many projects and is the most complex tool today. Together with formatters, these tools are necessary in the continuous integration process introduced in the following section.
 
-The second section introduces the CI/CD process. The primary goal of this section is to provide students with the knowledge to be able to operate the CI/CD pipeline using both GitLab CI/CD and GitHub Actions.
+The second section introduces the CI/CD process. The primary goal of this section is to provide students with the knowledge to implement the CI/CD pipeline using both GitLab CI/CD and GitHub Actions.
 
 As the faculty operates a self-hosted GitLab instance, almost all of the git-related work is done using GitLab. Consequently, most students do not interact with GitHub throughout their studies. The secondary goal of this chapter is to familiarize students with GitHub so they can join the open-source community, as most open-source software is developed on the GitHub platform.
 
@@ -677,7 +677,7 @@ The lectures directory contains all slides and their respective assets (images, 
 
 \section{exercises}
 
-The exercises directory contains all exercises with assignments and related code. Each exercise is located in a separate directory containing a README that specifies the assignment.
+The exercises directory contains all exercises with assignments and related code. Each exercise is in a separate directory containing a README specifying the assignment.
 
 \section{homework}
 
