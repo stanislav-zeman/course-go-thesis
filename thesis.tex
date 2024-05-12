@@ -124,15 +124,11 @@ The last five lectures are completely new and extend the course with numerous te
 I considered multiple tools for creating the lecture slides. It certainly had to be a markdown-oriented technology for multiple reasons. A plain-text solution was a necessity as all materials are versioned using git. This, in turn, eases collaboration with potential open-source contributors, which can further extend the course or fix any existing mistakes.
 
 The original RedHat Go course used the Go Present tool
-\footnote{
-  See \url{https://pkg.go.dev/golang.org/x/tools/present} for more information.
-}.
+\footnote{See \url{https://pkg.go.dev/golang.org/x/tools/present} for more information.}.
 This solution, created by the Go team, implements an exceptional feature: it can run the Go code in your slides and immediately present the output. For this reason, I decided to continue using it for the new lectures as any other markdown-styled solution did not offer any similar viable alternative.
 
 I also considered Marp
-\footnote{
-  See \url{https://marp.app} for more information.
-}
+\footnote{See \url{https://marp.app} for more information.}
 as the runner-up. This tool is used throughout the Rust course previously mentioned in the second chapter. Compared to the Go Present tool, the main benefits include much better formatting capabilities, the possibility of exporting slides to multiple data formats like PDF or HTML, and a more straightforward syntax.
 
 \subsection{Exercises}
@@ -584,13 +580,19 @@ The students are expected to understand basic software engineering practices and
 
 \subsubsection{Content}
 
-The first section covers linters and expands on the knowledge acquired in the introductory lesson, where the built-in go-vet linter was introduced. Most of this section is dedicated to the golangci-lint tool, a linter aggregator incorporated in many projects and is the most complex tool today. Together with formatters, these tools are necessary in the continuous integration process introduced in the following section.
+The first section covers linters and expands on the knowledge acquired in the introductory lesson, where the built-in go-vet linter was introduced. Most of this section is dedicated to the golangci-lint tool, a linter aggregator incorporated in many projects and is the most complex tool today. Together with formatters, these tools are necessary in the continuous integration process introduced in the following section. \\
 
 The second section introduces the CI/CD process. The primary goal of this section is to provide students with the knowledge to implement the CI/CD pipeline using both GitLab CI/CD and GitHub Actions.
 
-As the faculty operates a self-hosted GitLab instance, almost all of the git-related work is done using GitLab. Consequently, most students do not interact with GitHub throughout their studies. The secondary goal of this chapter is to familiarize students with GitHub so they can join the open-source community, as most open-source software is developed on the GitHub platform.
+As the faculty operates a self-hosted GitLab instance, almost all of the git-related work is done using GitLab. Consequently, most students do not interact with GitHub throughout their studies. The secondary goal of this chapter is to familiarize students with GitHub so they can join the open-source community, as most open-source software is developed on the GitHub platform. \\
 
 The third section gives an introduction to infrastructure design. Introduces basic concepts such as proxying, load balancing, and application scaling. Two related technologies are introduced to leverage these concepts, namely Traefik Proxy and Caddy. This section aims to give students a basic understanding of how to provision basic infrastructure and tackle basic infrastructure design problems such as fault tolerance, scaling, or encryption.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{figures/infrastructure.png}
+    \caption{One of the infrastructure example diagrams.}
+\end{figure}
 
 The last section introduces all major cloud providers (Amazon, Microsoft, and Google) and further develops into Google Cloud Platform (GCP). As Google offers free credits thanks to the faculty program, it is a great opportunity for students to get their hands on operating cloud infrastructure. A set of basic services that GCP offers are introduced so students can leverage these in their follow-up projects.
 
@@ -607,6 +609,11 @@ Tasks:
 \end{itemize}
     
 \section{Lecture 11: Observability}
+
+This lecture delves into the topic of observability. The lecture covers all major types of telemetry signals, namely metrics, logs, and traces. Each signal is briefly introduced, after which specific state-of-the-art \footnote{Many alternative technologies to the ones provided exist. The selection was made based on a general prevalence and on the fact that they are open-source and implemented in Go.}
+technologies are introduced. In the last part, the OpenTelemetry project is introduced.
+
+Following the lecture, students should be able to set up the introduced technologies, instrument their applications with basic telemetry, and monitor their applications' health. No previous knowledge regarding observability is required.
 
 \subsubsection{Outline}
 
@@ -630,6 +637,39 @@ Tasks:
 \end{itemize}
 
 \subsubsection{Content}
+
+The lecture starts off with an introduction to concepts such as health and heartbeat and shows how to export application status. \\
+
+The next section covers the first of the three major signal - metrics. A brief explanation with multiple metric examples is given. The spotlight is then transferred to the Prometheus project.
+
+Prometheus 
+\footnote{See \url{https://https://prometheus.io} for more information.}
+is undeniably the leading project that revolves around retrieving, storing, and evaluating metrics. The Prometheus format is supported by multiple third-party tools. The section introduces the Prometheus format and the various metric types it supports.
+
+Lastly, this section introduces Grafana 
+\footnote{See \url{https://grafana.com/grafana/} for more information.}
+as the project of choice for visualizing metrics. The slides refer to the Granafa sandbox
+\footnote{See \url{https://play.grafana.org/d/000000012/grafana-play-home} for more information.}
+that can be explored during the lecture shortly. \\
+
+The second signal to cover is logs. This section puts logs into context and introduces additional structured logging libraries that offer additional features and focus more on performance compared to standard library packages.
+The technology of choice for logs is Loki. Created by the Grafana Labs, it is a log aggregation system heavily inspired by Prometheus. The lecture covers the basic setup and summarizes possible clients and agents that can be used to retrieve the logs. \\
+
+The final presented signal is traces. As traces are the most complex of all the mentioned telemetry types, a more thorough introduction is given. Then, a transition to Jager is made.
+
+Like with Loki, the slides introduce Jaegers architecture and core concepts. As Jaeger dropped support for all of its previous clients and now only supports OpenTelemetry API and SDK, the instrumentation part is left out and shown in the following section, where OpenTelemetry is explored in-depth. \\
+
+The OpenTelemetry 
+\footnote{See \url{https://opentelemetry.io} for more information.}
+project is an initiative that has gained much traction in recent years. Backed by the Cloud Native Computing Foundation (CNCF)
+\footnote{See \url{https://www.cncf.io} for more information.},
+it is currently the leading project in defining telemetry standards. As of today, all major cloud providers support it. The last section gives insight into the OpenTelemetry Collector and its architecture, explains how OpenTelemetry works, and how applications can be instrumented using its Go API and SDK.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{figures/opentelemetry-architecture.png}
+    \caption{OpenTelemetry Architecture inspired by the documentation diagram.}
+\end{figure}
 
 \subsection{Exercise 11}
 
