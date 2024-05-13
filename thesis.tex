@@ -58,6 +58,8 @@
 \usepackage{floatrow}
 \floatsetup[table]{capposition=top}
 \usepackage[babel]{csquotes}
+\usepackage{hyperref}
+\usepackage{cleveref}
 
 \begin{document}
 
@@ -86,7 +88,7 @@ If the faculty wants to act like we maintain profession-oriented study programs 
 or "Software Engineering" (SWE), 
 \footnote{See \url{https://www.fi.muni.cz/admission/mgr/software-engineering.html.en}.}
 we cannot simply stick to the fundamentals. 
-Moreover, both of these study programs require attending an internship, each 480 and 400 hours long, respectively. The faculty should, at least to some extent, prepare the students for such endeavors. For example, students are pushed to attend an internship without ever having to connect an application to a database or without ever having to create an API \ref{web-dev}, which is quite absurd for a program that mentions application development in its name. Hence, students often have to settle for relatively limited internship positions even though they could go straight to working as juniors. The faculty should also not expect this knowledge to be given to the students during their internships, as it is often not the case.
+Moreover, both of these study programs require attending an internship, each 480 and 400 hours long, respectively. The faculty should, at least to some extent, prepare the students for such endeavors. For example, students are pushed to attend an internship without ever having to connect an application to a database or without ever having to create an API \cref{web-dev}, which is quite absurd for a program that mentions application development in its name. Hence, students often have to settle for relatively limited internship positions even though they could go straight to working as juniors. The faculty should also not expect this knowledge to be given to the students during their internships, as it is often not the case.
 
 \section{Related courses}
 
@@ -107,11 +109,11 @@ This is the only mandatory course for the PVA program that currently addresses m
 
 This Go course is somewhat inspired by an existing course taught at FI MUNI called Programming in Rust 
 \footnote{See \url{https://is.muni.cz/predmet/fi/podzim2023/PV281?lang=en} for more information.}
-under the code PV281. I first attended the course in the Autumn of 2022 and later joined in on its third run in the Autumn of 2023 as a seminar tutor. \\
+under the code PV281. I first attended the course in the Autumn of 2022 and later joined in on its third run in the Autumn of 2023 as a seminar tutor.
 
-From my personal experience, this course has been a great source of knowledge, especially for me as a second-year student, that I could mostly apply to practice. Besides obviously teaching Rust, the course went beyond just the programming language as it taught topics like software architecture design, introduced web development and databases basics, and heavily used Docker throughout its latter seminars. \\
+From my personal experience, this course has been a great source of knowledge, especially for me as a second-year student, that I could mostly apply to practice. Besides obviously teaching Rust, the course went beyond just the programming language as it taught topics like software architecture design, introduced web development and databases basics, and heavily used Docker throughout its latter seminars.
 
-As great of an experience as it was, the course certainly had its shortcomings. Docker, for example, was not properly introduced even though it was never even mentioned in its prerequisites. Some Docker knowledge was, therefore, implicitly expected. To this day, only a single course \ref{code-quality-and-management} delves into the topics of containerization with practical applications. \\
+As great of an experience as it was, the course certainly had its shortcomings. Docker, for example, was not properly introduced even though it was never even mentioned in its prerequisites. Some Docker knowledge was, therefore, implicitly expected. To this day, only a single course \cref{code-quality-and-management} delves into the topics of containerization with practical applications.
 
 Because of the scope of the course, it did not properly delve into the depth of the Rust programming language. One topic that is worth mentioning is macros, which the course lacked and are leveraged by the language quite heavily. Macros were only introduced as part of a bonus lecture that, in the end, did not occur. Therefore, it appeared to be an afterthought.
 
@@ -120,7 +122,7 @@ Because of the scope of the course, it did not properly delve into the depth of 
 Although this course
 \footnote{See \url{https://is.muni.cz/predmet/fi/jaro2024/PB176?lang=en}.}
 delves into the problematics of Docker, it does so in a way that makes it voluntary. Unfortunately, to my knowledge, 
-\footnote{All of the information is based on the course run of Spring 2023} the course explores Docker in its final lectures and does not dedicate proper space to this technology. Moreover, only the last fourth homework focuses on the Docker technology and requires three completed homework for the course completion. Consequently, the Docker homework becomes optional if students have completed the previous four assignments, so they are not required to do it.
+\footnote{This information is based on the course run of Spring 2024} the course explores Docker in its final lectures and does not dedicate proper space to this technology. Moreover, only the last fourth homework focuses on the Docker technology and requires three completed homework for the course completion. Consequently, the Docker homework becomes optional if students have completed the previous four assignments, so they are not required to do it.
 
 \section{RedHat Go Course}
 
@@ -128,37 +130,113 @@ During the Autumn semester of 2023, a new first trial run for the Go programming
 \footnote{See \url{https://is.muni.cz/predmet/fi/podzim2023/PB173?lang=en}.}.
 The course was organized by Martin Ukrop and led by Pavel Tišnovský and Ivan Nečas, both of whom maintain an existing Go Course \cite{redhat-go-course} under Redhat. At that time, I had been studying Go for several months, and as I was deeply interested and dedicated to mastering it, I decided to join in on the efforts.
 
-The RedHat Go Course was originally designed to cover the language fundamentals, and thanks to Go being a minimalistic language, teaching it only took half of a semester. The second half was dedicated to implementing the student's projects and their subsequent defense in the last weeks of the semester.
+The RedHat Go Course was originally designed to cover the language fundamentals, and thanks to Go being a minimalistic language, teaching it only took half of the semester. The second half was lecture-free, and the students were left to implement their projects. A subsequent project defense was organized for the last week of the semester where students provided a description and a demonstration of the projects. The projects were also submitted for review, which we provided two weeks after the defense.
 
 \section{Motivation for extending the course}
 
-As the course was short and limited in scope, it felt like it missed a couple of opportunities. To name a few, it did not cover any interesting technologies, the basics of API design, or the integration and access to a database. As a result, we have decided to expand the thesis with additional materials and rework the existing ones.
+The course was short and limited in scope, so it felt like it missed a couple of opportunities. To name a few, it did not cover any interesting technologies, the basics of API design, or the integration and access to a database. As a result, we have decided to expand the scope of the course with additional materials and rework the existing ones.
 
 \subsection{Questionnaire}
 
-After a successful end of the first run, we issued a questionnaire to gather feedback from students and things that could be improved and incorporated into the new course.
+After the successful end of the first run, we issued a questionnaire to gather student feedback for things that could be improved and incorporated into the new course. We gathered feedback from nine students out of the nineteen who finished the course. The course originally started with twenty attendees.
 
 One of the greatest shortcomings I suspected and later confirmed by the questionnaire was a lack of programming exercises. The final project was the only output we required from the students. Thanks to it being final, students had no motivation to put in any extra effort throughout the semester.
 
-The students unequivocally agreed that additional activities would be welcome. However, the students generally opposed the idea of dedicated seminars as the Go language was too simple and preferred homework exercises. Some of the excerpts
+The students unequivocally agreed that additional activities would be welcome. However, they generally opposed the idea of dedicated seminars as the Go language was too simple and preferred homework exercises. Some of the excerpts
 \footnote{These excerpts were translated from Czech/Slovak languages.}
-to the following question: \\
+to the related question: \\
 
+\subsubsection{Additional exercises}
+
+\noindent
 Q: \textit{
 "Would you welcome dedicated seminars or additional assignments with feedback to accompany the lectures? If so, which of these two options would you prefer and why?"} \\
 
+\noindent
 A1: \textit{"For me, assignments are more important; seminars in programming subjects generally don't make much sense to me."} \\
 
+\noindent
 A2: \textit{"Definitely homework. I don't think seminars and working with a tutor are necessary. Homework can be solved anytime; they are not time-bound or tied to a specific time."} \\
 
-A3: \textit{"Seminars aren't very necessary; I understood everything well from the lectures and could immediately apply it. Homework might help with revision. Also, the project was practically a homework assignment."}
+\noindent
+A3: \textit{"Seminars aren't very necessary; I understood everything well from the lectures and could immediately apply it. Homework might help with revision. Also, the project was practically a homework assignment."} \\
+
+\subsubsection{Sneekpeek to the new course outline}
+
+\noindent
+When presented with an older version of the overview
+\footnote{The original overview included an additional Event-driven programming lecture. It was discarded as I deemed it not as important. Instead, the Observability lecture further described in \cref{lecture-observability} was preferred.}
+showcased in the \cref{design-overview}. The students generally welcomed the changes: \\
+
+\noindent
+Q: \textit{
+"Would you welcome dedicated seminars or additional assignments with feedback to accompany the lectures? If so, which of these two options would you prefer and why?"} \\
+
+\noindent
+A1: \textit{"The second half sounds really great. Too bad it wasn't there this year; it's exactly what would greatly improve the course :D"} \\
+
+\noindent
+A2: \textit{"It looks great. I hope that the materials for the next run will be available for graduates of this course, too. I would love to learn something new."} \\
+
+\noindent
+A3: \textit{"The content looks great; it's good that there's room for more interesting stuff."} \\
+
+\noindent
+However, some concerns were raised by the new material additions: \\
+
+\noindent
+A4: \textit{"For me, the question is whether topics 7-11\footnote{This references the same lectures as described by the overview in \cref{design-overview} with the addition of the discarded Event-driven programming lecture.} should belong to the Go programming subject or a separate half-course. What initial knowledge do you expect students to have in these topics? Each of these topics seems quite broad to me, so you would have to go superficially for students who haven't encountered the topic yet or assume some basic knowledge. Certainly, the initial questionnaire for students will help you with this, but I would expect that without prerequisites, there will always be students who are completely unfamiliar with the topic."} \\
+
+\noindent
+A5: \textit{"Will the conclusion still involve a project? Won't it be too much in conjunction with assignments?"} \\
+
+\noindent
+These concerns are further reflected in the course design described in \cref{course-design}. \\
+
+\subsubsection{General feedback}
+
+\noindent
+Some of the additional general feedback provided on the course: \\
+
+\noindent
+Q: \textit{"Are there any concepts or specific aspects of Go that you feel you still don't fully understand even after completing the course?"} \\
+
+\noindent
+A1: \textit{"During project creation, I struggled with structuring the project and how to design it. Also, I found it challenging to create packages sensibly and avoid cyclic imports."} \\
+
+\noindent
+A2: \textit{"Perhaps goroutines, but I don't think we focused on them too much."} \\
+
+\noindent
+A3: \textit{"Perhaps delve more into packages."} \\
+
+\noindent
+A4: \textit{"Slices and arrays, although it might be because I didn't work with them much in my project."} \\
+
+\noindent
+Q: \textit{"Did you lack any knowledge during project implementation that the course didn't cover adequately?"}
+
+\noindent
+A1: \textit{"I didn't understand how to run Docker and how to use it."} \\
+
+\noindent
+A2: \textit{"Perhaps how to set up a repository and how to structure a larger project. It's nothing that couldn't be looked up, but it would be nice to have it included in the course."} \\
+
+\noindent
+A3: \textit{"Slices and arrays, although it might be because I didn't work with them much in my project."} \\
+
+\noindent
+A4: \textit{"If I had paid more attention (or if greater attention had been demanded from me, for example through exercises or assignments) during the semester, I wouldn't have had to rush to catch up on everything during project work."} \\
+
+\noindent
+These comments are also reflected throughout the design \cref{course-design}.
 
 \subsection{Interest}
 
 The first run of the RedHat Go Course was Go's first occurrence at our faculty. There is certainly a great interest in the Go programming language. I judge this by having personal conversations with peers and other tutors and by the spike \footnote{At one point, over one hundred students enrolled for the course.}
 in course enrollments before the semester that I perceived. However, it must be noted that the course under which the Go Course ran shared it with two additional seminars, so this fact may be inconclusive.
 
-\chapter{The course design}
+\chapter{The course design}\label{course-design}
 
 This chapter gives high-level insight into the course design and the reasoning behind the decisions taken. Detailed explanations about particular lectures, exercises, and homework are given in the fourth chapter.
 
@@ -180,7 +258,7 @@ The original course is open-sourced under the Creative Commons Attribution-Share
 
 The original idea was to keep the new course open-sourced either way, so reusing and adapting the existing course was not a deterrent. The motivation behind this was to keep the course in the public space. Anyone who would like to remix or reuse the course would be free to do so. There is no reason to keep anyone from using any of its materials, even for those with commercial intentions.
 
-\section{Overview}
+\section{Overview}\label{design-overview}
 
 The course materials are structurally split into three major categories: lectures, exercises, and homework, to be specific, each with a dedicated git repository. All of these categories are inspected in the following subsections. The last subsection of this chapter briefly talks about the final projects.
 
@@ -224,7 +302,7 @@ Contrary to lecture exercises, homework exercises are intended to be reviewed an
 
 The projects are the final part of the course and make up the second half of the final grade. The projects are estimated to take fifty to sixty hours for each student. The size of the projects should approximately match that estimation.
 
-As part of a bonus lecture \ref{lecture-projects}, the students are presented with a set of technologies or libraries they can leverage in their project implementations. This lecture subordinately serves as a form of motivation.
+As part of a bonus lecture \cref{lecture-projects}, the students are presented with a set of technologies or libraries they can leverage in their project implementations. This lecture subordinately serves as a form of motivation.
 
 The general incentive is to make students come up with their own projects. Therefore, no "official" project assignments will be published. This was deeply considered as it may demotivate some students in the final part of the semester. However, I believe that the exploratory bonus lecture is sufficient for driving the students' projects even without predefined assignments.
 
@@ -725,7 +803,7 @@ Tasks:
     \item The second task involves setting up an automatic build and deployment using Cloud Run, provisioning a Compute Engine virtual machine and a Cloud SQL SQL server that can later be used for the student's projects.
 \end{itemize}
     
-\section{Lecture 11: Observability}
+\section{Lecture 11: Observability}\label{lecture-observability}
 
 This lecture delves into the topic of observability. The lecture covers all major types of telemetry signals, namely metrics, logs, and traces. Each signal is briefly introduced, after which specific state-of-the-art \footnote{Many alternative technologies to the ones provided exist. The selection was made based on a general prevalence and on the fact that they are open-source and implemented in Go.}
 technologies are introduced. In the last part, the OpenTelemetry project is introduced.
