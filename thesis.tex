@@ -75,29 +75,88 @@ Go is an aspiring programming language that has gained much traction in recent y
 
 \chapter{The current state at FI MUNI}
 
+As this thesis focuses on designing a course in the Faculty of Informatics Masaryk University (FI MUNI) context, it first defines multiple shortcomings of local courses and references related courses.
+
 \section{Lack of up-to-date technologies}
+
+As it is often said, the faculty's goal is not to teach you specific technologies but to provide fundamental knowledge of informatics. I agree that this is valued in the long run as technologies evolve and change, but the fundamentals will always remain the same. However, I would like to oppose it.
+
+If the faculty wants to act like we maintain profession-oriented study programs like "Programming and application development" (PVA)
+\footnote{See \url{https://www.fi.muni.cz/admission/bc/programming-and-development.html.en}.}
+or "Software Engineering" (SWE), 
+\footnote{See \url{https://www.fi.muni.cz/admission/mgr/software-engineering.html.en}.}
+we cannot simply stick to the fundamentals. 
+Moreover, both of these study programs require attending an internship, each 480 and 400 hours long, respectively. The faculty should, at least to some extent, prepare the students for such endeavors. For example, students are pushed to attend an internship without ever having to connect an application to a database or without ever having to create an API \ref{web-dev}, which is quite absurd for a program that mentions application development in its name. Hence, students often have to settle for relatively limited internship positions even though they could go straight to working as juniors. The faculty should also not expect this knowledge to be given to the students during their internships, as it is often not the case.
+
+\section{Related courses}
+
+This section describes related courses.
+
+\subsection{Web development and markup languages} \label{web-dev}
+
+Web development and markup languages
+\footnote{See \url{https://is.muni.cz/predmet/fi/jaro2024/PB138?lang=en;setlang=en}.}
+is a course originally called Modern Markup Languages and Their Applications that has been reworked from a solely markup language course, which dedicated all of its time to technologies like XML and HTML
+\footnote{The course was last run in this form in the Spring of 2019. See \url{https://is.muni.cz/course/fi/spring2019/PB138} for more information.}.
+
+The course nowadays includes programming and developing web applications using the Typescript programming language. The scope of the subject is rather large, as it has to cover all of the topics from designing a database scheme and implementing a persistence layer and API to creating single-page applications using React.
+
+This is the only mandatory course for the PVA program that currently addresses most of the program's shortcomings and teaches the knowledge mostly required in practice.
 
 \subsection{Programming in Rust}
 
-This course is somewhat inspired by an existing course taught at FI MUNI called Programming in Rust 
+This Go course is somewhat inspired by an existing course taught at FI MUNI called Programming in Rust 
 \footnote{See \url{https://is.muni.cz/predmet/fi/podzim2023/PV281?lang=en} for more information.}
 under the code PV281. I first attended the course in the Autumn of 2022 and later joined in on its third run in the Autumn of 2023 as a seminar tutor. \\
 
 From my personal experience, this course has been a great source of knowledge, especially for me as a second-year student, that I could mostly apply to practice. Besides obviously teaching Rust, the course went beyond just the programming language as it taught topics like software architecture design, introduced web development and databases basics, and heavily used Docker throughout its latter seminars. \\
 
-As great of an experience as it was, the course certainly had its shortcomings. Docker, for example, was not properly introduced even though it was never even mentioned in its prerequisites. Some Docker knowledge was, therefore, implicitly expected. To this day, only a single optional course
+As great of an experience as it was, the course certainly had its shortcomings. Docker, for example, was not properly introduced even though it was never even mentioned in its prerequisites. Some Docker knowledge was, therefore, implicitly expected. To this day, only a single course \ref{code-quality-and-management} delves into the topics of containerization with practical applications. \\
+
+Because of the scope of the course, it did not properly delve into the depth of the Rust programming language. One topic that is worth mentioning is macros, which the course lacked and are leveraged by the language quite heavily. Macros were only introduced as part of a bonus lecture that, in the end, did not occur. Therefore, it appeared to be an afterthought.
+
+\subsection{Basic Code Quality and Management} \label{code-quality-and-management}
+
+Although this course
 \footnote{See \url{https://is.muni.cz/predmet/fi/jaro2024/PB176?lang=en}.}
-delves into the topics of containerization with practical applications.
+delves into the problematics of Docker, it does so in a way that makes it voluntary. Unfortunately, to my knowledge, 
+\footnote{All of the information is based on the course run of Spring 2023} the course explores Docker in its final lectures and does not dedicate proper space to this technology. Moreover, only the last fourth homework focuses on the Docker technology and requires three completed homework for the course completion. Consequently, the Docker homework becomes optional if students have completed the previous four assignments, so they are not required to do it.
 
 \section{RedHat Go Course}
 
+During the Autumn semester of 2023, a new first trial run for the Go programming language course was planned under the course Domain-specific development
+\footnote{See \url{https://is.muni.cz/predmet/fi/podzim2023/PB173?lang=en}.}.
+The course was organized by Martin Ukrop and led by Pavel Tišnovský and Ivan Nečas, both of whom maintain an existing Go Course \cite{redhat-go-course} under Redhat. At that time, I had been studying Go for several months, and as I was deeply interested and dedicated to mastering it, I decided to join in on the efforts.
+
+The RedHat Go Course was originally designed to cover the language fundamentals, and thanks to Go being a minimalistic language, teaching it only took half of a semester. The second half was dedicated to implementing the student's projects and their subsequent defense in the last weeks of the semester.
+
 \section{Motivation for extending the course}
+
+As the course was short and limited in scope, it felt like it missed a couple of opportunities. To name a few, it did not cover any interesting technologies, the basics of API design, or the integration and access to a database. As a result, we have decided to expand the thesis with additional materials and rework the existing ones.
 
 \subsection{Questionnaire}
 
-After a successful end of the first run, we 
+After a successful end of the first run, we issued a questionnaire to gather feedback from students and things that could be improved and incorporated into the new course.
+
+One of the greatest shortcomings I suspected and later confirmed by the questionnaire was a lack of programming exercises. The final project was the only output we required from the students. Thanks to it being final, students had no motivation to put in any extra effort throughout the semester.
+
+The students unequivocally agreed that additional activities would be welcome. However, the students generally opposed the idea of dedicated seminars as the Go language was too simple and preferred homework exercises. Some of the excerpts
+\footnote{These excerpts were translated from Czech/Slovak languages.}
+to the following question: \\
+
+Q: \textit{
+"Would you welcome dedicated seminars or additional assignments with feedback to accompany the lectures? If so, which of these two options would you prefer and why?"} \\
+
+A1: \textit{"For me, assignments are more important; seminars in programming subjects generally don't make much sense to me."} \\
+
+A2: \textit{"Definitely homework. I don't think seminars and working with a tutor are necessary. Homework can be solved anytime; they are not time-bound or tied to a specific time."} \\
+
+A3: \textit{"Seminars aren't very necessary; I understood everything well from the lectures and could immediately apply it. Homework might help with revision. Also, the project was practically a homework assignment."}
 
 \subsection{Interest}
+
+The first run of the RedHat Go Course was Go's first occurrence at our faculty. There is certainly a great interest in the Go programming language. I judge this by having personal conversations with peers and other tutors and by the spike \footnote{At one point, over one hundred students enrolled for the course.}
+in course enrollments before the semester that I perceived. However, it must be noted that the course under which the Go Course ran shared it with two additional seminars, so this fact may be inconclusive.
 
 \chapter{The course design}
 
