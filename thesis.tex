@@ -373,149 +373,6 @@ GraphQL (GQL) is a query language that was created at Facebook. It is built on t
 
 Some of the lectures, namely Infrastructure and Observability, overlap with the DevOps/Ops field. Although the lectures provide Go examples and try to apply the general knowledge to Go, these topics are not Go specific and could be extracted to an additional course in the future. This would free up space for other topics, such as those previously mentioned.
 
-\section{Catalog specification}
-
-This chapter specifies the common catalog used at Masaryk University.
-
-\subsubsection{Extent and Intensity}
-
-The following expression notes the intensity of lectures, seminars, and homework, plus the type of completion, respectively.
-
-(2/0/1) + 1 (colloquium)
-
-\subsubsection{Prerequisities}
-
-No hard requirements are enforced. However, students are expected to have a basic understanding of networking and virtualization.
-
-\subsubsection{Enrolment limitations}
-
-The course is intended to be run with up to 20 students. It can later be scaled to a higher number, but currently, the intent is to test the new course in practice and interact more with students, which does not scale well and would require opening a second seminar.
-
-\subsubsection{Course objectives}
-
-Students will understand the fundamentals of the Go programming language and its common uses in practice. They will acquire the required knowledge for entry-level Go developer positions while writing idiomatic Go code, and they will be capable of applying this knowledge to real-life projects.
-
-\subsubsection{Learning outcomes}
-
-Students will be able to:
-\begin{itemize}
-    \item Write idiomatic Go code.
-    \item Understand the Go concurrency model.
-    \item Inspect and optimize Go applications.
-    \item Develop REST API services.
-    \item Containerize and deploy their applications.
-    \item Implement persistence leveraging SQL databases.
-    \item Instrument applications with various types of telemetry.
-\end{itemize}
-
-\subsubsection{Syllabus}
-
-\begin{enumerate}
-    \item Introduction
-    \begin{itemize}
-        \item Introduction to Go
-        \item IDEs and editors
-        \item Installing Go
-        \item Running Go
-    \end{itemize}
-    \item Fundamentals \#1
-    \begin{itemize}
-        \item Packages \& Visibility
-        \item Variables
-        \item Data types
-        \item Control flow
-        \item Functions
-        \item Pointers
-        \item Structures
-    \end{itemize}
-    \item Fundamentals \#2
-    \begin{itemize}
-        \item Interfaces
-        \item Errors
-        \item Arrays
-        \item Slices
-        \item Maps
-        \item Range
-    \end{itemize}
-    \item Concurrency \& parallelism
-    \begin{itemize}
-        \item Goroutines
-        \item Runtime
-        \item Channels
-        \item Select
-        \item Related packages
-    \end{itemize}
-    \item Advanced \#1
-    \begin{itemize}
-        \item Generics
-        \item Packages
-        \item Testing
-    \end{itemize}
-    \item Advanced \#2
-    \begin{itemize}
-        \item Benchmarks
-        \item Optimizations
-        \item CGo
-        \item Unsafe \& Reflect
-    \end{itemize}
-    \item REST APIs
-    \begin{itemize}
-        \item JSON
-        \item HTTP
-        \item REST API
-        \item HTTP package
-        \item Routers \& Web frameworks
-        \item OpenAPI
-        \item Templating
-    \end{itemize}
-    \item Containers
-    \begin{itemize}
-        \item Containerization
-        \item Docker
-        \item Kubernetes
-    \end{itemize}
-    \item Databases
-    \begin{itemize}
-        \item SQL
-        \item RDBMSs
-        \item Migrations
-        \item sql
-        \item sqlx
-        \item sqlc
-        \item GORM
-    \end{itemize}
-    \item Infrastructure
-    \begin{itemize}
-        \item CI/CD
-        \item Infrastructure
-        \item GCP
-    \end{itemize}
-    \item Observability
-    \begin{itemize}
-        \item Health
-        \item Logs
-        \item Metrics
-        \item Tracing
-        \item OpenTelemetry
-    \end{itemize}
-\end{enumerate}
-
-\subsubsection{Literature}
-
-\begin{itemize}
-    \item BODNER, Jon. Learning Go. O’Reilly, 2024.\cite{learning-go}
-    \item HARSANYI, Teiva. 100 Go Mistakes and How to Avoid Them. Manning Publications, 2022.\cite{100-go-mistakes}
-    \item HOLMES, Joel. Shipping Go. Manning Publications, 2023.\cite{shipping-go}
-\end{itemize}
-
-\subsubsection{Teaching methods}
-
-In-person lectures with hands-on exercises and reviewed homework assignments.
-
-\subsubsection{Assessment methods}
-
-Multiple homework assignments (fifty points) and a final project (fifty points), including its defense. Seventy out of the one hundred points are required for a successful completion.
-
 \chapter{The course content}
 
 The content is described in the same order as it is presented to students throughout the semester.
@@ -936,5 +793,72 @@ The course directory contains information that serves as the starting point when
 \section{ping-pong}
 
 The ping-pong directory contains a simple REST API project used for teaching deployments and their automation. It is split up from the code project as it simplifies the deployments.
+
+\chapter{Catalog specification}
+
+This chapter specifies the common catalog used at Masaryk University.
+
+\subsubsection{Extent and Intensity}
+
+The following expression notes the intensity of lectures, seminars, and homework, plus the type of completion, respectively.
+
+(2/0/1) + 1 (colloquium)
+
+\subsubsection{Prerequisities}
+
+No hard requirements are enforced. However, students must possess programming fundamentals (IB111)\footnote{ \url{https://is.muni.cz/predmet/fi/podzim2023/IB111?lang=en}.} and a basic understanding of networking (PB156)\footnote{\url{https://is.muni.cz/predmet/fi/jaro2012/PB156?lang=en}.} and virtualization (PB152)\footnote{\url{https://is.muni.cz/predmet/fi/jaro2020/PB152?lang=en}.} to the extent of referenced courses.
+
+\subsubsection{Enrolment limitations}
+
+The course is intended to be run with up to 20 students. It can later be scaled to a higher number, but currently, the intent is to test the new course in practice and interact more with students, which does not scale well and would require opening a second seminar.
+
+\subsubsection{Course objectives}
+
+Students will understand the fundamentals of the Go programming language and its common uses in practice. They will acquire the required knowledge for entry-level Go developer positions while writing idiomatic Go code, and they will be capable of applying this knowledge to real-life projects.
+
+\subsubsection{Learning outcomes}
+
+Students will be able to:
+\begin{itemize}
+    \item Write idiomatic Go code.
+    \item Understand the Go concurrency model.
+    \item Inspect and optimize Go applications.
+    \item Develop REST API services.
+    \item Containerize and deploy their applications.
+    \item Implement persistence leveraging SQL databases.
+    \item Instrument applications with various types of telemetry.
+\end{itemize}
+
+\subsubsection{Syllabus}
+
+\begin{enumerate}
+    \item Introduction: (Introduction to Go, IDEs and editors, Installing Go, Running Go)
+    \item Fundamentals \#1: (Packages \& Visibility, Variables, Data types, Control flow, Functions, Pointers, User-defined data types)
+    \item Fundamentals \#2: (Interfaces, Errors, Arrays, Slices, Maps, Range)
+    \item Concurrency \& parallelism: (Goroutines, Runtime, Channels, Select, Related packages)
+    \item Advanced \#1: (Generics, Packages, Testing)
+    \item Advanced \#2: (Benchmarks, Optimizations, CGo, Unsafe \& Reflect)
+    \item REST APIs: (JSON, HTTP, REST API, HTTP package, Routers \& Web frameworks, OpenAPI, Templating)
+    \item Containers: (Containerization, Docker, Kubernetes)
+    \item Databases: (SQL, RDBMSs, Migrations, SQL, sqlx, sqlc, GORM)
+    \item Infrastructure: (CI/CD, Infrastructure, Google Cloud Platform)
+    \item Observability: (Health, Logs, Metrics, Traces, OpenTelemetry)
+\end{enumerate}
+
+\subsubsection{Literature}
+
+\begin{itemize}
+    \item BODNER, Jon. Learning Go. O’Reilly, 2024.\cite{learning-go}
+    \item HARSANYI, Teiva. 100 Go Mistakes and How to Avoid Them. Manning Publications, 2022.\cite{100-go-mistakes}
+    \item HOLMES, Joel. Shipping Go. Manning Publications, 2023.\cite{shipping-go}
+\end{itemize}
+
+\subsubsection{Teaching methods}
+
+In-person lectures with hands-on exercises and reviewed homework assignments and projects.
+
+\subsubsection{Assessment methods}
+
+Multiple homework assignments (fifty points) and a final project (fifty points), including its defense. Seventy out of the one hundred points are required for a successful completion.
 
 \end{document}
