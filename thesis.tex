@@ -28,7 +28,7 @@
     keywords    = {go, golang, course, lectures, exercises, homework},
     TeXkeywords = {go, golang, course, lectures, exercises, homework},
     abstract    = {
-      This thesis deals with designing and implementing a new course aimed at teaching the Go programming language. This work puts the Faculty of Informatics of Masaryk University into context, and its design reflects some of the shortcomings of local courses or their lack thereof. As such, the course goes beyond just the language fundamentals. The thesis implements multiple types of materials, primarily including lectures, exercises, and homework, while discussing the design decisions behind them. Multiple of the course lectures are based on an existing Go Course maintained under RedHat.
+      This thesis deals with designing and implementing a new course aimed at teaching the Go programming language. This work puts the Faculty of Informatics of Masaryk University into context, and its design reflects some of the shortcomings of local courses or their lack thereof. As such, the course goes beyond just the language fundamentals. The thesis implements multiple types of materials, primarily including lectures, exercises, and homework, while discussing the design decisions behind them. The majority of the course lectures are based on an existing Go Course maintained under RedHat.
     },
     thanks      = {
       These are the acknowledgements for my thesis.
@@ -77,60 +77,56 @@ Go is an aspiring programming language that has gained much traction in recent y
 
 \chapter{The current state at FI MUNI}
 
-As this thesis focuses on designing a course in the Faculty of Informatics Masaryk University (FI MUNI) context, it first maps the ground and explores the current state of related courses while describing both their benefits and shortcomings and providing references. It is worth noting that all of the information further described is my own observation as a bachelor's degree student studying the Programming and Application Development program (PVA). The observations are mostly concerned with practical applications.
+As this thesis focuses on designing a course in the Faculty of Informatics Masaryk University (FI MUNI)\footnote{\url{https://www.fi.muni.cz/index.html.en}} context, it first maps the ground and explores the current state of related local courses while describing both their strong points and shortcomings and providing references. It is worth noting that all of the information further described is my own observation as a last year bachelor's degree student studying the Programming and Application Development program (PVA)\footnote{\url{https://www.fi.muni.cz/admission/bc/programming-and-development.html.en}.} and that the observations are mostly concerned with practical applications.
 
 \section{Up-to-date technologies and practical knowledge}
 
-As it is often said, the faculty's goal is not to teach you specific technologies but to provide fundamental knowledge of informatics. I agree that this is valued in the long run as technologies evolve and change, but the fundamentals will always remain the same. However, I would like to oppose the idea somewhat.
+As it is often said, the faculty's goal is not to teach you specific technologies but to provide fundamental knowledge of informatics. I certainly agree that this is valued in the long run as technologies evolve and change, but the fundamentals will always remain the same. However, I would like to oppose the idea somewhat.
 
-If the faculty wants to act like we maintain profession-oriented study programs like "Programming and application development" (PVA)
-\footnote{See \url{https://www.fi.muni.cz/admission/bc/programming-and-development.html.en}.}
-or "Software Engineering" (SWE), 
-\footnote{See \url{https://www.fi.muni.cz/admission/mgr/software-engineering.html.en}.}
-we cannot simply stick to the fundamentals. 
-Moreover, both of these study programs require attending an internship, each 480 and 400 hours long, respectively. The faculty should, at least to some extent, prepare the students for such endeavors. For example, students are pushed to attend an internship without ever having to connect an application to a database or without ever having to create an API \cref{web-dev}, which is quite absurd for a program that mentions application development in its name. Hence, students often have to settle for relatively limited internship positions even though they could go straight to working as juniors. The faculty should also not expect this knowledge to be given to the students during their internships, as it is often not the case.
+The faculty currently maintains profession-oriented study programs, namely the PVA and Software Engineering (SWE)\footnote{\url{https://www.fi.muni.cz/admission/mgr/software-engineering.html.en}.}\footnote{Although some of the points mentioned, in my opinion, apply to this program as well, the chapter mostly concerns with the PVA program as I can better reflect it.}. These courses are, compared to their more academic programs, intended to give more focus to practical applications.
+
+I argue that the present situation in these programs regarding this type of applied knowledge is rather lacking. I propose that more stress should be given to practical usage and application of the acquired knowledge rather than solely sticking to the fundamentals, as the current state of such courses is insufficient.
+
+Moreover, both of these study programs require attending an internship\footnote{See \url{https://www.fi.muni.cz/studies/internship/programming.html.en} for PVA and \url{https://www.fi.muni.cz/studies/internship/software-engineering.html} for SWE.}\footnote{Even though the courses themselves are called internships, any type of employment position is accepted. I.e., you do not need to be an intern.}. The faculty should, at least to some extent, prepare the students for such endeavors and not expect this knowledge to be given to them during their internships, as it is often not the case. 
+
+To give a clear example, students are required to attend an internship without ever having to connect an application to a database or design and implement an API \footnote{This knowledge is mostly covered by the Web development course described in \cref{web-dev}. Unfortunately, the PVA plan suggests enrolling for this course during the last semester; therefore, this knowledge is not covered before attending the internship.}. This is, to me, quite absurd for a program that specifies application development in its name. Hence, students often have to settle for relatively limited and often underpaid internship positions even though they could go straight to working as fully-fledged juniors.
 
 \section{Related faculty courses}
 
-This section describes related courses.
+This section describes courses that try to/do provide practical knowledge or somehow relate to the discussed topics.
 
-\subsection{Web development and markup languages} \label{web-dev}
+\subsection{Web development and markup languages}\label{web-dev}
 
-Web development and markup languages
-\footnote{See \url{https://is.muni.cz/predmet/fi/jaro2024/PB138?lang=en;setlang=en}.}
-is a course originally called Modern Markup Languages and Their Applications that has been reworked from a solely markup language course, which dedicated all of its time to technologies like XML and HTML
-\footnote{The course was last run in this form in the Spring of 2019. See \url{https://is.muni.cz/course/fi/spring2019/PB138} for more information.}.
+Web development and markup languages\footnote{See \url{https://is.muni.cz/predmet/fi/jaro2024/PB138?lang=en}.}
+is a course originally called Modern Markup Languages and Their Applications that has been reworked from a solely markup language course, which dedicated all of its time to mark-up technologies like XML and HTML\footnote{The course was last run in this form in the Spring of 2019. See \url{https://is.muni.cz/course/fi/spring2019/PB138} for more information.}.
 
-The course nowadays includes programming and developing web applications using the Typescript programming language. The scope of the subject is rather large, as it has to cover all of the topics from designing a database scheme and implementing a persistence layer and API to creating single-page applications using React.
+Nowadays, the course includes programming and developing web applications using the Typescript programming language. The scope of the subject is rather large, as it has to cover all of the topics from designing a database scheme and implementing a persistence layer and API to creating single-page applications using React.
 
-This is the only mandatory course for the PVA program that currently addresses most of the program's shortcomings and teaches the knowledge mostly required in practice.
+The course currently covers a rather vast amount of topics. One potential way to improve the course would be to split it up into two courses. The first one would concern the backend design, while the second would cover the client side of modern web applications. This would help make the course more maintainable and allow the newly created courses to go more in-depth.
 
-\subsection{Programming in Rust}
+With all this said, this is currently the only mandatory course for the PVA program that addresses most of the program's shortcomings and teaches the knowledge mostly required in practice.
 
-This Go course is somewhat inspired by an existing course taught at FI MUNI called Programming in Rust 
-\footnote{See \url{https://is.muni.cz/predmet/fi/podzim2023/PV281?lang=en} for more information.}
-under the code PV281. I first attended the course in the Autumn of 2022 and later joined in on its third run in the Autumn of 2023 as a seminar tutor.
+\subsection{Programming in Rust}\label{rust-course}
 
-From my personal experience, this course has been a great source of knowledge, especially for me as a second-year student, that I could mostly apply to practice. Besides obviously teaching Rust, the course went beyond just the programming language as it taught topics like software architecture design, introduced web development and databases basics, and heavily used Docker throughout its latter seminars.
+The Programming in Rust\footnote{\url{https://is.muni.cz/predmet/fi/podzim2023/PV281?lang=en}} course, besides teaching the Rust programming language itself, went beyond just the language as it taught topics like software architecture design, introduced web development and databases basics, and heavily used Docker throughout its latter seminars. From my personal experience, this course has been a great source of knowledge, especially for me as a second-year student, that I could mostly apply to practice. I attended the course in the Autumn of 2022 as a student and later joined in on its third run in the Autumn of 2023 as a seminar tutor.
 
 As great of an experience as it was, the course certainly had its shortcomings. Docker, for example, was not properly introduced even though it was never even mentioned in its prerequisites. Some Docker knowledge was, therefore, implicitly expected. To this day, only a single course \cref{code-quality-and-management} delves into the topics of containerization with practical applications.
 
 Because of the scope of the course, it did not properly delve into the depth of the Rust programming language. One topic that is worth mentioning is macros, which the course lacked and are leveraged by the language quite heavily. Macros were only introduced as part of a bonus lecture that, in the end, did not occur. Therefore, it appeared to be an afterthought.
 
-\subsection{Basic Code Quality and Management} \label{code-quality-and-management}
+\subsection{Basic Code Quality and Management}\label{code-quality-and-management}
 
-Although this course
-\footnote{See \url{https://is.muni.cz/predmet/fi/jaro2024/PB176?lang=en}.}
-delves into the problematics of Docker, it does so in a way that makes it voluntary. Unfortunately, to my knowledge, 
-\footnote{This information is based on the course run of Spring 2024} the course explores Docker in its final lectures and does not dedicate proper space to this technology. Moreover, only the last fourth homework focuses on the Docker technology and requires three completed homework for the course completion. Consequently, the Docker homework becomes optional if students have completed the previous four assignments, so they are not required to do it.
+The Basic Code Quality and Management\footnote{\url{https://is.muni.cz/predmet/fi/jaro2024/PB176?lang=en}} course tries to cover topics implicitly expected by many courses but never previously covered. These topics include fundamentals of git, build tools, continuous integration (CI), and Docker\footnote{This information is mostly based on the course run of Spring 2023, which I had personally attended.}. 
+
+Although this course delves into the problematics of Docker, it does so in a way that makes it voluntary. Docker is unfortunately explored in its final lectures and does not dedicate proper space to this technology. Moreover, only the last fourth homework focuses on Docker technology, while the students are required to complete only three of the four homework assignments. Consequently, the Docker homework becomes optional if students have completed the previous three assignments and they can freely ignore it.
 
 \section{RedHat Go Course}
 
-During the Autumn semester of 2023, a new first trial run for the Go programming language course was planned under the course Domain-specific development
-\footnote{See \url{https://is.muni.cz/predmet/fi/podzim2023/PB173?lang=en}.}.
+During the Autumn semester of 2023, a new first trial run for the Go programming language course was planned under the course Domain-specific development\footnote{See \url{https://is.muni.cz/predmet/fi/podzim2023/PB173?lang=en}.}.
+
 The course was organized by Martin Ukrop and led by Pavel Tišnovský and Ivan Nečas, both of whom maintain an existing Go Course \cite{redhat-go-course} under Redhat. At that time, I had been studying Go for several months, and as I was deeply interested and dedicated to mastering it, I decided to join in on the efforts.
 
-The RedHat Go Course was originally designed to cover the language fundamentals, and thanks to Go being a minimalistic language, teaching it only took half of the semester. The second half was lecture-free, and the students were left to implement their projects. A subsequent project defense was organized for the last week of the semester where students provided a description and a demonstration of the projects. The projects were also submitted for review, which we provided two weeks after the defense.
+The RedHat Go Course was originally designed to cover the language fundamentals, and thanks to Go being a minimalistic language, teaching it only took half of the semester. The second half was lecture-free, and the students were left to implement their projects. A subsequent project defense was organized for the last week of the semester, during which students provided a description and a demonstration of the projects. The projects were also submitted for review, which we provided two weeks after the defense.
 
 \section{Motivation for extending the course}
 
@@ -142,8 +138,7 @@ After the successful end of the first run, we issued a questionnaire to gather s
 
 One of the greatest shortcomings I suspected and later confirmed by the questionnaire was a lack of programming exercises. The final project was the only output we required from the students. Thanks to it being final, students had no motivation to put in any extra effort throughout the semester.
 
-The students unequivocally agreed that additional activities would be welcome. However, they generally opposed the idea of dedicated seminars as the Go language was too simple and preferred homework exercises. Some of the excerpts
-\footnote{These excerpts were translated from Czech/Slovak languages.}
+The students unequivocally agreed that additional activities would be welcome. However, they generally opposed the idea of dedicated seminars as the Go language was too simple and preferred homework exercises. Some of the excerpts\footnote{These excerpts were translated from Czech/Slovak languages.}
 to the related question: \\
 
 \subsubsection{Additional exercises}
@@ -164,8 +159,7 @@ A3: \textit{"Seminars aren't very necessary; I understood everything well from t
 \subsubsection{Sneekpeek to the new course outline}
 
 \noindent
-When presented with an older version of the overview
-\footnote{The original overview included an additional Event-driven programming lecture. It was discarded as I deemed it not as important. Instead, the Observability lecture further described in \cref{lecture-observability} was preferred.}
+When presented with an older version of the overview\footnote{The original overview included an additional Event-driven programming lecture. It was discarded as I deemed it not as important. Instead, the Observability lecture further described in \cref{lecture-observability} was preferred.}
 showcased in the \cref{design-overview}. The students generally welcomed the changes: \\
 
 \noindent
@@ -229,16 +223,16 @@ A3: \textit{"Slices and arrays, although it might be because I didn't work with 
 A4: \textit{"If I had paid more attention (or if greater attention had been demanded from me, for example through exercises or assignments) during the semester, I wouldn't have had to rush to catch up on everything during project work."} \\
 
 \noindent
-These comments are also reflected throughout the design \cref{course-design}.
+These comments are also reflected throughout the design \cref{chapter-design}.
 
 \subsection{Interest}
 
-The first run of the RedHat Go Course was Go's first occurrence at our faculty. There is certainly a great interest in the Go programming language. I judge this by having personal conversations with peers and other tutors and by the spike \footnote{At one point, over one hundred students enrolled for the course.}
-in course enrollments before the semester that I perceived. However, it must be noted that the course under which the Go Course ran shared it with two additional seminars, so this fact may be inconclusive.
+The first run of the RedHat Go Course was Go's first occurrence at our faculty. There is certainly a great interest in the Go programming language. I judge this by having personal conversations with peers and other tutors and by the spike\footnote{Over one hundred students enrolled for the course at one point.}
+in course enrollments before the semester that I perceived. However, it must be noted that the Domain-specific development course under which the Go Course ran shared it with two additional seminars, so this fact may be inconclusive.
 
-\chapter{The course design}\label{course-design}
+\chapter{The course design}\label{chapter-design}
 
-This chapter gives high-level insight into the course design and the reasoning behind the decisions taken. Detailed explanations about particular lectures, exercises, and homework are given in the fourth chapter.
+This chapter gives high-level insight into the course design and the reasoning behind the decisions taken. Detailed explanations about particular lectures, exercises, and homework are given in the \cref{chapter-content}.
 
 \section{Elementary information}
 
@@ -250,10 +244,8 @@ The newly created course is intended to be taught throughout the span of twelve 
 
 \subsection{Licensing}
 
-The original course is open-sourced under the Creative Commons Attribution-ShareAlike (CC BY-SA 4.0 Deed) license
-\footnote{See \url{https://creativecommons.org/licenses/by-sa/4.0/} for license details.}
-, and as it is a share-alike license, the new course had to respect it. There was an option to migrate to the GPLv3 license
-\footnote{See \url{https://www.gnu.org/licenses/gpl-3.0.en.html} for license details.}
+The original course is open-sourced under the Creative Commons Attribution-ShareAlike (CC BY-SA 4.0 Deed) license\footnote{See \url{https://creativecommons.org/licenses/by-sa/4.0/} for license details.}
+, and as it is a share-alike license, the new course had to respect it. There was an option to migrate to the GPLv3 license\footnote{See \url{https://www.gnu.org/licenses/gpl-3.0.en.html} for license details.}
 , which is compatible, but in the end, the CC license was preferred.
 
 The original idea was to keep the new course open-sourced either way, so reusing and adapting the existing course was not a deterrent. The motivation behind this was to keep the course in the public space. Anyone who would like to remix or reuse the course would be free to do so. There is no reason to keep anyone from using any of its materials, even for those with commercial intentions.
@@ -274,17 +266,15 @@ The last five lectures are completely new and extend the course with numerous te
 
 I considered multiple tools for creating the lecture slides. It certainly had to be a markdown-oriented technology for multiple reasons. A plain-text solution was a necessity as all materials are versioned using git. This, in turn, eases collaboration with potential open-source contributors, which can further extend the course or fix any existing mistakes.
 
-The original RedHat Go course used the Go Present tool
-\footnote{See \url{https://pkg.go.dev/golang.org/x/tools/present} for more information.}.
-This solution, created by the Go team, implements an exceptional feature: it can run the Go code in your slides and immediately present the output. For this reason, I decided to continue using it for the new lectures as any other markdown-styled solution did not offer any similar viable alternative.
+The original RedHat Go course used the Go Present tool\footnote{See \url{https://pkg.go.dev/golang.org/x/tools/present} for more information.}.
+This solution, created by the Go team, implements an exceptional feature: it can run the Go code in your slides and immediately present the output. For this reason, I decided to continue using it for the new lectures, as any other markdown-styled solution did not offer any similar viable alternative.
 
-I also considered Marp
-\footnote{See \url{https://marp.app} for more information.}
+I also considered Marp\footnote{See \url{https://marp.app} for more information.}
 as the runner-up. This tool is used throughout the Rust course previously mentioned in the second chapter. Compared to the Go Present tool, the main benefits include much better formatting capabilities, the possibility of exporting slides to multiple data formats like PDF or HTML, and a more straightforward syntax.
 
 \subsection{Exercises}
 
-The exercises are designed to be complementary assignments to lectures. The general feedback on the first course run, as discussed in the second chapter, was a lack of hands-on experience. These exercises were designed to compensate for that. They are, by no means, an equivalent substitute for traditional standard seminars. The students are expected to spend only up to thirty minutes solving them.
+The exercises are designed to be complementary assignments to lectures. The general feedback on the first-course run, as discussed in the second chapter, was a lack of hands-on experience. These exercises were designed to compensate for that. They are, by no means, an equivalent substitute for traditional standard seminars. The students are expected to spend only up to thirty minutes solving them.
 
 Each lecture is paired with a single exercise that can, in some cases, be split into up to two tasks. Both of these, in some way, relate to the topics covered in the lecture.
 
@@ -325,7 +315,7 @@ The recommended number of team members is up to four students. The size of the p
 
 When evaluating projects, it should be verified that the work was roughly evenly distributed between the students. As often happens, some students leave most of the work for their team members and only join in on minor tasks, if at all. Such lack of activity should be reflected in the student's evaluation.
 
-It should also be noted that sometimes, a student implements most of the project assignment independently without giving the rest of the team a chance to contribute appropriately. Differentiation between the two cases is merely impossible. The only way is to consult the team members directly, and even then, the active students tend not to report on and abandon their peers.
+It should also be noted that sometimes, a student implements most of the project assignments independently without giving the rest of the team a chance to contribute appropriately. Differentiation between the two cases is merely impossible. The only way is to consult the team members directly, and even then, the active students tend not to report on and abandon their peers.
 
 \subsubsection{Solo projects}
 
@@ -373,7 +363,7 @@ GraphQL (GQL) is a query language that was created at Facebook. It is built on t
 
 Some of the lectures, namely Infrastructure and Observability, overlap with the DevOps/Ops field. Although the lectures provide Go examples and try to apply the general knowledge to Go, these topics are not Go specific and could be extracted to an additional course in the future. This would free up space for other topics, such as those previously mentioned.
 
-\chapter{The course content}
+\chapter{The course content}\label{chapter-content}
 
 The content is described in the same order as it is presented to students throughout the semester.
 
@@ -662,7 +652,7 @@ Tasks:
     
 \section{Lecture 11: Observability}\label{lecture-observability}
 
-This lecture delves into the topic of observability. The lecture covers all major types of telemetry signals, namely metrics, logs, and traces. Each signal is briefly introduced, after which specific state-of-the-art \footnote{Many alternative technologies to the ones provided exist. The selection was made based on a general prevalence and on the fact that they are open-source and implemented in Go.}
+This lecture delves into the topic of observability. The lecture covers all major types of telemetry signals, namely metrics, logs, and traces. Each signal is briefly introduced, after which specific state-of-the-art\footnote{Many alternative technologies to the ones provided exist. The selection was made based on a general prevalence and on the fact that they are open-source and implemented in Go.}
 technologies are introduced. In the last part, the OpenTelemetry project is introduced.
 
 Following the lecture, students should be able to set up the introduced technologies, instrument their applications with basic telemetry, and monitor their applications' health. No previous knowledge regarding observability is required.
@@ -694,14 +684,11 @@ The lecture starts off with an introduction to concepts such as health and heart
 
 The next section covers the first of the three major signal - metrics. A brief explanation with multiple metric examples is given. The spotlight is then transferred to the Prometheus project.
 
-Prometheus 
-\footnote{See \url{https://https://prometheus.io} for more information.}
+Prometheus\footnote{See \url{https://https://prometheus.io} for more information.}
 is undeniably the leading project that revolves around retrieving, storing, and evaluating metrics. The Prometheus format is supported by multiple third-party tools. The section introduces the Prometheus format and the various metric types it supports.
 
-Lastly, this section introduces Grafana 
-\footnote{See \url{https://grafana.com/grafana/} for more information.}
-as the project of choice for visualizing metrics. The slides refer to the Granafa sandbox
-\footnote{See \url{https://play.grafana.org/d/000000012/grafana-play-home} for more information.}
+Lastly, this section introduces Grafana\footnote{See \url{https://grafana.com/grafana/} for more information.}
+as the project of choice for visualizing metrics. The slides refer to the Granafa sandbox\footnote{See \url{https://play.grafana.org/d/000000012/grafana-play-home} for more information.}
 that can be explored during the lecture shortly. \\
 
 The second signal to cover is logs. This section puts logs into context and introduces additional structured logging libraries that offer additional features and focus more on performance compared to standard library packages.
@@ -711,10 +698,8 @@ The final presented signal is traces. As traces are the most complex of all the 
 
 Like with Loki, the slides introduce Jaegers architecture and core concepts. As Jaeger dropped support for all of its previous clients and now only supports OpenTelemetry API and SDK, the instrumentation part is left out and shown in the following section, where OpenTelemetry is explored in-depth. \\
 
-The OpenTelemetry 
-\footnote{See \url{https://opentelemetry.io} for more information.}
-project is an initiative that has gained much traction in recent years. Backed by the Cloud Native Computing Foundation (CNCF)
-\footnote{See \url{https://www.cncf.io} for more information.},
+The OpenTelemetry\footnote{See \url{https://opentelemetry.io} for more information.}
+project is an initiative that has gained much traction in recent years. Backed by the Cloud Native Computing Foundation (CNCF)\footnote{See \url{https://www.cncf.io} for more information.},
 it is currently the leading project in defining telemetry standards. As of today, all major cloud providers support it. The last section gives insight into the OpenTelemetry Collector and its architecture, explains how OpenTelemetry works, and how applications can be instrumented using its Go API and SDK.
 
 \begin{figure}[H]
@@ -760,16 +745,16 @@ The lecture ends with giving multiple links to resources related to open-source 
 \appendix
 \chapter{Course materials}
 
-All course materials are maintained under the \href{https://github.com/course-go}{course-go} GitHub organization. To preserve the current state of the materials, all relevant repositories were exported and compressed into an attachment to this thesis. Each top-level directory in the attached archive maps to a GitHub repository. The directories contain versions of materials that existed when submitting this thesis and are most likely out-of-date as you read this text. Inspect the respective GitHub repositories if you want to view the updated version.
+All course materials are maintained under the course-go\footnote{\url{https://github.com/course-go}} GitHub organization. To preserve the current state of the materials, all relevant repositories were exported and compressed into an attachment to this thesis. Each top-level directory in the attached archive maps to a GitHub repository. The directories contain versions of materials that existed when submitting this thesis and are most likely out-of-date as you read this text. Inspect the respective GitHub repositories if you want to view the updated version.
 
 The GitHub repositories for respective directories can be found under the following URLs:
 \begin{itemize}
-    \item \href{https://github.com/course-go/lectures}{lectures}
-    \item \href{https://github.com/course-go/exercises}{exercises}
-    \item \href{https://github.com/course-go/homework}{homework}
-    \item \href{https://github.com/course-go/code}{code}
-    \item \href{https://github.com/course-go/course}{course}
-    \item \href{https://github.com/course-go/ping-pong}{ping-pong}
+    \item lectures\footnote{\url{https://github.com/course-go/lectures}}
+    \item exercises\footnote{\url{https://github.com/course-go/exercises}}
+    \item homework\footnote{\url{https://github.com/course-go/homework}}
+    \item code\footnote{\url{https://github.com/course-go/code}}
+    \item course\footnote{\url{https://github.com/course-go/course}}
+    \item ping-pong\footnote{\url{https://github.com/course-go/ping-pong}}
 \end{itemize}
 
 \section{lectures}
