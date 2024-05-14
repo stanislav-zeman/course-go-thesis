@@ -185,7 +185,7 @@ A4: \textit{"For me, the question is whether topics 7-11\footnote{This reference
 A5: \textit{"Will the conclusion still involve a project? Won't it be too much in conjunction with assignments?"} \\
 
 \noindent
-These concerns are further reflected in the course design described in \cref{course-design}. \\
+These concerns are further reflected in the course design described in \cref{chapter-design}. \\
 
 \subsubsection{General feedback}
 
@@ -242,11 +242,13 @@ The course builds upon the foundations of an already existing Go Course maintain
 
 The newly created course is intended to be taught throughout the span of twelve weeks. The first eleven weeks are regular lessons, and the last week is reserved for consultation and/or as a potential substitute class.
 
+All of the course materials are publicly accessible on GitHub. The respective links are provided in the \cref{apendix-materials}.
+
 \subsection{Licensing}
 
 The original course is open-sourced under the Creative Commons Attribution-ShareAlike (CC BY-SA 4.0 Deed) license\footnote{See \url{https://creativecommons.org/licenses/by-sa/4.0/} for license details.}
 , and as it is a share-alike license, the new course had to respect it. There was an option to migrate to the GPLv3 license\footnote{See \url{https://www.gnu.org/licenses/gpl-3.0.en.html} for license details.}
-, which is compatible, but in the end, the CC license was preferred.
+, which is compatible, but in the end, the Creative Commons license was preferred.
 
 The original idea was to keep the new course open-sourced either way, so reusing and adapting the existing course was not a deterrent. The motivation behind this was to keep the course in the public space. Anyone who would like to remix or reuse the course would be free to do so. There is no reason to keep anyone from using any of its materials, even for those with commercial intentions.
 
@@ -254,6 +256,11 @@ The original idea was to keep the new course open-sourced either way, so reusing
 
 The course materials are structurally split into three major categories: lectures, exercises, and homework, to be specific, each with a dedicated git repository. All of these categories are inspected in the following subsections. The last subsection of this chapter briefly talks about the final projects.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm]{figures/schedule.png}
+    \caption{Outline of the course schedule.}
+\end{figure}
 \subsection{Lectures}
 
 The lecture slides are indubitably the most vital type of material. 
@@ -701,7 +708,7 @@ The lecture ends with giving multiple links to resources related to open-source 
 \printbibliography[heading=bibintoc]
 
 \appendix
-\chapter{Course materials}
+\chapter{Course materials}\label{apendix-materials}
 
 All course materials are maintained under the course-go\footnote{\url{https://github.com/course-go}} GitHub organization. To preserve the current state of the materials, all relevant repositories were exported and compressed into an attachment to this thesis. Each top-level directory in the attached archive maps to a GitHub repository. The directories contain versions of materials that existed when submitting this thesis and are most likely out-of-date as you read this text. Inspect the respective GitHub repositories if you want to view the updated version.
 
