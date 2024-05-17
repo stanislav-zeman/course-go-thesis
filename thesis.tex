@@ -151,7 +151,7 @@ One of the greatest shortcomings I suspected and later confirmed by the question
 The students unequivocally agreed that additional activities would be welcome. However, they generally opposed the idea of dedicated seminars as the Go language was too simple and preferred homework exercises. Some of the excerpts\footnote{These excerpts were translated from Czech and Slovak languages.}
 to the related question: \\
 
-\subsubsection{Additional exercises}
+\subsubsection{Additional exercises}\label{additional-exercises}
 
 \noindent
 Q: \textit{
@@ -166,7 +166,7 @@ A2: \textit{"Definitely homework. I don't think seminars and working with a tuto
 \noindent
 A3: \textit{"Seminars aren't very necessary; I understood everything well from the lectures and could immediately apply it. Homework might help with revision. Also, the project was practically a homework assignment."} \\
 
-\subsubsection{Sneakpeek to the new course outline}
+\subsubsection{Sneakpeek to the new course outline}\label{sneakpeek}
 
 \noindent
 When presented with an older version of the overview\footnote{The original overview included an additional Event-driven programming lecture. It was discarded as I deemed it not as important. Instead, the Observability lecture further described in \cref{lecture-observability} was preferred.}
@@ -197,7 +197,7 @@ A5: \textit{"Will the conclusion still involve a project? Won't it be too much i
 \noindent
 These concerns are further reflected in the course design described in \cref{chapter-design}. \\
 
-\subsubsection{General feedback}
+\subsubsection{General feedback}\label{general-feedback}
 
 \noindent
 Some of the additional general feedback provided on the course: \\
@@ -218,7 +218,7 @@ A3: \textit{"Perhaps delve more into packages."} \\
 A4: \textit{"Slices and arrays, although it might be because I didn't work with them much in my project."} \\
 
 \noindent
-Q: \textit{"Did you lack any knowledge during project implementation that the course didn't cover adequately?"}
+Q: \textit{"Did you lack any knowledge during project implementation that the course didn't cover adequately?"} \\
 
 \noindent
 A1: \textit{"I didn't understand how to run Docker and how to use it."} \\
@@ -244,27 +244,21 @@ in course enrollments before the semester that I perceived. However, it must be 
 
 This chapter gives high-level insight into the course design and the reasoning behind the decisions taken. Detailed explanations about particular lectures, exercises, and homework are given in the \cref{chapter-content}.
 
-\section{Elementary information}
+\section{Overview}\label{design-overview}
 
-The course primarily focuses on teaching the Go programming language. However, its goal is not only to teach the fundamentals of Go, but the course also focuses on equipping its students with the knowledge often required in practice.
+The course primarily focuses on teaching the Go programming language. However, its goal is not only to teach the fundamentals of Go, but the course also focuses on equipping its students with the knowledge often required in practice to develop production applications.
 
-The course builds upon the foundations of an already existing Go Course maintained under RedHat\cite{redhat-go-course}. This course already implemented numerous lectures, which were mainly reworked and restructured.
+The course builds upon the foundations of an existing Go Course maintained under RedHat\cite{redhat-go-course}. This course already implemented numerous lectures, which were mainly reworked and restructured.
 
 The newly created course is intended to be taught throughout the span of twelve weeks. The first eleven weeks are regular lessons, and the last week is reserved for consultation and/or as a potential substitute class.
 
-All of the course materials are publicly accessible on GitHub. The respective links are provided in the \cref{apendix-materials}.
+The course is designed to be taught in the academic environment where lectures and seminars are usually one hundred minutes long. This is reflected in the expected lecture times and exercises.
 
-\subsection{Licensing}
+All of the course materials are publicly accessible on GitHub\cite{github}. The respective links are provided in the \cref{apendix-materials}. GitHub was chosen as most of the open-source software is maintained on this platform.
 
-The original course is open-sourced under the Creative Commons Attribution-ShareAlike (CC BY-SA 4.0 Deed) license\footnote{See \url{https://creativecommons.org/licenses/by-sa/4.0/} for license details.}
-, and as it is a share-alike license, the new course had to respect it. There was an option to migrate to the GPLv3 license\footnote{See \url{https://www.gnu.org/licenses/gpl-3.0.en.html} for license details.}
-, which is compatible, but in the end, the Creative Commons license was preferred.
+The course materials are structurally split into three major categories: lectures, exercises, and homework, each with a dedicated git repository. All of these categories are inspected in the following subsections. The last subsection of this chapter briefly talks about the final projects.
 
-The original idea was to keep the new course open-sourced either way, so reusing and adapting the existing course was not a deterrent. The motivation behind this was to keep the course in the public space. Anyone who would like to remix or reuse the course would be free to do so. There is no reason to keep anyone from using any of its materials, even for those with commercial intentions.
-
-\section{Overview}\label{design-overview}
-
-The course materials are structurally split into three major categories: lectures, exercises, and homework, to be specific, each with a dedicated git repository. All of these categories are inspected in the following subsections. The last subsection of this chapter briefly talks about the final projects.
+The following \cref{schedule-outline} showcases the course outline to better understand the schedule.
 
 \begin{figure}[H]
     \centering
@@ -272,49 +266,56 @@ The course materials are structurally split into three major categories: lecture
     \caption{Outline of the course schedule.}
     \label{schedule-outline}
 \end{figure}
-\subsection{Lectures}
 
-The lecture slides are indubitably the most vital type of material. 
+\subsection{Lectures}
 
 The first six lessons are adaptations of the original RedHat Go Course slides, which underwent major changes and restructuring. The changes were made to make the taught topics more cohesive and easier to follow, as some of the code samples were unnecessarily long or complex. Several lessons, specifically those on REST API and Concurrency, presented outdated principles that warranted updating. Multiple lectures, such as Math \& Go or Python \& Go, were removed altogether as I did not deem them important.
 
 The last five lectures are completely new and extend the course with numerous technologies and third-party libraries. The original course focused solely on using the standard library. Some of the parts of the standard library, notably the HTTP web router, are generally not leveraged in practice. The new lectures focus more on practical usage; therefore, they are not limited in this way.
 
+All of the lectures are estimated to take around ninety minutes. Spare time should be used to implement the exercises described in \cref{exercises}.
+
 \subsubsection{Tooling}
 
-I considered multiple tools for creating the lecture slides. It certainly had to be a markdown-oriented technology for multiple reasons. A plain-text solution was a necessity as all materials are versioned using git. This, in turn, eases collaboration with potential open-source contributors, which can further extend the course or fix any existing mistakes.
+I considered multiple tools for creating the lecture slides. For numerous reasons, I reviewed only markdown-oriented technologies. The major reason was that all materials were intended to be versioned using git, so a plain-text solution was necessary. This was done to ease collaboration with potential open-source contributors, which can further extend the course or fix any existing mistakes. The course also includes code exercises and examples that needed to be versioned, so merging all of these materials under a single GitHub organization seemed the most reasonable.
 
-The original RedHat Go course used the Go Present tool\footnote{See \url{https://pkg.go.dev/golang.org/x/tools/present} for more information.}.
-This solution, created by the Go team, implements an exceptional feature: it can run the Go code in your slides and immediately present the output. For this reason, I decided to continue using it for the new lectures, as any other markdown-styled solution did not offer any similar viable alternative.
+The original RedHat Go course used the Go Present tool\cite{go-present}. This solution, created by the Go team, implements an exceptional feature: it can run the Go code in your slides and immediately present the output. For this reason, I decided to continue using it for the new lectures, as any other markdown-styled solution did not offer any similar viable alternative.
 
-I also considered Marp\footnote{See \url{https://marp.app} for more information.}
-as the runner-up. This tool is used throughout the Rust course previously mentioned in the second chapter. Compared to the Go Present tool, the main benefits include much better formatting capabilities, the possibility of exporting slides to multiple data formats like PDF or HTML, and a more straightforward syntax.
+I also considered Marp\cite{marp} as the runner-up. This tool is used throughout the Rust course previously mentioned in the \cref{rust-course}. Compared to the Go Present tool, the main benefits include much better formatting capabilities, the possibility of exporting slides to multiple data formats like PDF or HTML, and a more straightforward syntax.
 
-\subsection{Exercises}
+\subsection{Exercises}\label{exercises}
 
-The exercises are designed to be complementary assignments to lectures. The general feedback on the first-course run, as discussed in the second chapter, was a lack of hands-on experience. These exercises were designed to compensate for that. They are, by no means, an equivalent substitute for traditional standard seminars. The students are expected to spend only up to thirty minutes solving them.
+The exercises are designed to be complementary assignments to lectures. The general feedback on the first course run, as discussed in the \cref{additional-exercises}, was a lack of hands-on experience. These exercises were designed to compensate for that. They are, by no means, an equivalent substitute for traditional standard seminars. The students are expected to spend only up to thirty minutes solving them.
 
 Each lecture is paired with a single exercise that can, in some cases, be split into up to two tasks. Both of these, in some way, relate to the topics covered in the lecture.
 
-The exercises are not intended to be reviewed or evaluated in any way. However, they can provide useful on-site insight into the student's understanding of the covered topic, which can be reflected later. These exercises should also serve as the ground for answering potential follow-up questions.
+The exercises are not intended to be graded. However, they can be reviewed or evaluated as they can provide useful on-site insight into the student's understanding of the covered topic, which can be reflected later. These exercises should also serve as the ground for answering potential follow-up questions on the lecture topics.
+
+It is worth noting that the exercises are not necessarily intended to be completely finished. They are expected to take up around twenty to thirty minutes. That amount of time will usually not be left after giving the lecture. As noted previously, some exercises comprise multiple tasks; in such cases, you can prioritize which one you deem more important and instead do just the single task.
 
 \subsection{Homework}
 
-The homework exercises are a form of individual work. Their goal is to prepare students for their final projects. The homework tasks depend on each other and demonstrate building an application from the ground up.
+The homework assignments are a form of individual work. Their goal is to prepare students for their final projects. The first two homework assignments are independent, while the last three depend on each other and demonstrate building an application from the ground up.
 
-Starting from the third week, the assignments are published with a fourteen-day deadline followed by a seven-day review period. The review period is designed to give students feedback that they will later incorporate into their solutions.
+The students start by forking the original homework assignment repository, making it private, and adding their tutors to the repository. The assignments are then submitted as a pull request into these private repositories, where they will be reviewed.
 
-Contrary to lecture exercises, homework exercises are intended to be reviewed and graded. In the end, they should make up half of the final grade.
+Starting from the third week, the assignments are published with a ten-day deadline followed by a four-day review period. The review period is designed to give students feedback that they will later incorporate into their solutions.
 
 \subsection{Projects}
 
-The projects are the final part of the course and make up the second half of the final grade. The projects are estimated to take fifty to sixty hours for each student. The size of the projects should approximately match that estimation.
+The projects are the final part of the course. They are estimated to take fifty to sixty hours for each student. The size of the projects should approximately match that estimation.
 
 As part of a bonus lecture \cref{lecture-projects}, the students are presented with a set of technologies or libraries they can leverage in their project implementations. This lecture subordinately serves as a form of motivation.
 
 The general incentive is to make students come up with their own projects. Therefore, no "official" project assignments will be published. This was deeply considered as it may demotivate some students in the final part of the semester. However, I believe that the exploratory bonus lecture is sufficient for driving the students' projects even without predefined assignments.
 
 No matter the choice of project, all of them are finished with a short defense during the examination period. These defenses can be organized either physically or online. Students are expected to give a short presentation and a demonstration. Students should also cover used technologies and libraries and briefly describe their experiences and struggles.
+
+There are two reasonable approaches on how to review the projects. 
+
+The first one is to review the projects before the defense and confront the student during the defense. This allows confronting the students and having a discussion to reflect on the student's solutions and their potential mistakes. On the other hand, it slightly prohibits public defenses in the presence of other students.
+
+The second one is to review the projects after the defense. This permits the creation of public sessions that multiple students can attend at once, as no personal questions are raised. On the other hand, it makes the follow-up review less personal, and the student cannot be reasonably confronted.
 
 There are multiple means of completing the project, each offering a different set of advantages and disadvantages. The course is designed not to be overly restrictive, therefore giving flexibility of choice for the projects.
 
@@ -329,7 +330,7 @@ The project assignment can be fulfilled in three ways:
 
 The team projects required coordination between the team members; therefore, it simulates practical collaboration the most. However, it restricts students as they have to agree on a single project assignment. 
 
-The recommended number of team members is up to four students. The size of the projects should be linearly scaled with the number of team members. It is strongly advised not to be exceeded. Any higher number may negatively affect the teams' performance as it brings an additional overhead.
+The students can group into up to four-member teams, but two or three-membered teams are preferred. The size of the projects should be linearly scaled with the number of team members. I do not recommend exceeding these numbers, as it is generally observed that any higher number may negatively affect the teams' performance. It mostly only brings an additional overhead and introduces large project requirements.
 
 When evaluating projects, it should be verified that the work was roughly evenly distributed between the students. As often happens, some students leave most of the work for their team members and only join in on minor tasks, if at all. Such lack of activity should be reflected in the student's evaluation.
 
@@ -341,11 +342,11 @@ The solo projects give the most flexibility. Students can implement their own as
 
 On the other hand, the lack of interaction with peers is also the biggest disadvantage. The goal of these projects should, at least to some extent, be to get students familiar with real-life software project collaboration. Such projects are hardly implemented by solo developers.
 
-Students generally perceive this way as the path of least resistance, so it should be expected that the majority of projects will be of this kind.
+Based on the first course run, students opted out of this option the most as it is perceived as the path of least resistance. Hence, it should be expected that most projects will be of this kind.
 
 \subsubsection{Open-source contributions}
 
-The open-source contributions are rather experimental. The main motivation behind this variant is to allow students to get involved in the open-source community, give them a guiding hand, and provide feedback for their first steps. 
+The open-source contributions are rather experimental. The main motivation behind this variant is to allow students to get involved in the open-source community, give them a guiding hand, and provide feedback during their first steps. 
 
 This path presents several challenges to the students. First, the students must find open-source projects to contribute to. Secondly, they must engage, review current issues, and participate in the discussion and codebase. Lastly, they must implement the changes and get them reviewed and merged.
 
@@ -357,27 +358,73 @@ The size expectations for the open-source contributions are much lower than thos
 
 It should be noted that contributing to projects with low activity or without active maintainers should be avoided.
 
-In my opinion, our faculty does not promote open-source collaboration enough. The faculty's lack of permanent open-source-oriented courses exploring open-source workflow and etiquette can further support this statement. It is worth noting that some efforts to introduce such courses have been made in collaboration with industrial partners in the past few years.
+Our faculty does not promote open-source collaboration enough. The faculty's lack of permanent open-source-oriented courses exploring open-source workflow and etiquette can further support this statement. Some efforts to introduce such courses have been made in collaboration with industrial partners in the past few years. These open-source projects also try to push this motion forward.
+
+\section{Reflecting feedback}
+
+The lectures now also explore the discussed topics in \cref{general-feedback} in greater. Some of them, like the Docker or structuring Go projects, were previously not covered at all.
+
+The new outline also raised some concerns in \cref{sneakpeek} regarding the scope of the course. 
+
+The first was that the scope of the course got rather large, with topics not directly related to Go. As was previously declared, the goal of the course is to equip its students with the knowledge required to build production Go applications. Although some of the topics do not necessarily relate to Go, namely Observability, Infrastructure, or Containers lectures, they are applied to the Go environment and demonstrate the process that is involved when implementing, deploying, and maintaining such production applications. For this reason, I decided that they were a good addition to the course's content. However, it is worth noting that these topics could be later extracted to a separate course as described in the \cref{devops-overlap}. Currently, there is no such opportunity to do this so for the time being, these topics will be covered in the Go course directly.
+
+The second concern is that the course will become time-consuming with the addition of homework assignments combined with the projects. To put it frankly, the course's first run was overcredited as we did not require any attendance and only required the project to complete the course. The mother course, Domain-driven Development, under which the Go course runs, currently has an extent of three European Credit Transfer and Accumulation System (ECTS) credits. Adding these additional homework assignments will align the extent of the course more with its mother course.
+
+\section{Evaluation}
+
+Students can acquire up to one hundred points in total. From these one hundred points, a minimum of seventy has to be acquired. The first half of these points can be received by completing the homework assignments, while the second half is obtained by completing the project.
+
+There is a common requirement for all of the graded tasks. This requirement being that all Go code is written idiomatically, avoiding common mistakes and misconceptions.
+
+\subsection{Homework}
+
+The points for homework assignments are not distributed evenly as the two first homework are smaller in size and scope. Therefore, the first two homework assignments are graded by up to seven points each, while the last three are twelve points each. Each homework defines a set of requirements and expectations.
+
+\subsection{Projects}
+
+Defining precise grading criteria for projects is slightly problematic as they can vary heavily in scope and focus. 
+
+None of the requirements mentioned in this subsection apply to the open-source contribution projects as they simply do not make sense.
+
+Projects should also have one structure as specified by the de facto Go project layout standard\cite{go-project-layout}.
+
+All projects should include a continuous integration pipeline that lints, formats, builds, and tests the projects and a continuous delivery pipeline that publishes a docker image to a public repository of any choice.
+
+Minimal happy-path test cases must be implemented using the Go test suite.
+
+All projects should include a usage scenario that can be executed to verify basic functionality.
+
+Bonus points can be gained by performing additional actions such as deploying the application, instrumenting the application with telemetry, setting up monitoring, creating an OpenAPI specification, heavily testing the application, etc.
+
+\subsection{Bonus points}
+
+Additional bonus points can be acquired by being active during lectures and exercises or submitting exceptional solutions for homework and projects.
+
+\subsection{Licensing}
+
+The original course is open-sourced under the Creative Commons Attribution-ShareAlike (CC BY-SA 4.0 Deed) license\footnote{See \url{https://creativecommons.org/licenses/by-sa/4.0/} for license details.}
+, and as it is a share-alike license, the new course had to respect it. There was an option to migrate to the GPLv3 license\footnote{See \url{https://www.gnu.org/licenses/gpl-3.0.en.html} for license details.}
+, which is compatible, but in the end, the Creative Commons license was preferred.
+
+The original idea was to keep the new course open-sourced either way, so reusing and adapting the existing course was not a deterrent. The motivation behind this was to keep the course in the public space. Anyone who would like to remix or reuse the course would be free to do so. There is no reason to keep anyone from using any of its materials, even for those with commercial intentions.
 
 \section{Limitations}
 
-\subsection{Covered Topics}
+This subsection describes some possible inefficiencies that were later perceived but were currently not incorporated into the course. Some of these will be considered as additions to the course in the future.
 
-This subsection describes some possible inefficiencies that were later perceived but not incorporated into the course because of the lack of time or space.
+\subsection{Auth}
 
-\subsubsection{Auth}
+The course does not cover authorization or authentication in any way. It is up to debate if the course should cover this topic and, if so, to what extent. I believe that education in this regard, especially with practical application, is insufficient at our faculty. A dedicated course tackling topics like JWT, Cookies, and OAuth2 and their usage should exist instead. None of these concepts are currently covered in depth by any course.
 
-The course does not cover authorization or authentication in any way. It is up to debate if the course should cover this topic and, if so, to what extent. I believe that education in this regard, especially with practical application, is insufficient at our faculty. A dedicated course tackling topics like JWT, Cookies, and OAuth2 and their usage should exist instead.
+\subsection{APIs}
 
-\subsubsection{APIs}
+The course currently covers designing and implementing REST APIs. This is still the standard for most service communication. However, during the past decade, multiple other approaches emerged that are often incorporated into systems in practice, notably gRPC\cite{grpc} and GraphQL\cite{graphql}. These were not added to the course but could be considered in the future as they are highly related to backend development.
 
-The course currently covers designing and implementing REST APIs. This is still the standard for most service communication. However, during the past decade, multiple other approaches emerged that are often incorporated into systems in practice, notably gRPC and GraphQL.
+\subsection{Event-driven communication}
 
-gRPC is an implementation of the Remote Procedure Call (RPC) protocol by Google (g). It is often used for server-to-server communication as it provides type safety, lowers latency thanks to transmitting binary data using its custom format, and performs client/server code generation.
+Event-driven communication solves multiple problems imposed by today's world of distributed architectures. Giving a basic overview of how these systems work and how to integrate such systems should be considered in the future. Notable Go-specific projects that exist regarding this topic are the NATS\cite{nats} message broker and the event-driven commutation library Watermill\cite{watermill}.
 
-GraphQL (GQL) is a query language that was created at Facebook. It is built on top of standard REST API. GQL is often used for APIs that operate with complicated structured data. It removes the necessity to implement numerous endpoints and instead allows GQL queries to be sent to a single endpoint that parses the query and responds only to data specified in the query. Clients can fetch all required data using a single request. This way, the process saves time and network bandwidth.
-
-\subsubsection{DevOps/Ops overlap}
+\subsection{DevOps/Ops overlap}\label{devops-overlap}
 
 Some of the lectures, namely Infrastructure and Observability, overlap with the DevOps/Ops field. Although the lectures provide Go examples and try to apply the general knowledge to Go, these topics are not Go specific and could be extracted to an additional course in the future. This would free up space for other topics, such as those previously mentioned.
 
@@ -612,7 +659,7 @@ The third section gives an introduction to infrastructure design. Introduces bas
     \caption{One of the infrastructure example diagrams.}
 \end{figure}
 
-The last section introduces all major cloud providers (Amazon, Microsoft, and Google) and further develops into Google Cloud Platform (GCP)\cite{gcp}. As Google offers free credits thanks to the faculty program\cite{gcp-faculty}, it is a great opportunity for students to get their hands on operating cloud infrastructure. A set of basic services that GCP offers are introduced so students can leverage these in their follow-up projects.
+The last section introduces all major cloud providers (Amazon, Microsoft, and Google) and further delves into Google Cloud Platform (GCP)\cite{gcp}. As Google offers free credits thanks to the faculty program\cite{gcp-faculty}, it is a great opportunity for students to get their hands on operating cloud infrastructure. A set of basic services that GCP offers are introduced so students can leverage these in their final projects.
 
 \subsection{Exercise 10}
 
@@ -622,7 +669,7 @@ As students generally have a basic understanding of CI, thanks to their previous
 
 Tasks:
 \begin{itemize}
-    \item The first task involves setting up a Caddy server instance as a reverse proxy/load balancing multiple ping-pong service instances.
+    \item The first task involves setting up a Caddy server instance as a reverse proxy/load balancing multiple ping-pong service instances. You can learn more about the ping-ping application in the \cref{apendix-materials}.
     \item The second task involves setting up an automatic build and deployment using Cloud Run\cite{gcp-cloud-run}, provisioning a Compute Engine\cite{gcp-cloud-compute} virtual machine, and a Cloud SQL SQL\cite{gcp-cloud-sql} server that can later be used for the student's projects.
 \end{itemize}
     
