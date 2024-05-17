@@ -577,7 +577,7 @@ This lecture is designed solely to provide elementary information about the cour
 
 \section{Lecture 10: Infrastructure}
 
-The motivation behind this lecture is to give students an insight into the CI/CD process and how this practice can be applied in the context of Go projects. The second goal is to give students a basic knowledge of how such projects can be deployed and maintained.
+The motivation behind this lecture is to give students an insight into the continuous integration and continuous deployment/delivery (CI/CD) process and how this practice can be applied in the context of Go projects. The second goal is to give students a basic knowledge of how such projects can be deployed and maintained.
 
 The students are expected to understand basic software engineering practices and elementary networking.
 
@@ -594,7 +594,7 @@ The students are expected to understand basic software engineering practices and
 
 The first section covers linters and expands on the knowledge acquired in the introductory lesson, where the built-in go-vet linter was introduced. Most of this section is dedicated to the golangci-lint tool, a linter aggregator incorporated in many projects and is the most complex tool today. Together with formatters, these tools are necessary in the continuous integration process introduced in the following section.
 
-The second section introduces the CI/CD process. The primary goal of this section is to provide students with the knowledge to implement the CI/CD pipeline using both GitLab CI/CD and GitHub Actions.
+The second section introduces the CI/CD process. The primary goal of this section is to provide students with the knowledge to implement the CI/CD pipeline using both GitLab CI/CD\cite{gitlab-cicd} and GitHub Actions\cite{github-actions}.
 
 As the faculty operates a self-hosted GitLab instance, almost all of the git-related work is done using GitLab. Consequently, most students do not interact with GitHub throughout their studies. The secondary goal of this chapter is to familiarize students with GitHub so they can join the open-source community, as most open-source software is developed on the GitHub platform.
 
@@ -604,7 +604,7 @@ As the faculty operates a self-hosted GitLab instance, almost all of the git-rel
     \caption{CI/CD pipeline.}
 \end{figure}
 
-The third section gives an introduction to infrastructure design. Introduces basic concepts such as proxying, load balancing, and application scaling. Two related technologies are introduced to leverage these concepts, namely Traefik Proxy and Caddy. This section aims to give students a basic understanding of how to provision basic infrastructure and tackle basic infrastructure design problems such as fault tolerance, scaling, or encryption.
+The third section gives an introduction to infrastructure design. Introduces basic concepts such as proxying, load balancing, and application scaling. Two related technologies are introduced to leverage these concepts, namely Traefik Proxy\cite{traefik} and Caddy\cite{caddy}. This section aims to give students a basic understanding of how to provision basic infrastructure and tackle basic infrastructure design problems such as fault tolerance, scaling, or encryption.
 
 \begin{figure}[H]
     \centering
@@ -612,7 +612,7 @@ The third section gives an introduction to infrastructure design. Introduces bas
     \caption{One of the infrastructure example diagrams.}
 \end{figure}
 
-The last section introduces all major cloud providers (Amazon, Microsoft, and Google) and further develops into Google Cloud Platform (GCP). As Google offers free credits thanks to the faculty program, it is a great opportunity for students to get their hands on operating cloud infrastructure. A set of basic services that GCP offers are introduced so students can leverage these in their follow-up projects.
+The last section introduces all major cloud providers (Amazon, Microsoft, and Google) and further develops into Google Cloud Platform (GCP)\cite{gcp}. As Google offers free credits thanks to the faculty program\cite{gcp-faculty}, it is a great opportunity for students to get their hands on operating cloud infrastructure. A set of basic services that GCP offers are introduced so students can leverage these in their follow-up projects.
 
 \subsection{Exercise 10}
 
@@ -623,13 +623,13 @@ As students generally have a basic understanding of CI, thanks to their previous
 Tasks:
 \begin{itemize}
     \item The first task involves setting up a Caddy server instance as a reverse proxy/load balancing multiple ping-pong service instances.
-    \item The second task involves setting up an automatic build and deployment using Cloud Run, provisioning a Compute Engine virtual machine and a Cloud SQL SQL server that can later be used for the student's projects.
+    \item The second task involves setting up an automatic build and deployment using Cloud Run\cite{gcp-cloud-run}, provisioning a Compute Engine\cite{gcp-cloud-compute} virtual machine, and a Cloud SQL SQL\cite{gcp-cloud-sql} server that can later be used for the student's projects.
 \end{itemize}
     
 \section{Lecture 11: Observability}\label{lecture-observability}
 
 This lecture delves into the topic of observability. The lecture covers all major types of telemetry signals, namely metrics, logs, and traces. Each signal is briefly introduced, after which specific state-of-the-art\footnote{Many alternative technologies to the ones provided exist. The selection was made based on a general prevalence and on the fact that they are open-source and implemented in Go.}
-technologies are introduced. In the last part, the OpenTelemetry project is introduced.
+technologies are introduced. In the last part, the OpenTelemetry\cite{open-telemetry} project is introduced.
 
 Following the lecture, students should be able to set up the introduced technologies, instrument their applications with basic telemetry, and monitor their applications' health. No previous knowledge regarding observability is required.
 
@@ -637,20 +637,9 @@ Following the lecture, students should be able to set up the introduced technolo
 
 \begin{itemize}
     \item Health
-    \item Metrics
-    \begin{itemize}
-        \item Prometheus
-        \item Grafana
-    \end{itemize}
-    \item Logs
-    \begin{itemize}
-        \item Loggers
-        \item Loki
-    \end{itemize}
-    \item Traces
-    \begin{itemize}
-        \item Jaeger
-    \end{itemize}
+    \item Metrics (Prometheus, Grafana)
+    \item Logs (Loggers, Loki)
+    \item Traces (Jaeger)
     \item OpenTelemetry
 \end{itemize}
 
@@ -660,22 +649,20 @@ The lecture starts off with an introduction to concepts such as health and heart
 
 The next section covers the first of the three major signal - metrics. A brief explanation with multiple metric examples is given. The spotlight is then transferred to the Prometheus project.
 
-Prometheus\footnote{See \url{https://https://prometheus.io} for more information.}
-is undeniably the leading project that revolves around retrieving, storing, and evaluating metrics. The Prometheus format is supported by multiple third-party tools. The section introduces the Prometheus format and the various metric types it supports.
+Prometheus\cite{prometheus} is undeniably the leading project that revolves around retrieving, storing, and evaluating metrics. The Prometheus format is supported by multiple third-party tools. The section introduces the Prometheus format and the various metric types it supports.
 
-Lastly, this section introduces Grafana\footnote{See \url{https://grafana.com/grafana/} for more information.}
-as the project of choice for visualizing metrics. The slides refer to the Granafa sandbox\footnote{See \url{https://play.grafana.org/d/000000012/grafana-play-home} for more information.}
+Lastly, this section introduces Grafana\cite{grafana} as the project of choice for visualizing metrics. The slides refer to the Granafa sandbox\footnote{See \url{https://play.grafana.org/d/000000012/grafana-play-home} for more information.}
 that can be explored during the lecture shortly.
 
 The second signal to cover is logs. This section puts logs into context and introduces additional structured logging libraries that offer additional features and focus more on performance compared to standard library packages.
-The technology of choice for logs is Loki. Created by the Grafana Labs, it is a log aggregation system heavily inspired by Prometheus. The lecture covers the basic setup and summarizes possible clients and agents that can be used to retrieve the logs.
+The technology of choice for logs is Loki\cite{loki}. Created by the Grafana Labs, it is a log aggregation system heavily inspired by Prometheus. The lecture covers the basic setup and summarizes possible clients and agents that can be used to retrieve the logs.
 
-The final presented signal is traces. As traces are the most complex of all the mentioned telemetry types, a more thorough introduction is given. Then, a transition to Jager is made.
+The final presented signal is traces. As traces are the most complex of all the mentioned telemetry types, a more thorough introduction is given. Then, a transition to Jager\cite{jaeger} is made.
 
 Like with Loki, the slides introduce Jaegers architecture and core concepts. As Jaeger dropped support for all of its previous clients and now only supports OpenTelemetry API and SDK, the instrumentation part is left out and shown in the following section, where OpenTelemetry is explored in-depth.
 
-The OpenTelemetry\footnote{See \url{https://opentelemetry.io} for more information.}
-project is an initiative that has gained much traction in recent years. Backed by the Cloud Native Computing Foundation (CNCF)\footnote{See \url{https://www.cncf.io} for more information.},
+The OpenTelemetry\cite{open-telemetry}
+project is an initiative that has gained much traction in recent years. Backed by the Cloud Native Computing Foundation (CNCF)\cite{cncf},
 it is currently the leading project in defining telemetry standards. As of today, all major cloud providers support it. The last section gives insight into the OpenTelemetry Collector and its architecture, explains how OpenTelemetry works, and how applications can be instrumented using its Go API and SDK.
 
 \begin{figure}[H]
