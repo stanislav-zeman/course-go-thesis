@@ -95,11 +95,11 @@ The programs also do not set any expectations, introduce the aspects of the inte
 
 \section{Related faculty courses}
 
-This section describes courses that try to provide practical knowledge or somehow relate to the discussed topics.
+This section describes courses that try to provide practical knowledge or somehow relate to the discussed topics. All of the described courses are mentioned in the \cref{de}
 
 \subsection{Web development and markup languages}\label{web-dev}
 
-Web development and markup languages\footnote{See \url{https://is.muni.cz/predmet/fi/jaro2024/PB138?lang=en}.}
+Web development and markup languages\footnote{\url{https://is.muni.cz/predmet/fi/jaro2024/PB138?lang=en}}
 is a course originally called Modern Markup Languages and Their Applications that has been reworked from a solely markup language course, which dedicated all of its time to mark-up technologies like XML and HTML\footnote{The course was last run in this form in the Spring of 2019. See \url{https://is.muni.cz/course/fi/spring2019/PB138} for more information.}.
 
 Nowadays, the course includes programming and developing web applications using the Typescript programming language. The scope of the subject is rather large, as it covers both frontend and backend development and has to cover all of the topics from designing a database scheme and implementing a persistence layer and API to creating single-page applications using React.
@@ -132,7 +132,7 @@ All of these topics and technologies are usually greatly used in practice and, a
 
 \section{RedHat Go Course}
 
-During the Autumn semester of 2023, a new first trial run for the Go programming language course was planned under the course Domain-specific development\footnote{See \url{https://is.muni.cz/predmet/fi/podzim2023/PB173?lang=en}.}.
+During the Autumn semester of 2023, a new first trial run for the Go programming language course was planned under the Domain-specific Development course\footnote{ \url{https://is.muni.cz/predmet/fi/podzim2023/PB173?lang=en}}.
 
 The course was organized by Martin Ukrop and led by Pavel Tišnovský and Ivan Nečas, both of whom maintain the existing Go Course \cite{redhat-go-course} under Redhat. At that time, I had been studying Go for several months, and as I was deeply interested and dedicated to mastering it, I decided to join in on the efforts.
 
@@ -237,7 +237,7 @@ These comments are also reflected throughout the design \cref{chapter-design}.
 \subsection{Interest}
 
 The first run of the RedHat Go Course was Go's first occurrence at our faculty. There is certainly a great interest in the Go programming language. I judge this by having personal conversations with peers and other tutors and by the spike\footnote{Over one hundred students enrolled for the course at one point.}
-in course enrollments before the semester that I perceived. However, it must be noted that the Domain-specific development course under which the Go Course ran shared it with two additional seminars, so this fact may be inconclusive.
+in course enrollments before the semester that I perceived. However, it must be noted that the Domain-specific Development course under which the Go Course ran shared it with two additional seminars, so this fact may be inconclusive.
 
 \chapter{The course design}\label{chapter-design}
 
@@ -249,7 +249,7 @@ The course primarily focuses on teaching the Go programming language. However, i
 
 The course builds upon the foundations of an existing Go Course maintained under RedHat\cite{redhat-go-course}. This course already implemented numerous lectures, which were mainly reworked and restructured.
 
-The newly created course is intended to be taught throughout the span of twelve weeks. The first eleven weeks are regular lessons, and the last week is reserved for consultation and/or as a potential substitute class.
+The newly created course is intended to be taught throughout the span of twelve weeks. The first eleven weeks are regular lessons, and the last week is reserved for consultation or as a potential substitute class.
 
 The course is designed to be taught in the academic environment where lectures and seminars are usually one hundred minutes long. This is reflected in the expected lecture times and exercises.
 
@@ -270,9 +270,9 @@ The following \cref{schedule-outline} showcases the course outline to better und
 
 The first six lessons are adaptations of the original RedHat Go Course slides, which underwent major changes and restructuring. The changes were made to make the taught topics more cohesive and easier to follow, as some of the code samples were unnecessarily long or complex. Several lessons, specifically those on REST API and Concurrency, presented outdated principles that warranted updating. Multiple lectures, such as Math \& Go or Python \& Go, were removed altogether as I did not deem them important.
 
-The last five lectures are completely new and extend the course with numerous technologies and third-party libraries. The original course focused solely on using the standard library. Some of the parts of the standard library, notably the HTTP web router, are generally not leveraged in practice. The new lectures focus more on practical usage; therefore, they are not limited in this way.
+The last five lectures are completely new and extend the course with numerous technologies and third-party libraries. The original course focused solely on using the standard library. Some of the parts of the standard library, notably the default HTTP web router, are generally not leveraged in practice\footnote{Although this might change as it was extended in the Go version 1.22 release.}. The new lectures focus more on practical usage; therefore, they are not limited in this way.
 
-All of the lectures are estimated to take around ninety minutes. Spare time should be used to implement the exercises described in \cref{exercises}.
+All of the lectures are estimated to take around eighty to ninety minutes. Spare time should be used to implement the exercises described in \cref{exercises}.
 
 \subsubsection{Tooling}
 
@@ -302,7 +302,7 @@ Starting from the third week, the assignments are published with a ten-day deadl
 
 \subsection{Projects}
 
-The projects are the final part of the course. They are estimated to take fifty to sixty hours for each student. The size of the projects should approximately match that estimation.
+The projects are the final part of the course. They are estimated to take fifty to sixty hours\footnote{This requirement will need to be decreased to twenty-five to thirty hours if the course is to be run under the Domain-specific Development course. This is done solely to match the course extent.} for each student. The size of the projects should approximately match that estimation.
 
 As part of a bonus lecture \cref{lecture-projects}, the students are presented with a set of technologies or libraries they can leverage in their project implementations. This lecture subordinately serves as a form of motivation.
 
@@ -359,15 +359,17 @@ It should be noted that contributing to projects with low activity or without ac
 
 Our faculty does not promote open-source collaboration enough. The faculty's lack of permanent open-source-oriented courses exploring open-source workflow and etiquette can further support this statement. Some efforts to introduce such courses have been made in collaboration with industrial partners in the past few years. These open-source projects also try to push this motion forward.
 
-\section{Reflecting feedback}
+\section{Reflecting on existing courses}\label{reflect-course}
 
-The lectures now also explore the discussed topics in \cref{general-feedback} in greater. Some of them, like the Docker or structuring Go projects, were previously not covered at all.
+\section{Reflecting feedback}\label{reflect-feedback}
+
+The lectures now also explore the discussed topics in \cref{general-feedback} in greater. Some of them, like the Docker or the structuring of Go projects, were previously not covered at all.
 
 The new outline also raised some concerns in \cref{sneakpeek} regarding the scope of the course. 
 
 The first was that the scope of the course got rather large, with topics not directly related to Go. As was previously declared, the goal of the course is to equip its students with the knowledge required to build production Go applications. Although some of the topics do not necessarily relate to Go, namely Observability, Infrastructure, or Containers lectures, they are applied to the Go environment and demonstrate the process that is involved when implementing, deploying, and maintaining such production applications. For this reason, I decided that they were a good addition to the course's content. However, it is worth noting that these topics could be later extracted to a separate course as described in the \cref{devops-overlap}. Currently, there is no such opportunity to do this so for the time being, these topics will be covered in the Go course directly.
 
-The second concern is that the course will become time-consuming with the addition of homework assignments combined with the projects. To put it frankly, the course's first run was overcredited as we did not require any attendance and only required the project to complete the course. The mother course, Domain-driven Development, under which the Go course runs, currently has an extent of three European Credit Transfer and Accumulation System (ECTS) credits. Adding these additional homework assignments will align the extent of the course more with its mother course.
+The second concern is that the course will become time-consuming with the addition of homework assignments combined with the projects. The reality is that the course's first run was overcredited as we did not require any attendance, and the only required output was the completion of the project. The mother course, Domain-driven Development, under which the Go course runs, currently has an extent of three European Credit Transfer and Accumulation System (ECTS) credits. Adding these additional homework assignments will align the extent of the course more with its mother course.
 
 \section{Evaluation}
 
@@ -800,7 +802,7 @@ The following expression notes the intensity of lectures, seminars, and homework
 
 \subsubsection{Prerequisities}
 
-No hard requirements are enforced. However, students be proficient in using SQL (PB154)\footnote{ \url{https://is.muni.cz/predmet/fi/podzim2023/PB154?lang=en}.}, must possess programming fundamentals (IB111)\footnote{ \url{https://is.muni.cz/predmet/fi/podzim2023/IB111?lang=en}.} and a basic understanding of networking (PB156)\footnote{\url{https://is.muni.cz/predmet/fi/jaro2012/PB156?lang=en}.} and virtualization (PB152)\footnote{\url{https://is.muni.cz/predmet/fi/jaro2020/PB152?lang=en}.} to the extent of referenced courses.
+No hard requirements are enforced. However, students are expected be proficient in using SQL (PB154)\footnote{ \url{https://is.muni.cz/predmet/fi/podzim2023/PB154?lang=en}.}, must possess programming fundamentals (IB111)\footnote{ \url{https://is.muni.cz/predmet/fi/podzim2023/IB111?lang=en}.} and have a basic understanding of networking (PB156)\footnote{\url{https://is.muni.cz/predmet/fi/jaro2012/PB156?lang=en}.} and virtualization (PB152)\footnote{\url{https://is.muni.cz/predmet/fi/jaro2020/PB152?lang=en}.} to the extent of the referenced courses.
 
 \subsubsection{Enrolment limitations}
 
@@ -808,7 +810,7 @@ The course is intended to be run with up to 20 students. It can later be scaled 
 
 \subsubsection{Course objectives}
 
-Students will understand the fundamentals of the Go programming language and its common uses in practice. They will acquire the required knowledge for entry-level Go developer positions while writing idiomatic Go code, and they will be capable of applying this knowledge to real-life projects.
+Students will understand the fundamentals of the Go programming language and its common use cases in practice. They will acquire the required knowledge for entry-level Go developer positions while writing idiomatic Go code, and they will be capable of applying this knowledge to real-life projects.
 
 \subsubsection{Learning outcomes}
 
@@ -816,7 +818,7 @@ Students will be able to:
 \begin{itemize}
     \item Write idiomatic Go code.
     \item Understand the Go concurrency model.
-    \item Inspect and optimize Go applications.
+    \item Profile and optimize Go applications.
     \item Develop REST API services.
     \item Containerize and deploy their applications.
     \item Implement persistence leveraging SQL databases.
@@ -853,6 +855,6 @@ In-person lectures with hands-on exercises and reviewed homework assignments and
 
 \subsubsection{Assessment methods}
 
-Multiple homework assignments (fifty points) and a final project (fifty points), including its defense. Seventy out of the one hundred points are required for a successful completion.
+Multiple homework assignments (fifty points) and a final project (fifty points), including its defense. Seventy out of the one hundred points are required to successfully complete the course.
 
 \end{document}
