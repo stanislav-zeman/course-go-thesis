@@ -26,10 +26,10 @@
     advisor     = {RNDr. Martin Ukrop, Ph.D.},
     title       = {Designing a Comprehensive Course on Go},
     TeXtitle    = {Designing a Comprehensive Course on Go},
-    keywords    = {go, golang, course, lectures, exercises, homework, projects, programming, RedHat},
-    TeXkeywords = {go, golang, course, lectures, exercises, homework, projects, programming, RedHat},
+    keywords    = {go, golang, course, lectures, exercises, homework, projects, programming, Red Hat},
+    TeXkeywords = {go, golang, course, lectures, exercises, homework, projects, programming, Red Hat},
     abstract    = {
-      This thesis deals with designing and implementing a new course focused on the Go programming language. This work puts the Faculty of Informatics of Masaryk University into context, and its design reflects some of the shortcomings of local courses or their lack thereof. As such, the course goes beyond just the language fundamentals. The thesis implements multiple types of materials, primarily including lectures, exercises, and homework, while discussing the design decisions behind them. Most course lectures are based on an existing Go Course maintained under RedHat.
+      This thesis deals with designing and implementing a new course focused on the Go programming language. This work puts the Faculty of Informatics of Masaryk University into context, and its design reflects some of the shortcomings of local courses or their lack thereof. As such, the course goes beyond just the language fundamentals. The thesis implements multiple types of materials, primarily including lectures, exercises, and homework, while discussing the design decisions behind them. Most course lectures are based on an existing Go Course maintained under Red Hat.
     },
     thanks      = {
       I would like to express my gratitude to all my friends, colleagues, and family who have supported, inspired, and motivated me throughout this journey, as this would not be possible without you. 
@@ -76,7 +76,7 @@ This thesis introduces a new course focused on the Go\cite{go} programming langu
 
 Following this introduction, the thesis presents the Go programming language in \cref{chapter-go}. Next, it maps the ground and the current state of related courses at the Faculty of Informatics of Masaryk University in \cref{chapter-state}. This work then describes the decisions taken and the overall design of the course in \cref{chapter-design}. \Cref{chapter-content} delves in-depth into the content of the course, with each topic introduced separately. Lastly, the \cref{chapter-conclusion} summarizes the work and declares future plans.
 
-Unless otherwise specified, all of the work discussed throughout the thesis is my own. As the thesis builds on the foundation laid by the RedHat Go Course\cite{redhat-go-course}, it clearly states the extent of usage of the original materials and the transformations made to them in \cref{chapter-content} where each course topic is inspected in depth. Whenever I use prular, I refer to the team behind the organization\footnote{Martin Ukrop, Pavel Tišnovský, and Ivan Nečas.} of the Go course.
+Unless otherwise specified, all of the work discussed throughout the thesis is my own. As the thesis builds on the foundation laid by the Red Hat Go Course\cite{redhat-go-course}, it clearly states the extent of usage of the original materials and the transformations made to them in \cref{chapter-content} where each course topic is inspected in depth. Whenever I use prular, I refer to the team behind the organization\footnote{Martin Ukrop, Pavel Tišnovský, and Ivan Nečas.} of the Go course.
 
 The text of this thesis is licensed under the Creative Commons Attribution 4.0 Attribution International \footnote{\url{https://creativecommons.org/licenses/by/4.0/}} license, while all its related materials are licensed under the Creative Commons Attribution 4.0 Attribution-ShareAlike International \footnote{\url{https://creativecommons.org/licenses/by-sa/4.0/}} license unless otherwise specified.
 
@@ -178,15 +178,15 @@ Besides the Java Spring Framework\cite{spring}, the course explores observabilit
 
 All of these topics and technologies are usually greatly used in practice and, as such, should be introduced to students sooner in their studies. Additionally, to attend the course, students must pass both the previous Java courses.
 
-\section{RedHat Go Course}
+\section{Red Hat Go Course}
 
 During the Autumn semester of 2023, a new first trial run for the Go programming language course was planned under the Domain-specific Development course\footnote{ \url{https://is.muni.cz/predmet/fi/podzim2023/PB173?lang=en}}.
 
-The course was organized by Martin Ukrop and led by Pavel Tišnovský and Ivan Nečas, both of whom maintain the existing Go Course \cite{redhat-go-course} under Redhat. At that time, I had been studying Go for several months, and as I was deeply interested and dedicated to mastering it, I decided to join in on the efforts.
+The course was organized by Martin Ukrop and led by Pavel Tišnovský and Ivan Nečas, both of whom maintain the existing Go Course \cite{redhat-go-course} under Red Hat. At that time, I had been studying Go for several months, and as I was deeply interested and dedicated to mastering it, I decided to join in on the efforts.
 
-The RedHat Go Course was originally designed to cover the language fundamentals, and thanks to Go being a minimalistic language, teaching it only took half of the semester. The second half was lecture-free, and the students were left to implement their projects. A subsequent project defense was organized for the last week of the semester, during which students provided a description and a demonstration of the projects. The projects were also submitted for review, which we provided two weeks after the defense.
+The Red Hat Go Course was originally designed to cover the language fundamentals, and thanks to Go being a minimalistic language, teaching it only took half of the semester. The second half was lecture-free, and the students were left to implement their projects. A subsequent project defense was organized for the last week of the semester, during which students provided a description and a demonstration of the projects. The projects were also submitted for review, which we provided two weeks after the defense.
 
-\section{Extending the RedHat Go Course}
+\section{Extending the Red Hat Go Course}
 
 The course was short and limited in scope, so it felt like it missed several opportunities. To name a few, it did not cover any interesting technologies, API design basics, or database integration. As a result, we have decided to expand the scope of the course with additional materials and rework the existing ones for the next run.
 
@@ -284,7 +284,7 @@ These comments are also reflected throughout the design \cref{chapter-design}.
 
 \subsection{Interest}
 
-The first run of the RedHat Go Course was Go's first occurrence at our faculty. There is certainly a great interest in the Go programming language. I judge this by having personal conversations with peers and other tutors and by the spike\footnote{Over one hundred students enrolled for the course at one point.}
+The first run of the Red Hat Go Course was Go's first occurrence at our faculty. There is certainly a great interest in the Go programming language. I judge this by having personal conversations with peers and other tutors and by the spike\footnote{Over one hundred students enrolled for the course at one point.}
 in course enrollments before the semester that I perceived. However, it must be noted that the Domain-specific Development course under which the Go Course ran shared it with two additional seminars, so this fact may be inconclusive.
 
 \chapter{Course design}\label{chapter-design}
@@ -295,7 +295,7 @@ This chapter gives high-level insight into the course design and the reasoning b
 
 The course primarily focuses on teaching the Go programming language. However, its goal is not only to teach the fundamentals of Go, but the course also focuses on equipping its students with the knowledge often required in practice to develop production applications.
 
-The course builds upon the foundations of an existing Go Course maintained under RedHat\cite{redhat-go-course}. This course already implemented numerous lectures, which were mainly reworked and restructured.
+The course builds upon the foundations of an existing Go Course maintained under Red Hat\cite{redhat-go-course}. This course already implemented numerous lectures, which were mainly reworked and restructured.
 
 The newly created course is intended to be taught throughout the span of twelve weeks. The first eleven weeks are regular lessons, and the last week is reserved for consultation or as a potential substitute class.
 
@@ -316,7 +316,7 @@ The following \cref{schedule-outline} showcases the course outline to better und
 
 \subsection{Lectures}
 
-The first six lessons are adaptations of the original RedHat Go Course slides, which underwent major changes and restructuring. The changes were made to make the taught topics more cohesive and easier to follow, as some of the code samples were unnecessarily long or complex. Several lessons, specifically those on REST API and Concurrency, presented outdated principles that warranted updating. Multiple lectures, such as Math \& Go or Python \& Go, were removed altogether as I did not deem them important.
+The first six lessons are adaptations of the original Red Hat Go Course slides, which underwent major changes and restructuring. The changes were made to make the taught topics more cohesive and easier to follow, as some of the code samples were unnecessarily long or complex. Several lessons, specifically those on REST API and Concurrency, presented outdated principles that warranted updating. Multiple lectures, such as Math \& Go or Python \& Go, were removed altogether as I did not deem them important.
 
 The last five lectures are completely new and extend the course with numerous technologies and third-party libraries. The original course focused solely on using the standard library. Some of the parts of the standard library, notably the default HTTP web router, are generally not leveraged in practice\footnote{Although this might change as it was extended in the Go version 1.22 release.}. The new lectures focus more on practical usage; therefore, they are not limited in this way.
 
@@ -326,7 +326,7 @@ All of the lectures are estimated to take around eighty to ninety minutes. Spare
 
 I considered multiple tools for creating the lecture slides. For numerous reasons, I reviewed only markdown-oriented technologies. The major reason was that all materials were intended to be versioned using git, so a plain-text solution was necessary. This was done to ease collaboration with potential open-source contributors, which can further extend the course or fix any existing mistakes. The course also includes code exercises and examples that needed to be versioned, so merging all of these materials under a single GitHub organization seemed the most reasonable.
 
-The original RedHat Go course used the Go Present tool\cite{go-present}. This solution, created by the Go team, implements an exceptional feature: it can run the Go code in your slides and immediately present the output. For this reason, I decided to continue using it for the new lectures, as any other markdown-styled solution did not offer any similar viable alternative.
+The original Red Hat Go course used the Go Present tool\cite{go-present}. This solution, created by the Go team, implements an exceptional feature: it can run the Go code in your slides and immediately present the output. For this reason, I decided to continue using it for the new lectures, as any other markdown-styled solution did not offer any similar viable alternative.
 
 I also considered Marp\cite{marp} as the runner-up. This tool is used throughout the Rust course previously mentioned in the \cref{rust-course}. Compared to the Go Present tool, the main benefits include much better formatting capabilities, the possibility of exporting slides to multiple data formats like PDF or HTML, and a more straightforward syntax.
 
@@ -807,7 +807,7 @@ The lecture ends with giving multiple links to resources related to open-source 
 
 \chapter{Conclusion}\label{chapter-conclusion}
 
-The goal of this thesis was to design a comprehensive course on Go. The thesis implemented new exercises and homework assignments and revamped the existing RedHat Go Course lectures while introducing new topics and giving reasoning for the decisions and design changes performed. The course materials created during this thesis form a great basis for the new course which can further be expanded.
+The goal of this thesis was to design a comprehensive course on Go. The thesis implemented new exercises and homework assignments and revamped the existing Red Hat Go Course lectures while introducing new topics and giving reasoning for the decisions and design changes performed. The course materials created during this thesis form a great basis for the new course which can further be expanded.
 
 \section{Future work}
 
