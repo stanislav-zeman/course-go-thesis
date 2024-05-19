@@ -25,10 +25,10 @@
     advisor     = {RNDr. Martin Ukrop, Ph.D.},
     title       = {Designing a Comprehensive Course on Go},
     TeXtitle    = {Designing a Comprehensive Course on Go},
-    keywords    = {go, golang, course, lectures, exercises, homework, projects, programming, code},
-    TeXkeywords = {go, golang, course, lectures, exercises, homework, projects, programming, code},
+    keywords    = {go, golang, course, lectures, exercises, homework, projects},
+    TeXkeywords = {go, golang, course, lectures, exercises, homework, projects},
     abstract    = {
-      This thesis deals with designing and implementing a new course aimed at teaching the Go programming language. This work puts the Faculty of Informatics of Masaryk University into context, and its design reflects some of the shortcomings of local courses or their lack thereof. As such, the course goes beyond just the language fundamentals. The thesis implements multiple types of materials, primarily including lectures, exercises, and homework, while discussing the design decisions behind them. The majority of the course lectures are based on an existing Go Course maintained under RedHat.
+      This thesis deals with designing and implementing a new course focused on the Go programming language. This work puts the Faculty of Informatics of Masaryk University into context, and its design reflects some of the shortcomings of local courses or their lack thereof. As such, the course goes beyond just the language fundamentals. The thesis implements multiple types of materials, primarily including lectures, exercises, and homework, while discussing the design decisions behind them. Most course lectures are based on an existing Go Course maintained under RedHat.
     },
     thanks      = {
       I would like to express my gratitude to all my friends, colleagues, and family who have supported, inspired, and motivated me throughout this journey, as this would not be possible without you. Special thanks to my advisor, Martin Ukrop, for his guidance and extreme patience, and to Pavel Tišnovský and Ivan Nečas for bringing Go to our faculty and laying the foundations for this work.
@@ -95,7 +95,7 @@ The faculty currently maintains profession-oriented study programs, namely the P
 
 I argue that the present situation in these programs regarding this type of applied knowledge is rather lacking and that more stress should be given to practical usage and application of the acquired knowledge rather than solely sticking to the fundamentals, as the current state of such courses is insufficient.
 
-Both of the mentioned study programs require attending an internship\footnote{See \url{https://www.fi.muni.cz/studies/internship/programming.html.en} for PVA and \url{https://www.fi.muni.cz/studies/internship/software-engineering.html} for SWE.}\footnote{Even though the courses themselves are called internships, any type of employment position is accepted. I.e., you do not need to be an intern.}. These internships are a great form of driving students into the commercial environment. However, the faculty should, at least to some extent, prepare the students for such endeavors and not expect this knowledge to be given to them during their internships, as it is often not the case. 
+Both of the mentioned study programs require attending an internship\footnote{See \url{https://www.fi.muni.cz/studies/internship/programming.html.en} for PVA and \url{https://www.fi.muni.cz/studies/internship/software-engineering.html} for SWE.}\footnote{Even though the courses themselves are called internships, any type of employment position is accepted. I.e., you do not need to be an intern.}. These internships are a great form of driving students into the commercial environment. However, the faculty should, at least to some extent, prepare the students for such endeavors and not expect this knowledge to be given to them during their internships, as this is often not the case. 
 
 To give a clear example, students are required to attend an internship without ever having to connect an application to a database or design and implement an API. This knowledge is mostly covered by the Web development course described in \cref{web-dev}. Unfortunately, the PVA plan suggests enrolling in this course during the last semester; therefore, this knowledge is not covered before attending the internship. This seems to be inappropriate for a program that specifies application development in its name. Hence, students often have to settle for relatively limited and often underpaid internship positions even though they could go straight to working as fully-fledged juniors. It is worth noting that I do not want to degrade internship positions in any kind of way. I am only noting that the faculty could provide students with more practical knowledge that is usually expected when applying for such positions.
 
@@ -259,7 +259,7 @@ The course builds upon the foundations of an existing Go Course maintained under
 
 The newly created course is intended to be taught throughout the span of twelve weeks. The first eleven weeks are regular lessons, and the last week is reserved for consultation or as a potential substitute class.
 
-The course is designed to be taught in the academic environment where lectures and seminars are usually one hundred minutes long. This is reflected in the expected lecture times and exercises.
+The course is designed to be taught in an academic environment where lectures and seminars are usually one hundred minutes long. This is reflected in the expected lecture times and exercises.
 
 All of the course materials are publicly accessible on GitHub\cite{github}. The respective links are provided in the \cref{apendix-materials}. GitHub was chosen as most of the open-source software is maintained on this platform.
 
@@ -723,7 +723,7 @@ The technology of choice for logs is Loki\cite{loki}. Created by the Grafana Lab
 
 The final presented signal is traces. As traces are the most complex of all the mentioned telemetry types, a more thorough introduction is given. Then, a transition to Jager\cite{jaeger} is made.
 
-Like with Loki, the slides introduce Jaegers architecture and core concepts. As Jaeger dropped support for all of its previous clients and now only supports OpenTelemetry API and SDK, the instrumentation part is left out and shown in the following section, where OpenTelemetry is explored in-depth.
+Like with Loki, the slides introduce Jaeger architecture and core concepts. As Jaeger dropped support for all of its previous clients and now only supports OpenTelemetry API and SDK, the instrumentation part is left out and shown in the following section, where OpenTelemetry is explored in-depth.
 
 The OpenTelemetry\cite{open-telemetry}
 project is an initiative that has gained much traction in recent years. Backed by the Cloud Native Computing Foundation (CNCF)\cite{cncf},
@@ -755,17 +755,27 @@ The motivation for this lecture is to provide students with an overview of state
 
 \subsubsection{Content}
 
-The Command Line Interface (CLI) section provides basic information about the most frequently used libraries to implement command-line applications. These libraries include the Cobra \cite{spf13-cobra} and the CLI \cite{urfave-cli}.
+The Command Line Interface (CLI) section provides basic information about the most frequently used libraries to implement command-line applications. These libraries include the Cobra\cite{spf13-cobra} and the CLI\cite{urfave-cli}.
 
-The lecture continues by introducing the Bubbletea \cite{charmbracelet-bubbletea} framework and its ecosystem for creating Terminal User Interface (TUI) applications.
+The lecture continues by introducing the Bubbletea\cite{charmbracelet-bubbletea} framework and its ecosystem for creating Terminal User Interface (TUI) applications.
 
-The third section introduces possible libraries for implementing desktop applications. The first framework it introduces is Wails \cite{wailsapp-wails}, an alternative to JavaScript Electron \cite{electron-electron}, or Rust Tauri \cite{tauri-apps-tauri} frameworks. The second mentioned library is Fyne \cite{fyne-io-fyne}, which, also from desktop environments, supports the iOS and Android mobile platforms.
+The third section introduces possible libraries for implementing desktop applications. The first framework it introduces is Wails\cite{wailsapp-wails}, an alternative to JavaScript Electron \cite{electron-electron}, or Rust Tauri\cite{tauri-apps-tauri} frameworks. The second mentioned library is Fyne\cite{fyne-io-fyne}, which, also from desktop environments, supports the iOS and Android mobile platforms.
 
 The web sections mentions the possibility of creating a web application with a combination of Go backend and an optional frontend technology. The HTMX\cite{bigskysoftware-htmx}, an HTML extension, is mentioned as an alternative to traditional single-page applications (SPAs).
 
 The lecture ends with giving multiple links to resources related to open-source development or possible Go projects.
 
 \chapter{Conclusion}\label{chapter-conclusion}
+
+The goal of this thesis was to design a comprehensive course on Go. The thesis implemented new exercises and homework assignments and revamped the existing RedHat Go Course lectures while introducing new topics and giving reasoning for the decisions and design changes performed. The course materials created during this thesis form a great basis for the new course which can further be expanded.
+
+\section{Future work}
+
+The course will have to evolve as the language and technologies evolve. I am dedicated to maintaining and developing the course to keep it up-to-date so it can be taught in the future.
+
+The Go course will be run under the Domain-specific Development course the next semester. It could be later extracted into its own separate course to eliminate some of the limitations imposed by running under a mother course, such as the shared extent and intensity.
+
+As discussed in the \cref{devops-overlap}, a new course could also be created in the future to cover some of the topics not necessarily tied with Go. This course could serve as a prerequisite to the Go course and other similar courses in the future.
 
 \printbibliography[heading=bibintoc]
 
@@ -801,7 +811,7 @@ The homework directory contains all homework assignments. Each homework assignme
 The code directory contains source code that either implements solutions to some of the exercises or implements some form of functionality used throughout the exercises.
 \section{course}
 
-The course directory contains information that serves as the starting point when people want to learn more about the course.
+The course directory contains information that is the starting point when people want to learn more about the course.
 \section{ping-pong}
 
 The ping-pong directory contains a simple REST API project used for teaching deployments and their automation. It is split up from the code project as it simplifies the deployments.
