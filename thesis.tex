@@ -146,12 +146,13 @@ The course was short and limited in scope, so it felt like it missed several opp
 
 After the successful end of the first run, we issued a questionnaire to gather student feedback for things that could be improved and incorporated into the new course. We gathered feedback from nine students out of the nineteen who finished the course. The course originally started with twenty attendees. Although this sample does not reflect the majority of opinions, it is still representative.
 
-One of the greatest shortcomings I suspected and later confirmed by the questionnaire was a lack of programming exercises. The final project was the only output we required from the students. Thanks to it being final, students had no motivation to put in any extra effort throughout the semester.
-
-The students unequivocally agreed that additional activities would be welcome. However, they generally opposed the idea of dedicated seminars as the Go language was too simple and preferred homework exercises. Some of the excerpts\footnote{These excerpts were translated from Czech and Slovak languages.}
-to the related question: \\
+All questionnaire questions and answers that will follow were translated from the Czech and Slovak languages to English using the ChatGPT\cite{chatgpt} language model.
 
 \subsubsection{Additional exercises}\label{additional-exercises}
+
+One of the greatest shortcomings I suspected and later confirmed by the questionnaire was a lack of programming exercises. The final project was the only output we required from the students. Thanks to it being final, students had no motivation to put in any extra effort throughout the semester.
+
+The students unequivocally agreed that additional activities would be welcome. However, they generally opposed the idea of dedicated seminars as the Go language was too simple and preferred homework exercises. Some of the excerpts to the related question: \\
 
 \noindent
 Q: \textit{
@@ -169,8 +170,7 @@ A3: \textit{"Seminars aren't very necessary; I understood everything well from t
 \subsubsection{Sneakpeek to the new course outline}\label{sneakpeek}
 
 \noindent
-When presented with an older version of the overview\footnote{The original overview included an additional Event-driven programming lecture. It was discarded as I deemed it not as important. Instead, the Observability lecture further described in \cref{lecture-observability} was preferred.}
-showcased in the \cref{design-overview}. The students generally welcomed the changes: \\
+I had already created an outline\footnote{Compared to the one showcased in \cref{schedule-outline}, the outline included an additional Event-driven communication lecture. This lecture was later discarded as I deemed it less important than the Observability lecture described in \cref{lecture-observability}. The removed lecture is also mentioned in the \cref{edc}.} for the new course at that time. When I presented the outline to the students, they generally welcomed the changes: \\
 
 \noindent
 Q: \textit{"For the next run, we plan to significantly revamp the course content to cover the entire semester. Do you have anything you would like to add regarding the content above? What do you think is a great addition, what seems unnecessary, or do you have any suggestions for content to be included in the course?"} \\
@@ -262,7 +262,7 @@ The following \cref{schedule-outline} showcases the course outline to better und
 \begin{figure}[H]
     \centering
     \includegraphics[width=11cm]{figures/schedule.png}
-    \caption{Outline of the course schedule.}
+    \caption{Outline of the course.}
     \label{schedule-outline}
 \end{figure}
 
@@ -411,7 +411,7 @@ The course does not cover authorization or authentication in any way. It is up t
 
 The course currently covers designing and implementing REST APIs. This is still the standard for most service communication. However, during the past decade, multiple other approaches emerged that are often incorporated into systems in practice, notably gRPC\cite{grpc} and GraphQL\cite{graphql}. These were not added to the course but could be considered in the future as they are highly related to backend development.
 
-\subsection{Event-driven communication}
+\subsection{Event-driven communication}\label{edc}
 
 Event-driven communication solves multiple problems imposed by today's world of distributed architectures. Giving a basic overview of how these systems work and how to integrate such systems should be considered in the future. Notable Go projects that exist regarding this topic are the NATS\cite{nats} message broker, the event-driven commutation library Watermill\cite{watermill}, and the messaging server Cetrinfugo\cite{centrifugo}.
 
