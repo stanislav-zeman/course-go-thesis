@@ -5,8 +5,9 @@
   nosansbold,
   nocolorbold,
   lof,
-  lot,
+  nolot,
 ]{fithesis4}
+
 \usepackage[resetfonts]{cmap}
 \usepackage[T1,T2A]{fontenc}
 \usepackage[
@@ -25,13 +26,15 @@
     advisor     = {RNDr. Martin Ukrop, Ph.D.},
     title       = {Designing a Comprehensive Course on Go},
     TeXtitle    = {Designing a Comprehensive Course on Go},
-    keywords    = {go, golang, course, lectures, exercises, homework, projects},
-    TeXkeywords = {go, golang, course, lectures, exercises, homework, projects},
+    keywords    = {go, golang, course, lectures, exercises, homework, projects, programming, RedHat},
+    TeXkeywords = {go, golang, course, lectures, exercises, homework, projects, programming, RedHat},
     abstract    = {
       This thesis deals with designing and implementing a new course focused on the Go programming language. This work puts the Faculty of Informatics of Masaryk University into context, and its design reflects some of the shortcomings of local courses or their lack thereof. As such, the course goes beyond just the language fundamentals. The thesis implements multiple types of materials, primarily including lectures, exercises, and homework, while discussing the design decisions behind them. Most course lectures are based on an existing Go Course maintained under RedHat.
     },
     thanks      = {
-      I would like to express my gratitude to all my friends, colleagues, and family who have supported, inspired, and motivated me throughout this journey, as this would not be possible without you. Special thanks to my advisor, Martin Ukrop, for his guidance and extreme patience, and to Pavel Tišnovský and Ivan Nečas for bringing Go to our faculty and laying the foundations for this work.
+      I would like to express my gratitude to all my friends, colleagues, and family who have supported, inspired, and motivated me throughout this journey, as this would not be possible without you. 
+      
+      Special thanks to my advisor, Martin Ukrop, for his guidance and extreme patience, and to Pavel Tišnovský and Ivan Nečas for bringing Go to our faculty and laying the foundations for this work.
     },
     bib         = bibliography.bib,
     facultyLogo = fithesis-fi,
@@ -61,6 +64,8 @@
 \usepackage{hyperref}
 \usepackage[nameinlink]{cleveref}
 
+\def\citeauthoryear#1{(\textcite{#1},~\citeyear{#1})}
+
 \begin{document}
 
 \chapter{Introduction}
@@ -77,11 +82,46 @@ The text of this thesis is licensed under the Creative Commons Attribution 4.0 A
 
 \chapter{The Go programming language}\label{chapter-go}
 
-Go is an aspiring programming language that has gained much traction in recent years. Initially introduced in 2009 and released in 2012, Go is characterized as a minimalist programming language prioritizing simplicity over integrating countless features, thereby avoiding bloating. Known mostly for its concurrency design, it is a language that enjoys extensive usage in the cloud-native environment.
+\noindent
+\textit{"Go started in September 2007 when Robert Griesemer, Ken Thompson, and I began discussing a new language to address the engineering challenges we and our colleagues at Google were facing in our daily work.} \\
+
+\noindent
+\textit{When we first released Go to the public in November 2009, we didn’t know if the language would be widely adopted or if it might influence future languages. Looking back from 2020, Go has succeeded in both ways: it is widely used both inside and outside Google, and its approaches to network concurrency and software engineering have had a noticeable effect on other languages and their tools.} \\
+
+\noindent
+\textit{Go has turned out to have a much broader reach than we had ever expected. Its growth in the industry has been phenomenal, and it has powered many projects at Google."} \citeauthoryear{go-pike}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{figures/gopher.png}
+    \caption{Gopher, the Go mascot.}
+\end{figure}
 
 \section{Characteristics}
 
+Go is characterized as a high-level, statically typed, garbage-collected, and minimalist programming language as it prioritizes simplicity over features. It is mostly known for its concurrency design that is inspired by the Communicating Sequential Processes \citeauthoryear{csp}. This paradigm favors passing messages over sharing memory for concurrent processes and is a fundamental principle in Go's design.
+
 \section{Usage}
+
+The usage of Go spans across numerous domains. The most notable are described in the following sections.
+
+\subsection{Cloud \& Network Services}
+
+Go enjoys extensive usage in the cloud-native environment. The cloud environment uncovers concurrency problems that are easier to tackle with Go's concurrency system. To clearly illustrate, over 75 percent of the Cloud Native Computing Foundation (CNCF)\cite{cncf} projects are implemented in Go. \cite{go-cloud}
+
+\subsection{Command-line Interfaces (CLIs)}\label{go-cli}
+
+Go supports multiplatform builds with fast build times, which is crucial when designing CLI applications. Go is also statically built into a single binary, which further helps with portability as it does not require any runtime dependencies. \cite{go-cli}
+
+\subsection{Web Development}\label{go-web}
+
+Go is one of the few programming languages that incorporates the implementation of an HTTP server directly in the standard library. Third-party libraries then leverage this implementation and further build upon this foundation. 
+
+Go itself is also a performant language. While not as fast as Rust\cite{rust} or C\cite{c}, it strikes a great balance of developer productivity and performance. \cite{benchmarks-game,go-web}
+
+\subsection{DevOps}
+
+Thanks to having great performance and build times as described in \cref{go-cli,go-web} respectively, it is also great for all types of automation processes, such as continuous delivery and deployment (CI/CD), often leveraged in Development Operations. \cite{go-devops}
 
 \chapter{The current state at FI MUNI}\label{chapter-state}
 
