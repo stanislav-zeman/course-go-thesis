@@ -122,7 +122,7 @@ The Basic Code Quality and Management\footnote{\url{https://is.muni.cz/predmet/f
 
 Although this course delves into the problematics of Docker, it does so in a way that makes it voluntary. The course requires the students to finish three of the four homework assignments introduced throughout the semester. Unfortunately, Docker is explored in its final lectures and its last fourth homework assignment. Consequently, the Docker homework becomes optional if students have completed the previous three assignments and they can freely ignore it.
 
-\subsection{Enterprise Applications in Java}\label{code-quality-and-management}
+\subsection{Enterprise Applications in Java}\label{enterprise-java-course}
 
 The Enterprise Applications in Java\footnote{\url{https://is.muni.cz/predmet/fi/jaro2024/PA165?lang=en}} is the last course in the trio of Java courses. As such, it primarily focuses on technologies rather than teaching Java fundamentals, which are mostly taught by the preceding courses. This course is intended to be attended by graduate students as no undergraduate programs suggest its attendance in their study plans.
 
@@ -359,7 +359,15 @@ It should be noted that contributing to projects with low activity or without ac
 
 Our faculty does not promote open-source collaboration enough. The faculty's lack of permanent open-source-oriented courses exploring open-source workflow and etiquette can further support this statement. Some efforts to introduce such courses have been made in collaboration with industrial partners in the past few years. These open-source projects also try to push this motion forward.
 
-\section{Reflecting on existing courses}\label{reflect-course}
+\section{Comparing with existing courses}\label{reflect-course}
+
+The overall course design was mostly inspired by the existing Rust course described in \cref{rust-course} and additionally resembles\footnote{The Go course was mostly designed before I had the chance to attend the Java course.} the Enterprise Java course described in \cref{enterprise-java-course}.
+
+Compared to the Rust course, the Go course does not cover any client-side development\footnote{This is covered by the HTMX and Tauri lecture in the Rust course.}, and instead solely focuses on the backend development. The Go course also covers containerization and the Docker platform described in \cref{lecture-containers}, which the Rust course did not cover and implicitly expected its knowledge. 
+
+The overall teaching methods are also inspired by the Rust course with some deviations. Instead of dedicated Rust seminars, the Go course has exercises. Instead of ten iterations\footnote{Small homework tasks, one for each week.}, the Go course has five homework assignments. Lastly, the Go course offers more flexibility of choice as the projects do not have predefined topics\footnote{Students can also create their own custom topics after consulting with tutors.} and do not require four-member teams like the Rust course.
+
+Compared to the Enterprise Java course, the Java course covers OAuth2 and various methods of authentication and messaging, while the Go course covers containerization and Docker in much more depth. Otherwise, the scope of the Go and Java courses is similar.
 
 \section{Reflecting feedback}\label{reflect-feedback}
 
