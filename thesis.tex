@@ -438,17 +438,15 @@ The points for homework assignments are not distributed evenly as the two first 
 
 \subsection{Projects}
 
-Defining precise grading criteria for projects is slightly problematic as they can vary heavily in scope and focus. 
+Defining precise grading criteria for projects is slightly problematic as they can vary heavily in scope and focus. However, some basic common criteria can be declared and are further described in this section. None of the following requirements apply to the open-source contribution projects, as they simply do not make sense.
 
-None of the requirements mentioned in this subsection apply to the open-source contribution projects as they simply do not make sense.
-
-Projects should also have one structure as specified by the de facto Go project layout standard\cite{go-project-layout}.
-
-All projects should include a continuous integration pipeline that lints, formats, builds, and tests the projects and a continuous delivery pipeline that publishes a docker image to a public repository of any choice.
-
-Minimal happy-path test cases must be implemented using the Go test suite.
-
-All projects should include a usage scenario that can be executed to verify basic functionality.
+All projects should:
+\begin{itemize}
+    \item follow the standard structure as specified by the de facto Go project layout standard\cite{go-project-layout}.
+    \item include a continuous integration pipeline that lints, formats, builds, and tests the projects and a continuous delivery pipeline that publishes a docker image to a public repository of any choice.
+    \item implement minimal happy-path test cases using the Go testing suite.
+    \item should include single or multiple scenarios that demonstrate its usage and that can be executed to verify basic functionality.
+\end{itemize}
 
 Bonus points can be gained by performing additional actions such as deploying the application, instrumenting the application with telemetry, setting up monitoring, creating an OpenAPI specification, heavily testing the application, etc.
 
