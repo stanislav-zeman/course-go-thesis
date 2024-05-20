@@ -767,17 +767,18 @@ Like with Loki, the slides introduce Jaeger architecture and core concepts. As J
 
 The OpenTelemetry\cite{open-telemetry}
 project is an initiative that has gained much traction in recent years. Backed by the Cloud Native Computing Foundation (CNCF)\cite{cncf},
-it is currently the leading project in defining telemetry standards. As of today, all major cloud providers support it. The last section gives insight into the OpenTelemetry Collector and its architecture, explains how OpenTelemetry works, and how applications can be instrumented using its Go API and SDK.
+it is currently the leading project in defining telemetry standards. As of today, all major cloud providers support it. The last section gives insight into the OpenTelemetry Collector and its architecture showcased in \cref{fig:otel}, explains how OpenTelemetry works, and how applications can be instrumented using its Go API and SDK.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=10cm]{figures/opentelemetry-architecture.png}
-    \caption{OpenTelemetry Architecture inspired by the documentation diagram.}
+    \caption{OpenTelemetry architecture inspired by the specification diagrams\cite{open-telemetry-spec}.}
+    \label{fig:otel}
 \end{figure}
 
 \subsection{Exercise 11}
 
-Similarly to the previous exercise, this one comprises two tasks. The second task is also more of a demo where the students will explore the OpenTelemtry Demo\cite{open-telemetry-demo} with the help of their tutors.
+Similarly to the previous exercise, this one comprises two tasks. The second task is also more of a demo where the students will explore the OpenTelemetry Demo\cite{open-telemetry-demo} with the help of their tutors.
 
 As I deemed metrics the most important to cover, the first task was dedicated to instrumenting and visualizing them. Logs are not really interesting to cover, and traces are rather complex to implement in a limited time span. Instead of trying to instrument an application with all of the related telemetry types, the exercise later moves on to the OpenTelemtry Demo in the second task, which has all of the mentioned things already implemented and better showcases real usage. \\
 
