@@ -663,6 +663,10 @@ This lecture is designed solely to provide elementary information about the cour
 
 \section{Lecture 09: Databases}\label{lecture-databases}
 
+This lecture focuses on Relational Database Management Systems (RDBMSs) and their integration with Go applications. The main goal of this lecture is to introduce the various approaches currently viable in the Go ecosystem, from low-level libraries to Object-relational Mapping (ORMs).
+
+As the output knowledge, students will be capable of implementing persistent Go applications while levering RDBMSs. Students are only expected to be proficient in using the Structured Query Language (SQL).
+
 \subsubsection{Outline}
 
 \begin{itemize}
@@ -674,7 +678,16 @@ This lecture is designed solely to provide elementary information about the cour
 
 \subsubsection{Content}
 
+The first two sections of the lecture give a brief refresher on SQL and RDBMS. It gives a short overview of the most popular RDBMSs and their key points.
+
+The third section introduces database migrations and their various aspects and challenges. It covers multiple database migration tools and showcases usage via both CLI and in-code.
+
+Lastly, the fourth and biggest section discusses multiple approaches to integrating database access to applications leveraging modern Go libraries. It starts by covering the
+support the standard library provides and introduces compatible database drivers. As the standard library defines rather low-level interfaces, multiple libraries try to compensate for this; the most notable is sqlx\cite{sqlx}, which is covered next. It provides more high-level functions that make writing the code less verbose. Thirdly, the sqlc\cite{sqlc} library is showcased as an interesting and untraditional approach as it works by \enquote{compiling} the SQL queries and generating native Go code. The last presented approach is the GORM\cite{gorm} library, which represents Go's most commonly used ORM.
+
 \subsection{Exercise 09}\label{exercise-09}
+
+The exercise builds upon the Todo application started in the previous exercise presented in \cref{exercise-07}. The application in the assignment currently uses an in-memory repository. The goal of the exercise is to extend the existing Docker compose file with a PostgreSQL\cite{postgres} database and rewrite the repository to persist its data using the database instance.
 
 \section{Homework 03}
 
@@ -682,7 +695,7 @@ This lecture is designed solely to provide elementary information about the cour
 
 The motivation behind this lecture is to give students an insight into the continuous integration and continuous deployment/delivery (CI/CD) process and how this practice can be applied in the context of Go projects. The second goal is to give students a basic knowledge of how such projects can be deployed and maintained.
 
-The students are expected to understand basic software engineering practices and elementary networking.
+After attending the lecture, students will be able to set up a basic CI/CD pipeline, provision infrastructure using the Google Cloud Platform, and deploy simple applications. The students are expected to understand basic software engineering practices and elementary networking.
 
 \subsubsection{Outline}
 
@@ -697,7 +710,7 @@ The students are expected to understand basic software engineering practices and
 
 The first section covers linters and expands on the knowledge acquired in the introductory lesson, where the built-in go-vet linter was introduced. Most of this section is dedicated to the golangci-lint tool, a linter aggregator incorporated in many projects and is the most complex tool today. Together with formatters, these tools are necessary in the continuous integration process introduced in the following section.
 
-The second section introduces the CI/CD process. The primary goal of this section is to provide students with the knowledge to implement the CI/CD pipeline using both GitLab CI/CD\cite{gitlab-cicd} and GitHub Actions\cite{github-actions}.
+The second section introduces the CI/CD process as depicted in the \cref{fig:cicd}. The primary goal of this section is to provide students with the knowledge to implement the CI/CD pipeline using both GitLab CI/CD\cite{gitlab-cicd} and GitHub Actions\cite{github-actions}.
 
 As the faculty operates a self-hosted GitLab instance, almost all of the git-related work is done using GitLab. Consequently, most students do not interact with GitHub throughout their studies. The secondary goal of this chapter is to familiarize students with GitHub so they can join the open-source community, as most open-source software is developed on the GitHub platform.
 
@@ -705,14 +718,16 @@ As the faculty operates a self-hosted GitLab instance, almost all of the git-rel
     \centering
     \includegraphics[width=12cm]{figures/cicd.png}
     \caption{CI/CD pipeline.}
+    \label{fig:cicd}
 \end{figure}
 
-The third section gives an introduction to infrastructure design. Introduces basic concepts such as proxying, load balancing, and application scaling. Two related technologies are introduced to leverage these concepts, namely Traefik Proxy\cite{traefik} and Caddy\cite{caddy}. This section aims to give students a basic understanding of how to provision basic infrastructure and tackle basic infrastructure design problems such as fault tolerance, scaling, or encryption.
+The third section gives an introduction to infrastructure design. Introduces basic concepts such as proxying, load balancing, and application scaling and goes through multiple examples, one of which is depicted in the \cref{fig:infra}. Two related technologies are introduced to leverage these concepts, namely Traefik Proxy\cite{traefik} and Caddy\cite{caddy}. This section aims to give students a basic understanding of how to provision basic infrastructure and tackle basic infrastructure design problems such as fault tolerance, scaling, or encryption.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm]{figures/infrastructure.png}
     \caption{One of the infrastructure example diagrams.}
+    \label{fig:infra}
 \end{figure}
 
 The last section introduces all major cloud providers (Amazon, Microsoft, and Google) and further delves into Google Cloud Platform (GCP)\cite{gcp}. As Google offers free credits thanks to the faculty program\cite{gcp-faculty}, it is a great opportunity for students to get their hands on operating cloud infrastructure. A set of basic services that GCP offers are introduced so students can leverage these in their final projects.
