@@ -438,8 +438,9 @@ The points for homework assignments are not distributed evenly as the two first 
 
 \subsection{Projects}
 
-Defining precise grading criteria for projects is slightly problematic as they can vary heavily in scope and focus. However, some basic common criteria can be declared and are further described in this section. None of the following requirements apply to the open-source contribution projects, as they simply do not make sense.
+Defining precise grading criteria for projects is slightly problematic as they can vary heavily in scope and focus. However, some basic common criteria can be declared and are further described in this section. None of the following requirements apply to the open-source contribution projects, as they simply do not make sense. \\
 
+\noindent
 All projects should:
 \begin{itemize}
     \item follow the standard structure as specified by the de facto Go project layout standard\cite{go-project-layout}.
@@ -448,6 +449,7 @@ All projects should:
     \item should include single or multiple scenarios that demonstrate its usage and that can be executed to verify basic functionality.
 \end{itemize}
 
+\noindent
 Bonus points can be gained by performing additional actions such as deploying the application, instrumenting the application with telemetry, setting up monitoring, creating an OpenAPI specification, heavily testing the application, etc.
 
 \subsection{Bonus points}
@@ -639,7 +641,7 @@ This lecture is designed solely to provide elementary information about the cour
 
 \subsubsection{Content}
 
-\subsection{Exercise 07}
+\subsection{Exercise 07}\label{exercise-07}
 
 \section{Homework 02}
 
@@ -672,7 +674,7 @@ This lecture is designed solely to provide elementary information about the cour
 
 \subsubsection{Content}
 
-\subsection{Exercise 09}
+\subsection{Exercise 09}\label{exercise-09}
 
 \section{Homework 03}
 
@@ -719,8 +721,9 @@ The last section introduces all major cloud providers (Amazon, Microsoft, and Go
 
 The exercise comprises two tasks. The second task is more of a demo in which the tutor will guide the students through the GCP Console.
 
-As students generally have a basic understanding of CI, thanks to their previous experiences, it is not practiced at the seminar. Instead, the seminar time is given to the GCP. The goal of the demo/exercise is to get students familiar with the GCP so they can provision their own infrastructure.
+As students generally have a basic understanding of CI, thanks to their previous experiences, it is not practiced at the seminar. Instead, the seminar time is given to the GCP. The goal of the demo/exercise is to get students familiar with the GCP so they can provision their own infrastructure. \\
 
+\noindent
 Tasks:
 \begin{itemize}
     \item The first task involves setting up a Caddy server instance as a reverse proxy/load balancing multiple ping-pong service instances. You can learn more about the ping-ping application in the \cref{apendix-materials}.
@@ -773,6 +776,17 @@ it is currently the leading project in defining telemetry standards. As of today
 \end{figure}
 
 \subsection{Exercise 11}
+
+Similarly to the previous exercise, this one comprises two tasks. The second task is also more of a demo where the students will explore the OpenTelemtry Demo\cite{open-telemetry-demo} with the help of their tutors.
+
+As I deemed metrics the most important to cover, the first task was dedicated to instrumenting and visualizing them. Logs are not really interesting to cover, and traces are rather complex to implement in a limited time span. Instead of trying to instrument an application with all of the related telemetry types, the exercise later moves on to the OpenTelemtry Demo in the second task, which has all of the mentioned things already implemented and better showcases real usage. \\
+
+\noindent
+Tasks:
+\begin{itemize}
+    \item The first task continues with the Todo application that students previously worked on during the exercises described in \cref{exercise-07,exercise-09}. Their objective is to instrument the application with Prometheus metrics and create Grafana dashboards to visualize them.
+    \item The second task involves running the OpenTelemetry Demo and interacting with the system. The system consists of multiple microservices implemented in multiple programming languages and instrumented with various types of telemetry while using the OpenTelemetry SDKs. This demo serves as a nice introduction to the OpenTelemetry ecosystem and also includes all of the presented technologies except for Loki, which is replaced with OpenSearch\cite{opensearch}.
+\end{itemize}
 
 \section{Homework 04}
 
