@@ -137,7 +137,7 @@ I argue that the present situation in these programs regarding this type of appl
 
 Both of the mentioned study programs require attending an internship\footnote{See \url{https://www.fi.muni.cz/studies/internship/programming.html.en} for PVA and \url{https://www.fi.muni.cz/studies/internship/software-engineering.html} for SWE.}\footnote{Even though the courses themselves are called internships, any type of employment position is accepted. I.e., you do not need to be an intern.}. These internships are a great form of driving students into the commercial environment. However, the faculty should, at least to some extent, prepare the students for such endeavors and not expect this knowledge to be given to them during their internships, as this is often not the case. 
 
-To give a clear example, students are required to attend an internship without ever having to connect an application to a database or design and implement an API. This knowledge is mostly covered by the Web development course described in \cref{web-dev}. Unfortunately, the PVA plan suggests enrolling in this course during the last semester; therefore, this knowledge is not covered before attending the internship. This seems to be inappropriate for a program that specifies application development in its name. Hence, students often have to settle for relatively limited and often underpaid internship positions even though they could go straight to working as fully-fledged juniors. It is worth noting that I do not want to degrade internship positions in any kind of way. I am only noting that the faculty could provide students with more practical knowledge that is usually expected when applying for such positions.
+To give a clear example, students are required to attend an internship without ever having to connect an application to a database or design and implement an API. This knowledge is mostly covered by the PB138: Web development course described in \cref{web-dev}. Unfortunately, the PVA plan suggests enrolling in this course during the last semester; therefore, this knowledge is not covered before attending the internship. This seems to be inappropriate for a program that specifies application development in its name. Hence, students often have to settle for relatively limited and often underpaid internship positions even though they could go straight to working as fully-fledged juniors. It is worth noting that I do not want to degrade internship positions in any kind of way. I am only noting that the faculty could provide students with more practical knowledge that is usually expected when applying for such positions.
 
 The programs also do not set any expectations, introduce the aspects of the interview process, or provide any related soft skills. No course explores these topics as of today.
 
@@ -145,10 +145,10 @@ The programs also do not set any expectations, introduce the aspects of the inte
 
 This section describes courses that try to provide practical knowledge or somehow relate to the discussed topics. Some of the described courses are additionally mentioned and compared to the design of the new Go course in the \cref{reflect-course}.
 
-\subsection{Web development and markup languages}\label{web-dev}
+\subsection{PB138: Web development and markup languages}\label{web-dev}
 
-Web development and markup languages\footnote{\url{https://is.muni.cz/predmet/fi/jaro2024/PB138?lang=en}}
-is a course originally called Modern Markup Languages and Their Applications that has been reworked from a solely markup language course, which dedicated all of its time to mark-up technologies like XML and HTML\footnote{The course was last run in this form in the Spring of 2019. See \url{https://is.muni.cz/course/fi/spring2019/PB138} for more information.}.
+The PB138: Web development and markup languages\footnote{\url{https://is.muni.cz/predmet/fi/jaro2024/PB138?lang=en}}
+is a course originally named Modern Markup Languages and Their Applications that has been reworked from a solely markup language course, which dedicated all of its time to mark-up technologies like XML and HTML\footnote{The course was last run in this form in the Spring of 2019. See \url{https://is.muni.cz/course/fi/spring2019/PB138} for more information.}.
 
 Nowadays, the course includes programming and developing web applications using the Typescript programming language. The scope of the subject is rather large, as it covers both frontend and backend development and has to cover all of the topics from designing a database scheme and implementing a persistence layer and API to creating single-page applications using React.
 
@@ -156,23 +156,23 @@ The course currently covers a rather vast amount of topics. One potential way to
 
 With all this said, this is currently the only mandatory course for the PVA program that addresses most of the program's shortcomings and teaches the knowledge mostly required in practice.
 
-\subsection{Programming in Rust}\label{rust-course}
+\subsection{PV281: Programming in Rust}\label{rust-course}
 
-The Programming in Rust\footnote{\url{https://is.muni.cz/predmet/fi/podzim2023/PV281?lang=en}} course, besides teaching the Rust programming language itself, went beyond just the language as it taught topics like software architecture design, introduced API development and databases basics. From my personal experience, this course has been a great source of knowledge, especially for me as a second-year student, that I could mostly apply to practice. I attended the course in the Autumn of 2022 as a student and later joined in on its third run in the Autumn of 2023 as a seminar tutor.
+The PV281: Programming in Rust\footnote{\url{https://is.muni.cz/predmet/fi/podzim2023/PV281?lang=en}} course, besides teaching the Rust programming language itself, went beyond just the language as it taught topics like software architecture design, introduced API development and databases basics. From my personal experience, this course has been a great source of knowledge, especially for me as a second-year student, that I could mostly apply to practice. I attended the course in the Autumn of 2022 as a student and later joined in on its third run in the Autumn of 2023 as a seminar tutor.
 
-The course certainly has its shortcomings. Docker\cite{docker}, which was heavily used throughout its latter seminars, was not properly introduced even though it was never even mentioned in its prerequisites. Some Docker knowledge was, therefore, implicitly expected. To this day, only the Basic Code Quality and Management course described in \cref{code-quality-and-management} delves into the topics of containerization with its practical usage. The course also tries to extend the topics covered to full-stack development thanks to lectures on HTMX\cite{bigskysoftware-htmx} and Desktop development using the Tauri framework\cite{tauri-apps-tauri}. Both of these technologies are certainly interesting and should be mentioned. However, the course should consider exploring the Rust language in depth and the aspects of backend development rather than exploring these web technologies to such an extent.
+The course certainly has its shortcomings. Docker\cite{docker}, which was heavily used throughout its latter seminars, was not properly introduced even though it was never even mentioned in its prerequisites. Some Docker knowledge was, therefore, implicitly expected. To this day, only the PB176: Basic Code Quality and Management course described in \cref{code-quality-and-management} delves into the topics of containerization with its practical usage. The course also tries to extend the topics covered to full-stack development thanks to lectures on HTMX\cite{bigskysoftware-htmx} and Desktop development using the Tauri framework\cite{tauri-apps-tauri}. Both of these technologies are certainly interesting and should be mentioned. However, the course should consider exploring the Rust language in depth and the aspects of backend development rather than exploring these web technologies to such an extent.
 
 Because of the scope of the course, it did not properly delve into the depth of the Rust programming language. One topic that is worth mentioning is macros, which the course lacked and are leveraged by the language quite heavily. Macros are only included as a part of a bonus lecture that at that time, did not occur. Therefore, it appeared to be an afterthought.
 
-\subsection{Basic Code Quality and Management}\label{code-quality-and-management}
+\subsection{PB176: Basic Code Quality and Management}\label{code-quality-and-management}
 
-The Basic Code Quality and Management\footnote{\url{https://is.muni.cz/predmet/fi/jaro2024/PB176?lang=en}} course tries to cover topics implicitly expected by many courses but never previously covered. These topics include fundamentals of git, build tools, continuous integration (CI), and Docker\footnote{This information is mostly based on the course run of Spring 2023, which I had personally attended.}. 
+The PB176: Basic Code Quality and Management\footnote{\url{https://is.muni.cz/predmet/fi/jaro2024/PB176?lang=en}} course tries to cover topics implicitly expected by many courses but never previously covered. These topics include fundamentals of git, build tools, continuous integration (CI), and Docker\footnote{This information is mostly based on the course run of Spring 2023, which I had personally attended.}. 
 
 Although this course delves into the problematics of Docker, it does so in a way that makes it voluntary. The course requires the students to finish three of the four homework assignments introduced throughout the semester. Unfortunately, Docker is explored in its final lectures and its last fourth homework assignment. Consequently, the Docker homework becomes optional if students have completed the previous three assignments and they can freely ignore it.
 
-\subsection{Enterprise Applications in Java}\label{enterprise-java-course}
+\subsection{PA165: Enterprise Applications in Java}\label{enterprise-java-course}
 
-The Enterprise Applications in Java\footnote{\url{https://is.muni.cz/predmet/fi/jaro2024/PA165?lang=en}} is the last course in the trio of Java courses. As such, it primarily focuses on technologies rather than teaching Java fundamentals, which are mostly taught by the preceding courses. This course is intended to be attended by graduate students as no undergraduate programs suggest its attendance in their study plans.
+The PA165: Enterprise Applications in Java\footnote{\url{https://is.muni.cz/predmet/fi/jaro2024/PA165?lang=en}} is the last course in the trio of Java courses. As such, it primarily focuses on technologies rather than teaching Java fundamentals, which are mostly taught by the preceding courses. This course is intended to be attended by graduate students as no undergraduate programs suggest its attendance in their study plans.
 
 Besides the Java Spring Framework\cite{spring}, the course explores observability tools like Prometheus\cite{prometheus} or Grafana\cite{grafana}, authentication using OAuth2\cite{oauth2}, continuous integration and delivery, and messaging while leveraging the Docker platform throughout the course.
 
@@ -180,7 +180,7 @@ All of these topics and technologies are usually greatly used in practice and, a
 
 \section{Red Hat Go Course}
 
-During the Autumn semester of 2023, a new first trial run for the Go programming language course was planned under the Domain-specific Development course\footnote{ \url{https://is.muni.cz/predmet/fi/podzim2023/PB173?lang=en}}.
+During the Autumn semester of 2023, a new first trial run for the Go programming language course was planned under the PB173 Domain-specific Development course\footnote{ \url{https://is.muni.cz/predmet/fi/podzim2023/PB173?lang=en}}.
 
 The course was organized by Martin Ukrop and led by Pavel Tišnovský and Ivan Nečas, both of whom maintain the existing Go Course \cite{redhat-go-course} under Red Hat. At that time, I had been studying Go for several months, and as I was deeply interested and dedicated to mastering it, I decided to join in on the efforts as a tutor.
 
@@ -327,7 +327,7 @@ I considered multiple tools for creating the lecture slides. For numerous reason
 
 The original Red Hat Go course used the Go Present tool\cite{go-present}. This solution, created by the Go team, implements an exceptional feature: it can run the Go code in your slides and immediately present the output. For this reason, I decided to continue using it for the new lectures, as any other markdown-styled solution did not offer any similar viable alternative.
 
-I also considered Marp\cite{marp} as the runner-up. This tool is used throughout the Rust course previously mentioned in the \cref{rust-course}. Compared to the Go Present tool, the main benefits include much better formatting capabilities, the possibility of exporting slides to multiple data formats like PDF or HTML, and a more straightforward syntax.
+I also considered Marp\cite{marp} as the runner-up. This tool is used throughout the PV281: Rust course previously mentioned in the \cref{rust-course}. Compared to the Go Present tool, the main benefits include much better formatting capabilities, the possibility of exporting slides to multiple data formats like PDF or HTML, and a more straightforward syntax.
 
 \subsection{Exercises}\label{exercises}
 
@@ -408,13 +408,13 @@ Our faculty does not promote open-source collaboration enough. The faculty's lac
 
 \section{Comparing with existing courses}\label{reflect-course}
 
-The overall course design was mostly inspired by the existing Rust course described in \cref{rust-course} and additionally resembles\footnote{The Go course was mostly designed before I had the chance to attend the Java course.} the Enterprise Java course described in \cref{enterprise-java-course}.
+The overall course design was mostly inspired by the existing PV281: Rust course described in \cref{rust-course} and additionally resembles\footnote{The Go course was mostly designed before I had the chance to attend the Java course.} the PA165: Enterprise Java course described in \cref{enterprise-java-course}.
 
-Compared to the Rust course, the Go course does not cover any client-side development\footnote{This is covered by the HTMX and Tauri lecture in the Rust course.}, and instead solely focuses on the backend development. The Go course also covers containerization and the Docker platform described in \cref{lecture-containers}, which the Rust course did not cover and implicitly expected its knowledge. 
+Compared to the PV281: Rust course, the Go course does not cover any client-side development\footnote{This is covered by the HTMX and Tauri lecture in the Rust course.}, and instead solely focuses on the backend development. The Go course also covers containerization and the Docker platform described in \cref{lecture-containers}, which the Rust course did not cover and implicitly expected its knowledge. 
 
-The overall teaching methods are also inspired by the Rust course with some deviations. Instead of dedicated Rust seminars, the Go course has exercises. Instead of ten iterations\footnote{Small homework tasks, one for each week.}, the Go course has five homework assignments. Lastly, the Go course offers more flexibility of choice as the projects do not have predefined topics\footnote{Students can also create their own custom topics after consulting with tutors.} and do not require four-member teams like the Rust course.
+The overall teaching methods are also inspired by the PV281: Rust course with some deviations. Instead of dedicated Rust seminars, the Go course has exercises. Instead of ten iterations\footnote{Small homework tasks, one for each week.}, the Go course has five homework assignments. Lastly, the Go course offers more flexibility of choice as the projects do not have predefined topics as the Rust course dost\footnote{Students can also create their own custom topics after consulting with tutors.} and do not require four-member teams like the Rust course.
 
-Compared to the Enterprise Java course, the Java course covers OAuth2 and various methods of authentication and messaging, while the Go course covers containerization and Docker in much more depth. Otherwise, the scope of the Go and Java courses is similar.
+Compared to the PA165: Enterprise Java course, the Java course covers OAuth2, microservices, and various methods of authentication and messaging, while the Go course covers infrastructure, containerization, and Docker in greater depth. Otherwise, the scope of the Go and Java courses is similar.
 
 \section{Reflecting feedback}\label{reflect-feedback}
 
