@@ -529,6 +529,10 @@ The first exercise guides students through setting up a working environment on t
 
 \section{Lecture 02: Fundamentals \#1}
 
+This lecture starts with exploring the core fundamentals of Go. It delves into topics like data types, functions, user-defined data types, and pointers.
+
+Students will be conscious of all the basic data types Go provides and all possible control flow keywords and their semantics. They will be able to write functions, define their own data types, and understand and appropriately use pointers throughout their code.
+
 \subsubsection{Outline}
 
 \begin{itemize}
@@ -542,9 +546,27 @@ The first exercise guides students through setting up a working environment on t
 
 \subsubsection{Content}
 
+The first section starts with the core fundamental knowledge of basic data types and their default values. These include all numeric variants and their aliases, strings and their encodings, and booleans.
+
+The second section describes all possible declarations of variables and their uses. It goes over their differences and implications and inspects the shadowing concepts.
+
+All control flow variants are then introduced in the third section. It maps all of the keywords with example usage and semantics.
+
+The fourth section introduces functions and declarations. It describes both named and anonymized functions, higher-order functions, or closures. It dedicates multiple slides to the defer keyword, which is extremely useful when freeing resources.
+
+Custom structures and type aliasing are introduced in the fifth section. As Go itself provides no support for enumeration types, an example workaround is provided as it is commonly used in Go. Concepts like anonymous structures and structure embedding are also introduced.
+
+The last section is dedicated to pointers. It shows their basic usage, like referencing and dereferencing, and their interoperation with editable structures as method receivers.
+
 \subsection{Exercise 02}
 
+This exercise lets students solve multiple katas that show commonly made mistakes. These katas all cover topics discussed throughout the lecture.
+
 \section{Lecture 03: Fundamentals \#2}
+
+This lecture continues with the introduction to the fundamentals of Go. This one covers more interesting topics like errors, interfaces, and collections than the previous lecture.
+
+Following this lecture, students will be able to understand the basics of error handling in Go. They will also be able to describe how interfaces are implemented, and they will be able to write idiomatic code using and iterating over the two common collection types, slices, and maps.
 
 \subsubsection{Outline}
 
@@ -559,7 +581,25 @@ The first exercise guides students through setting up a working environment on t
 
 \subsubsection{Content}
 
+The lectures start off with interfaces and their underlying implementations in Go. It also depicts some of the characteristics like implicit satisfying instead of explicit implementation or introduces the empty interface.
+
+The second section follows up on interfaces with the introduction of errors. The section is dedicated to handling error values and their creation, either as in-lined, sentinel, or completely custom errors with additional metadata.
+
+Arrays are introduced in the third section. These are mostly used just as a building block for slices which are explored next.
+
+Slices are introduced next as the dynamic list type in the fourth section. The section further describes the slice's implementation and its implications.
+
+The fifth section inspects the hash-map data structure native to Go. It goes over all of the common operations that can be performed on the map data type and also showcases how it can be used to implement a set. 
+
+The last section covers the range of keywords commonly used to iterate over collection items.
+
 \subsection{Exercise 03}
+
+This exercise is split into two tasks:
+\begin{itemize}
+    \item This first task, like in the previous exercise, lets students also solve multiple katas that show commonly made mistakes.
+    \item The second task explores the options builder pattern commonly used in Go. This pattern is an alternative to the traditional builder pattern and is more idiomatic as it is less verbose and provides more flexibility.
+\end{itemize}
 
 \section{Lecture 04: Concurrency \& Parallelism}
 
