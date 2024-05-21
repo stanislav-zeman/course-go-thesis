@@ -65,7 +65,6 @@
 \usepackage[nameinlink]{cleveref}
 \usepackage{enumitem}
 
-\def\citeauthoryear#1{(\textcite{#1},~\citeyear{#1})}
 \setitemize{itemsep=0ex}
 
 \begin{document}
@@ -91,7 +90,7 @@ The text of this thesis is licensed under the Creative Commons Attribution 4.0 A
 \textit{\enquote{When we first released Go to the public in November 2009, we didn’t know if the language would be widely adopted or if it might influence future languages. Looking back from 2020, Go has succeeded in both ways: it is widely used both inside and outside Google, and its approaches to network concurrency and software engineering have had a noticeable effect on other languages and their tools.}} \\
 
 \noindent
-\textit{\enquote{Go has turned out to have a much broader reach than we had ever expected. Its growth in the industry has been phenomenal, and it has powered many projects at Google.}} \citeauthoryear{go-pike}
+\textit{\enquote{Go has turned out to have a much broader reach than we had ever expected. Its growth in the industry has been phenomenal, and it has powered many projects at Google.}} \cite{go-pike}
 
 \begin{figure}[H]
     \centering
@@ -101,7 +100,7 @@ The text of this thesis is licensed under the Creative Commons Attribution 4.0 A
 
 \section{Characteristics}
 
-Go is characterized as a high-level, statically typed, garbage-collected, and minimalist programming language as it prioritizes simplicity over features. It is mostly known for its concurrency design that is inspired by the Communicating Sequential Processes \citeauthoryear{csp}. This paradigm favors passing messages over sharing memory for concurrent processes and is a fundamental principle in Go's design.
+Go is characterized as a high-level, statically typed, garbage-collected, and minimalist programming language as it prioritizes simplicity over features. It is mostly known for its concurrency design that is inspired by the Communicating Sequential Processes \cite{csp}. This paradigm favors passing messages over sharing memory for concurrent processes and is a fundamental principle in Go's design.
 
 \section{Usage}
 
