@@ -63,8 +63,10 @@
 \usepackage[babel]{csquotes}
 \usepackage{hyperref}
 \usepackage[nameinlink]{cleveref}
+\usepackage{enumitem}
 
 \def\citeauthoryear#1{(\textcite{#1},~\citeyear{#1})}
+\setitemize{itemsep=0ex}
 
 \begin{document}
 
@@ -628,11 +630,11 @@ This lecture is designed solely to provide elementary information about the cour
 
 \section{Lecture 07: REST APIs}
 
-\subsubsection{Outline}
-
 This lecture is dedicated to REST API design and to implementing such APIs in Go. The lecture covers the common fundamentals required to implement such APIs while also covering Go specifics and related technologies. 
 
 Following this lecture, students will be able to design and implement REST APIs using various Hypertext Transfer Protocol (HTTP) frameworks and routers. Only the fundamental knowledge of networking is expected.
+
+\subsubsection{Outline}
 
 \begin{itemize}
     \item JSON
