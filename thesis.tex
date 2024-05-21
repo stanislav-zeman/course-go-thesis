@@ -647,6 +647,10 @@ This lecture is designed solely to provide elementary information about the cour
 
 \section{Lecture 08: Containers}\label{lecture-containers}
 
+This lecture introduces containerization technology with a focus on practical usage. This knowledge is further required in the following lectures presented in \cref{lecture-databases,lecture-infrastructure,lecture-observability} and as it is currently not covered to the required extent as presented in \cref{code-quality-and-management}, it was incorporated into the course itself.
+
+After the lecture, students will be able to containerize their applications and run their applications and their dependencies using container images. They are only expected to have a basic understanding of virtualization before the lecture.
+
 \subsubsection{Outline}
 
 \begin{itemize}
@@ -659,7 +663,24 @@ This lecture is designed solely to provide elementary information about the cour
 
 \subsubsection{Content}
 
+The lecture starts by introducing containerization as a concept while comparing it to virtual machines. This section also provides motivation for using containers and briefly covers the Open Container Initiative (OCI) standards.
+
+The second and most extensive section explores the Docker\cite{docker} platform in-depth. It provides information regarding its history, flows as in \cref{fig:docker}, architecture, and maps all related tools. Most of the time is spent on using the CLI, Dockerfile, and Compose tools. Lastly, a Podman\cite{podman} is mentioned in the third section as an open-source alternative to Docker.
+
+The fourth section covers Testcontainers\cite{testcontainers} as a tool that simplifies the testing process by running dependencies directly in code.
+
+Lastly, the lecture briefly inspects the Kubernetes\cite{kubernetes} platform that further builds on the containerization technology and solves numerous problems that are often faced when building distributed systems, such as horizontal scaling and fault tolerance. This section is not meant to provide thorough insight but to give a broad overview of how Kubernetes works and what it can be used for.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{figures/docker.png}
+    \caption{The Docker flow.}
+    \label{fig:docker}
+\end{figure}
+
 \subsection{Exercise 08: Docker}
+
+During the exercise, students will containerize the Todo application they started with in the previous exercise in \cref{exercise-07}. The exercise is split into two steps. First, the students will create a custom container image using the Dockerfile, which they will then use in Docker Compose.
 
 \section{Lecture 09: Databases}\label{lecture-databases}
 
