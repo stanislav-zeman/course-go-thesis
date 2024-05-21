@@ -591,6 +591,10 @@ This lecture is designed solely to provide elementary information about the cour
 
 \section{Lecture 05: Advanced \#1}
 
+This lecture starts the exploration of advanced Go topics. The lecture begins with generics that were added to Go in version 1.18, followed by an overview of the majority of the commonly used standard library packages and finishes with the Go built-in testing framework.
+
+Students will be able to implement all kinds of generic data types, test their applications with various types of tests, and use all of the described tools and packages. No prior knowledge is expected.
+
 \subsubsection{Outline}
 
 \begin{itemize}
@@ -601,13 +605,22 @@ This lecture is designed solely to provide elementary information about the cour
 
 \subsubsection{Content}
 
+The first section explores the history of generics in Go and how generic data types were implemented prior to their addition. It also explores some of their limitations and showcases possible use cases with the implementations of the map and filter functions.
+
+In the second section, the lecture covers all interesting standard library packages that are often used in practice. These mostly include libraries for manipulating collections like maps and slices, libraries for interacting with the operating system and logging libraries.
+
+Lastly, the lecture describes the different types of tests and testing models as shown in \cref{fig:testing-models} and further continues to explore Go's testing toolchain. Apart from standard testing itself, it also covers fuzzing, which the testing framework supports. Finally, the section is finished with an overview of third party testing libraries that provide more high-level tooling or allow the generating of various types of fakes like stubs of mocks.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm]{figures/pyramids.png}
     \caption{Testing models.}
+    \label{fig:testing-models}
 \end{figure}
 
 \subsection{Exercise 05}
+
+This exercise lets students implement a generic data structure of their choice, followed by the creation of multiple unit tests using the Go test suite. It also guides the student through creating a coverage profile and how it can be inspected using the go cover tool.
 
 \section{Homework 01}
 
