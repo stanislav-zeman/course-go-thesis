@@ -613,6 +613,10 @@ This lecture is designed solely to provide elementary information about the cour
 
 \section{Lecture 06: Advanced \#2}
 
+This lecture introduces some of the additional advanced topics present in Go. It mainly focuses on performance and optimizations but also covers some of the additional topics like CGo, Unsafe, or Reflection, which could not be included in any other lecture as it either did not make sense or there was simply no space left.
+
+Students will be able to understand common limitations regarding various data types and references and will be able to profile and optimize Go applications after completing this lecture. No prior knowledge is expected.
+
 \subsubsection{Outline}
 
 \begin{itemize}
@@ -626,7 +630,19 @@ This lecture is designed solely to provide elementary information about the cour
 
 \subsubsection{Content}
 
+The lecture starts with introducing the benchmarking tooling in Go. This topic is similar to the testing presented as the last topic in the previous lecture. This was intentionally done to connect these two lectures, giving them a more natural transition.
+
+Profiling go applications is then explored in the second section. The pprof profiling tool is introduced and a description is given about the various types of profiles and all methods for retrieving them.
+
+The third section goes over optimizations commonly done in go and some common mistakes with specific data types that often cause low performance or high memory consumption.
+
+The fourth section introduces CGo as a Foreign Function Interface (FFI) to the C programming language, which Go directly supports in the standard library.
+
+The last two sections cover two standard library packages that leverage reflection, which allows one to examine types at runtime, or the unsafe package, which works around the Go's type system rules and allows such things as manipulating pointers directly.
+
 \subsection{Exercise 06}
+
+This exercise presents students with a webserver that endlessly consumes memory resources. The students then must use the pprof profiling tool to examine the application's performance. They have to both generate the performance profiles using the exposed HTTP endpoints and then visualize them using the appropriate graphs.
 
 \section{Lecture 07: REST APIs}
 
