@@ -545,6 +545,10 @@ This lecture is designed solely to provide elementary information about the cour
 
 \section{Lecture 04: Concurrency \& Parallelism}
 
+The lecture explores Go's concurrency model and dives into all of the synchronization primitives and principles commonly used in idiomatic Go code when building concurrent applications.
+
+After attending this lecture, students will be able to understand the concept of goroutines and Go's runtime model. They will also be able to write concurrent applications leveraging all of the possible synchronization primitives. It is suggested that the students have some conception of concurrency and knowledge of synchronization primitives.
+
 \subsubsection{Outline}
 
 \begin{itemize}
@@ -557,37 +561,50 @@ This lecture is designed solely to provide elementary information about the cour
 
 \subsubsection{Content}
 
+The lecture starts with exploring the differences between concurrency and parallelism as shown in \cref{fig:con-vs-par} and is followed by an introduction to the concept of goroutines. This knowledge is further built on in the second section, where Go's runtime model is described. One such state of the runtime environment can be viewed in \cref{fig:runtime}.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm]{figures/concurrency-parallelism.png}
     \caption{Differences between concurrency and parallelism}
+    \label{fig:con-vs-par}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm]{figures/scheduling.png}
     \caption{Possible runtime state.}
+    \label{fig:runtime}
 \end{figure}
+
+The third section introduces the concept of channels as a means of communication for concurrent processes. To better image some of the most common interactions and edge cases, multiple diagrams were created, such as the one in \cref{fig:goroutine-interactions}. The channels section also discussed various patterns commonly used in concurrent systems like the ones depicted in \cref{fig:fanin,fig:fanout}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm]{figures/buffered-full.png}
     \caption{Interaction between two goroutines interaction via a buffered channel.}
+    \label{fig:goroutine-interactions}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm]{figures/fanin.png}
     \caption{Diagram of the fan-in pattern.}
+    \label{fig:fanin}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm]{figures/fanout.png}
     \caption{Diagram of the fan-out pattern.}
+    \label{fig:fanout}
 \end{figure}
 
+The last section mostly covers the sync and atomic packages that provide synchronization primitives, such as mutexes, conditional variables or wait groups, and atomic data types.
+
 \subsection{Exercise 04}
+
+In this exercise, students are guided through an implementation of a producer-consumer problem in a service modeling invoice data messaging. The students will need to leverage the knowledge of all of the previously discussed topics like goroutines, contexts, and synchronization primitives. They are then further guided to optimize the application and implement a graceful shutdown for the service.
 
 \section{Lecture 05: Advanced \#1}
 
