@@ -928,7 +928,7 @@ Tasks:
     
 \section{Lecture 11: Observability}\label{lecture-observability}
 
-This lecture delves into the topic of observability. The lecture covers all major types of telemetry signals, namely metrics, logs, and traces. Each signal is briefly introduced, after which specific state-of-the-art\footnote{Many alternative technologies to the ones provided exist. The selection was made based on a general prevalence and on the fact that they are open-source and implemented in Go.}
+This lecture delves into the topic of observability\footnote{Even though it is an important topic that should be covered more throughout the studies, I personally encountered it only in the PA165: Enterprise Java course described in \cref{enterprise-java-course}. Moreover, it must be again noted that PA165 is a course designed for master's degree students, and bachelor's degree students do not generally attend it.}. The lecture covers all major types of telemetry signals, namely metrics, logs, and traces. Each signal is briefly introduced, after which specific state-of-the-art\footnote{Many alternative technologies to the ones provided exist. The selection was made based on a general prevalence and on the fact that they are open-source and implemented in Go.}
 technologies are introduced. In the last part, the OpenTelemetry\cite{open-telemetry} project is introduced.
 
 Following the lecture, students should be able to set up the introduced technologies, instrument their applications with basic telemetry, and monitor their applications' health. No previous knowledge regarding observability is required.
@@ -986,6 +986,12 @@ Tasks:
 \end{itemize}
 
 \section{Homework 05: ReelGoofy CI/CD \& Metrics}
+
+The fifth and final homework finishes the ReelGoofy service implemented throughout the two previous assignments. This assignment aims to create a CI/CD pipeline using GitHub Actions, instrument the ReelGoofy application with Prometheus metrics, and visualize these metrics using Grafana.
+
+The motivation is to futher simulate building a realistic application. Proper monitoring setup is vital for production applications. The aim is to give students hands-on experience working with metrics, Prometheus and Grafana. The assignment only specifies that the HTTP request metrics need to be exported. Other custom metrics are left to be exported by the students as they deem fit. All this is to give students an insight into what it takes to create such graphs and set up a working monitoring system. CI/CD is also necessary for such applications as it eases the development process and collaboration.
+
+The submitted solution must have a successfully running pipeline that implements all of the stages and operations described in the assignment. Additionally, the application must be properly instrumented while exposing Prometheus metrics and a Grafana dashboard has to be created for the service with at least six visualizations.
 
 \section{Bonus Lecture: Projects} \label{lecture-projects}
 
