@@ -461,7 +461,7 @@ Bonus points can be gained by performing additional actions such as deploying th
 
 Additional bonus points can be acquired by being active during lectures and exercises or submitting exceptional solutions for homework and projects. This rewards engaged students and promotes further activity during the lectures.
 
-\section{Limitations}
+\section{Limitations}\label{design-limitations}
 
 This section describes some possible inefficiencies that were later perceived but were currently not incorporated into the course. Some of these will be considered as additions to the course in the future.
 
@@ -1065,11 +1065,17 @@ The lecture ends with giving multiple links to resources related to open-source 
 
 \chapter{Conclusion}\label{chapter-conclusion}
 
-The goal of this thesis was to design a comprehensive course on Go. The thesis implemented new exercises and homework assignments and revamped the existing Red Hat Go Course lectures while introducing new topics and giving reasoning for the decisions and design changes performed. The course materials created during this thesis form a great basis for the new course which can further be expanded.
+The goal of this thesis was to design a comprehensive course on Go. This work reflected on the previous run of the Go course in the Red Hat format. The thesis also mapped the ground and the current state of similar courses at our faculty. Based on these observations, decisions were made that affected the overall course design.
+
+\section{Results}
+
+The thesis designed and implemented new materials that collectively constitute a comprehensive Go course. The materials include expanded and reworked lectures that now span the whole semester, some of which are based on the existing Go course maintained by Red Hat. Additionally, completely new homework assignments and exercises were created to promote active work throughout the semester. Furthermore, all of the newly created materials are open-sourced and publicly accessible on GitHub, so anyone is free to use them and adapt.
 
 \section{Future work}
 
 The course will have to evolve as the language and technologies evolve. I am currently dedicated to maintaining and developing the course to keep it up-to-date so it can be taught in the future. I plan to continue my studies at the faculty as a master's degree student, so the course should run in this format for at least the next two years. However, I will most likely continue tutoring it even in the following years.
+
+Apart from keeping the course up-to-date, it could also be expanded with additional topics as described in the \cref{design-limitations}. These topics will further improve the goal of the course being practice oriented.
 
 The Go course will be run under the Domain-specific Development course the next semester. It could be later extracted into its own separate course to eliminate some of the limitations imposed by running under a parent course, such as the shared extent and intensity.
 
