@@ -363,16 +363,19 @@ To initiate the projects, students are presented with a set of technologies or l
 
 The general incentive is to make students come up with their own projects. Therefore, no "official" project assignments will be published. This was deeply considered as it may demotivate some students in the final part of the semester. However, I believe that the exploratory bonus lecture is sufficient for driving the students' projects even without predefined assignments.
 
-No matter the choice of project, all of them are finished with a short defense during the examination period. These defenses can be organized either physically or online. Students are expected to give a short presentation and a demonstration. Students should also cover used technologies and libraries and briefly describe their experiences and struggles.
+No matter the choice of project, all of them are finished with a short defense during the examination period. These defenses can be organized either physically or online. Students are expected to give a short presentation and a demonstration. Students should also cover used technologies and libraries and briefly describe their experiences and struggles. \\
 
+\noindent
 There are two reasonable approaches on how to review the projects.
 \begin{itemize}
     \item The first one is to review the projects before the defense and confront the student during the defense. This allows confronting the students and having a discussion to reflect on the student's solutions and their potential mistakes. On the other hand, it slightly prohibits public defenses in the presence of other students.
     \item The second one is to review the projects after the defense. This permits the creation of public sessions that multiple students can attend at once, as no personal questions are raised. On the other hand, it makes the follow-up review less personal, and the student cannot be reasonably confronted.
 \end{itemize}
 
-There are multiple means of completing the project, each offering a different set of advantages and disadvantages. The course is designed not to be overly restrictive, therefore giving flexibility of choice for the projects.
+\noindent
+There are multiple means of completing the project, each offering a different set of advantages and disadvantages. The course is designed not to be overly restrictive, therefore giving flexibility of choice for the projects. \\
 
+\noindent
 The project assignment can be fulfilled in three ways:
 \begin{itemize}
  \item Implementing a team project.
@@ -669,14 +672,7 @@ After attending this lecture, students will be able to understand the concept of
 
 \subsubsection{Content}
 
-The lecture starts with exploring the differences between concurrency and parallelism as shown in \cref{fig:con-vs-par} and is followed by an introduction to the concept of goroutines. This knowledge is further built on in the second section, where Go's runtime model is described. One such state of the runtime environment can be viewed in \cref{fig:runtime}.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=12cm]{figures/concurrency-parallelism.png}
-    \caption{Differences between concurrency and parallelism}
-    \label{fig:con-vs-par}
-\end{figure}
+The lecture starts with exploring the differences between concurrency and parallelism and is followed by an introduction to the concept of goroutines. This knowledge is further built on in the second section, where Go's runtime model is described. One such state of the runtime environment can be viewed in \cref{fig:runtime}.
 
 \begin{figure}[H]
     \centering
@@ -685,29 +681,17 @@ The lecture starts with exploring the differences between concurrency and parall
     \label{fig:runtime}
 \end{figure}
 
-The third section introduces the concept of channels as a means of communication for concurrent processes. Multiple diagrams were created to better showcase some of the most common channel interactions and edge cases, such as the one in \cref{fig:goroutine-interactions}. The channels section also discussed various patterns commonly used in concurrent systems like the ones depicted in \cref{fig:fanin,fig:fanout}.
+\noindent
+The third section introduces the concept of channels as a means of communication for concurrent processes. Multiple diagrams were created to better showcase some of the most common channel interactions and edge cases, such as the one in \cref{fig:goroutine-interactions}. The channels section also discussed various patterns commonly used in concurrent systems like fan-in, fan-out, or pipeline.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=12cm]{figures/buffered-full.png}
-    \caption{Interaction between two goroutines interaction via a buffered channel.}
+    \includegraphics[width=11cm]{figures/buffered-full.png}
+    \caption{Two goroutines interacting using a buffered channel.}
     \label{fig:goroutine-interactions}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=12cm]{figures/fanin.png}
-    \caption{Diagram of the fan-in pattern.}
-    \label{fig:fanin}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=12cm]{figures/fanout.png}
-    \caption{Diagram of the fan-out pattern.}
-    \label{fig:fanout}
-\end{figure}
-
+\noindent
 The last section mostly covers the sync and atomic packages that provide synchronization primitives, such as mutexes, conditional variables or wait groups, and atomic data types.
 
 \subsubsection{Changes}
@@ -768,6 +752,7 @@ The second homework lets students implement a solution to the Sleeping barber pr
     \label{fig:barbershop}
 \end{figure}
 
+\noindent
 The problem presents multiple synchronization challenges that students need to tackle. The motivation is to showcase the effectiveness of the concurrency model in Go, as the assignment can be implemented by only using channels and the select statement. No other synchronization primitives are required. However, the assignment intentionally references the sync package\cite{go-sync} that contains these primitives but hints that it may now be required to implement the solution. This should prompt the students to think through the means they will use to implement the solution. The problem is not hard to understand and, as such, is a nice way to introduce the concurrency model of Go.
  
 The submitted solution needs to implement the problem as described by the set of rules. The solution must be race-free without the possibility of resulting in a deadlock.
@@ -961,6 +946,7 @@ As the faculty operates a self-hosted GitLab instance, almost all of the git-rel
     \label{fig:cicd}
 \end{figure}
 
+\noindent
 The third section gives an introduction to infrastructure design. Introduces basic concepts such as proxying, load balancing, and application scaling and goes through multiple examples, one of which is depicted in the \cref{fig:infra}. Two related technologies are introduced to leverage these concepts, namely Traefik Proxy\cite{traefik} and Caddy\cite{caddy}. This section aims to give students a basic understanding of how to provision basic infrastructure and tackle basic infrastructure design problems such as fault tolerance, scaling, or encryption.
 
 \begin{figure}[H]
@@ -970,6 +956,7 @@ The third section gives an introduction to infrastructure design. Introduces bas
     \label{fig:infra}
 \end{figure}
 
+\noindent
 The last section introduces all major cloud providers (Amazon, Microsoft, and Google) and further delves into Google Cloud Platform (GCP)\cite{gcp}. As Google offers free credits thanks to the faculty program\cite{gcp-faculty}, it is a great opportunity for students to get their hands on operating cloud infrastructure. A set of basic services that GCP offers are introduced so students can leverage these in their final projects.
 
 \subsection{Exercise 10}\label{exercise-10}
