@@ -693,6 +693,10 @@ The third section introduces the concept of channels as a means of communication
 
 The last section mostly covers the sync and atomic packages that provide synchronization primitives, such as mutexes, conditional variables or wait groups, and atomic data types.
 
+\subsubsection{Changes}
+
+The original concurrency lecture was in a horrific state. It covered the whole topic of concurrency in just nine-teen slides. Moreover, some of the examples showcased out-of-date principles as they were around five years old. Ultimately, I believe I did not reuse any of these slides. However, some examples might share similarities.
+
 \subsection{Exercise 04}
 
 In this exercise, students are guided through implementing a producer-consumer problem in a service modeling invoice data messaging. The students will need to leverage the knowledge of all of the previously discussed topics like goroutines, contexts, and synchronization primitives. They are then further guided to optimize the application and implement a graceful shutdown for the service.
@@ -725,6 +729,12 @@ Lastly, the lecture describes the different types of tests and testing models as
     \caption{Testing models.}
     \label{fig:testing-models}
 \end{figure}
+
+\subsubsection{Changes}
+
+This lecture combines the original \textit{testing}, \textit{lesson5}, and \textit{lesson8} lectures. Slides up to the go-carpet tool slides and slides regarding Gherking, GoConvey, and expect tools from the \textit{testing} lecture are reused. From \textit{lesson5}, the slides up to CGo were extracted. Lastly, the whole \textit{lesson8} was reused, but some slides were removed, namely the generic list implementation slides or the Java and Python assembly examples.
+
+Newly, the generics include slides about map and slice utility functions. After generics, the slides go over the most notable standard library packages; this was previously not covered at all. Finally, the lecture covers the topic of testing. Regarding this topic, the lecture goes much more in-depth into the standard library, thoroughly describing the T testing structure and giving examples of executing the tests while using additional arguments via the CLI, or it newly covers fuzzing and the F type.
 
 \subsection{Exercise 05}
 
