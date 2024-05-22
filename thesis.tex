@@ -634,7 +634,7 @@ The lecture starts with exploring the differences between concurrency and parall
     \label{fig:runtime}
 \end{figure}
 
-The third section introduces the concept of channels as a means of communication for concurrent processes. To better image some of the most common interactions and edge cases, multiple diagrams were created, such as the one in \cref{fig:goroutine-interactions}. The channels section also discussed various patterns commonly used in concurrent systems like the ones depicted in \cref{fig:fanin,fig:fanout}.
+The third section introduces the concept of channels as a means of communication for concurrent processes. Multiple diagrams were created to better showcase some of the most common channel interactions and edge cases, such as the one in \cref{fig:goroutine-interactions}. The channels section also discussed various patterns commonly used in concurrent systems like the ones depicted in \cref{fig:fanin,fig:fanout}.
 
 \begin{figure}[H]
     \centering
@@ -661,7 +661,7 @@ The last section mostly covers the sync and atomic packages that provide synchro
 
 \subsection{Exercise 04}
 
-In this exercise, students are guided through an implementation of a producer-consumer problem in a service modeling invoice data messaging. The students will need to leverage the knowledge of all of the previously discussed topics like goroutines, contexts, and synchronization primitives. They are then further guided to optimize the application and implement a graceful shutdown for the service.
+In this exercise, students are guided through implementing a producer-consumer problem in a service modeling invoice data messaging. The students will need to leverage the knowledge of all of the previously discussed topics like goroutines, contexts, and synchronization primitives. They are then further guided to optimize the application and implement a graceful shutdown for the service.
 
 \section{Lecture 05: Advanced \#1}
 
@@ -820,16 +820,16 @@ As the output knowledge, students will be capable of implementing persistent Go 
 
 \subsubsection{Content}
 
-The first two sections of the lecture give a brief refresher on SQL and RDBMS. It gives a short overview of the most popular RDBMSs and their key points.
+The first two sections of the lecture give a brief refresher on SQL and RDBMS. It briefly overviews the most popular RDBMSs and their key points.
 
 The third section introduces database migrations and their various aspects and challenges. It covers multiple database migration tools and showcases usage via both CLI and in-code.
 
 Lastly, the fourth and biggest section discusses multiple approaches to integrating database access to applications leveraging modern Go libraries. It starts by covering the
-support the standard library provides and introduces compatible database drivers. As the standard library defines rather low-level interfaces, multiple libraries try to compensate for this; the most notable is sqlx\cite{sqlx}, which is covered next. It provides more high-level functions that make writing the code less verbose. Thirdly, the sqlc\cite{sqlc} library is showcased as an interesting and untraditional approach as it works by \enquote{compiling} the SQL queries and generating native Go code. The last presented approach is the GORM\cite{gorm} library, which represents Go's most commonly used ORM.
+standard library's support and introduces compatible database drivers. As the standard library defines rather low-level interfaces, multiple libraries try to compensate for this; the most notable is sqlx\cite{sqlx}, which is covered next. It provides more high-level functions that make writing the code less verbose. Thirdly, the sqlc\cite{sqlc} library is showcased as an interesting and untraditional approach as it works by \enquote{compiling} the SQL queries and generating native Go code. The last presented approach is the GORM\cite{gorm} library, which represents Go's most commonly used ORM.
 
 \subsection{Exercise 09}\label{exercise-09}
 
-The exercise builds upon the Todo application started in the previous exercise presented in \cref{exercise-07}. The application in the assignment currently uses an in-memory repository. The goal of the exercise is to extend the existing Docker compose file with a PostgreSQL\cite{postgres} database and rewrite the repository to persist its data using the database instance.
+The exercise builds upon the Todo application started in the previous exercise presented in \cref{exercise-07}. The application in the assignment currently uses an in-memory repository. The exercise aims to extend the existing Docker compose file with a PostgreSQL\cite{postgres} database and rewrite the repository to persist its data using the database instance.
 
 \section{Homework 03}
 
@@ -910,7 +910,7 @@ The lecture starts off with an introduction to concepts such as health and heart
 
 The next section covers the first of the three major signal - metrics. A brief explanation with multiple metric examples is given. The spotlight is then transferred to the Prometheus project.
 
-Prometheus\cite{prometheus} is undeniably the leading project that revolves around retrieving, storing, and evaluating metrics. The Prometheus format is supported by multiple third-party tools. The section introduces the Prometheus format and the various metric types it supports.
+Prometheus\cite{prometheus} is undeniably the leading project that revolves around retrieving, storing, and evaluating metrics. Apart from Prometheus itself, multiple third-party tools support the Prometheus format. The section introduces the format and the various metric types it supports.
 
 Lastly, this section introduces Grafana\cite{grafana} as the project of choice for visualizing metrics. The slides refer to the Granafa sandbox\footnote{ \url{https://play.grafana.org/d/000000012/grafana-play-home}}
 that can be explored during the lecture shortly.
