@@ -489,7 +489,7 @@ The original idea was to keep the new course open-sourced either way, so reusing
 
 The content is described in the same order as it is presented to students throughout the semester.
 
-The lecture sections start by briefly explaining the lecture's content, followed by the expected input knowledge before attending the lecture and the expected output knowledge gained following the lecture's attendance. A precise lecture outline is then given, followed by a more detailed description of the lecture's content.
+The lecture sections start by briefly explaining the lecture's content, followed by the expected input knowledge before attending the lecture and the expected output knowledge gained following the lecture's attendance. A precise lecture outline is then given, followed by a more detailed description of the lecture's content. The first six lectures also contain a section describing the changes made to them as they are based on the Red Hat Go Course.
 
 The homework sections briefly describe the homework assignments and their scope. However, these sections focus more on the assignments' requirements and motivation rather than reviewing the assignment details themselves. View the materials directly instead to learn more about the exact specifications of the assignments.
 
@@ -526,11 +526,21 @@ The third section guides the students through the installation of the Go toolkit
 
 The last section delves into the Go itself and describes the Go CLI and all of its commands. It introduces the concepts of packages and modules and shows basic project setup and commonly used layout standards. This section finishes off with running a simple Hello World application.
 
+\subsubsection{Changes}
+
+The first slides are a makeover of the original \textit{go worth learning} lecture. The new lecture unifies the format, adds more examples, and removes some of the slides, mainly those with pictures, as they did not seem important.
+
+The new lecture takes the first few slides\footnote{Up to the slides about functions.} from the original \textit{lesson1} and reverses their order. The additional slides are left for the second lecture described in \cref{lecture-fundamentals-01}.
+
+Some minor changes were made, like extending the list of characteristics and companies using Go and adding proper links to external materials.
+
+The completely new slides and topics in this lecture include the origin and history of Go, going through the installation process of Go, covering packages, imports, and modules much better and more in-depth, and introducing the Go executable and the standard project structure.
+
 \subsection{Exercise 01}
 
 The first exercise guides students through setting up a working environment on their machines. Students will install Go itself as well as set-up all relevant environmental variables. Finally, they will practice a basic usage of Go CLI through commonly used commands.
 
-\section{Lecture 02: Fundamentals \#1}
+\section{Lecture 02: Fundamentals \#1}\label{lecture-fundamentals-01}
 
 This lecture starts with exploring the core fundamentals of Go. It delves into topics like data types, functions, user-defined data types, and pointers.
 
@@ -843,6 +853,8 @@ During the exercise, students will containerize the ToDo application they starte
 This lecture focuses on Relational Database Management Systems (RDBMSs) and their integration with Go applications. The main goal of this lecture is to introduce the various approaches currently viable in the Go ecosystem, from low-level libraries to Object-relational Mapping (ORMs).
 
 As the output knowledge, students will be capable of implementing persistent Go applications while levering RDBMSs. Students are only expected to be proficient in using the Structured Query Language (SQL).
+
+It must be noted that the Red Hat Go Course also contains a lecture on databases. I did this lecture during the semester when we tutored the course. It mostly only shows excerpts from documentation of specific tools, some of these excepts are located in this lecture as well.
 
 \subsubsection{Outline}
 
