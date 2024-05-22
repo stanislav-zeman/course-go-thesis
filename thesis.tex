@@ -708,6 +708,21 @@ This exercise lets students implement a generic data structure of their choice, 
 
 \section{Homework 02: Barbershop}
 
+The second homework lets students implement a solution to the Sleeping barber problem described by Edsger W. Dijkstra in his Cooperating sequential processes publication\cite{ewd-csp}. The problem is described as a set of rules with a diagram showcased in \cref{fig:barbershop} to better visualize the problem.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{figures/barbershop.png}
+    \caption{A visualization of the Sleeping barber problem.}
+    \label{fig:barbershop}
+\end{figure}
+
+The problem presents multiple synchronization challenges that students need to tackle. The motivation is to showcase the effectiveness of the concurrency model in Go, as the assignment can be implemented by only using channels and the select statement. No other synchronization primitives are required. However, the assignment intentionally references the sync package\cite{go-sync} that contains these primitives but hints that it may now be required to implement the solution. This should prompt the students to think through the means they will use to implement the solution. The problem is not hard to understand and, as such, is a nice way to introduce the concurrency model of Go.
+ 
+The submitted solution needs to implement the problem as described by the set of rules. The solution must be race-free without the possibility of resulting in a deadlock.
+
+Additionally, students can get two bonus points for implementing a solution that supports multiple barbers working in the barbershop.
+
 \section{Lecture 06: Advanced \#2}
 
 This lecture introduces some of the additional advanced topics present in Go. It mainly focuses on performance and optimizations but also covers some of the additional topics like CGo, Unsafe, or Reflection, which could not be included in any other lecture as it either did not make sense or there was simply no space left.
