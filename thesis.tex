@@ -787,7 +787,7 @@ The last section explores the Go's built-in templating engine and showcases its 
 
 \subsection{Exercise 07}\label{exercise-07}
 
-This exercise starts with implementing an application that is further used in exercises described in \cref{exercise-08,exercise-09,exercise-11}. The application is a simple Todo Create-Read-Update-Remove (CRUD) app with no complex business logic. The OpenAPI\cite{open-api} specification describes the application's API that the students will implement in this exercise.
+This exercise starts with implementing an application that is further used in exercises described in \cref{exercise-08,exercise-09,exercise-11}. The application is a simple ToDo Create-Read-Update-Remove (CRUD) app with no complex business logic. The OpenAPI\cite{open-api} specification describes the application's API that the students will implement in this exercise.
 
 \section{Homework 03: ReelGoofy REST API \& Testing}
 
@@ -834,7 +834,7 @@ Lastly, the lecture briefly inspects the Kubernetes\cite{kubernetes} platform th
 
 \subsection{Exercise 08}\label{exercise-08}
 
-During the exercise, students will containerize the Todo application they started with in the previous exercise in \cref{exercise-07}. The exercise is split into two steps. First, the students will create a custom container image using the Dockerfile, which they will then use in Docker Compose.
+During the exercise, students will containerize the ToDo application they started with in the previous exercise in \cref{exercise-07}. The exercise is split into two steps. First, the students will create a custom container image using the Dockerfile, which they will then use in Docker Compose.
 
 \section{Lecture 09: Databases}\label{lecture-databases}
 
@@ -862,7 +862,7 @@ standard library's support and introduces compatible database drivers. As the st
 
 \subsection{Exercise 09}\label{exercise-09}
 
-The exercise builds upon the Todo application started in the previous exercise presented in \cref{exercise-07}. The application in the assignment currently uses an in-memory repository. The exercise aims to extend the existing Docker compose file with a PostgreSQL\cite{postgres} database and rewrite the repository to persist its data using the database instance.
+The exercise builds upon the ToDo application started in the previous exercise presented in \cref{exercise-07}. The application in the assignment currently uses an in-memory repository. The exercise aims to extend the existing Docker compose file with a PostgreSQL\cite{postgres} database and rewrite the repository to persist its data using the database instance.
 
 \section{Homework 04: ReelGoofy Containarization \& Persistence}
 
@@ -981,7 +981,7 @@ As I deemed metrics the most important to cover, the first task was dedicated to
 \noindent
 Tasks:
 \begin{itemize}
-    \item The first task continues with the Todo application that students previously worked on during the exercises described in \cref{exercise-07,exercise-09}. Their objective is to instrument the application with Prometheus metrics and create Grafana dashboards to visualize them.
+    \item The first task continues with the ToDo application that students previously worked on during the exercises described in \cref{exercise-07,exercise-09}. Their objective is to instrument the application with Prometheus metrics and create Grafana dashboards to visualize them.
     \item The second task involves running the OpenTelemetry Demo and interacting with the system. The system consists of multiple microservices implemented in multiple programming languages and instrumented with various types of telemetry while using the OpenTelemetry SDKs. This demo serves as a nice introduction to the OpenTelemetry ecosystem and also includes all of the presented technologies except for Loki, which is replaced with OpenSearch\cite{opensearch}.
 \end{itemize}
 
