@@ -634,7 +634,7 @@ The motivation for this exercise is to let students start with a simple applicat
 
 The submitted solution needs to cover all of the described usages and properly implement the expected behavior. The solution must also be written idiomatically and properly handle resources and errors.
 
-\section{Lecture 04: Concurrency \& Parallelism}
+\section{Lecture 04: Concurrency \& Parallelism}\label{lecture-concurrency}
 
 The lecture explores Go's concurrency model and dives into all of the synchronization primitives and principles commonly used in idiomatic Go code when building concurrent applications.
 
@@ -786,13 +786,19 @@ The fourth section introduces CGo as a Foreign Function Interface (FFI) to the C
 
 The last two sections cover two standard library packages that leverage reflection, which allows one to examine types at runtime, or the unsafe package, which works around the Go's type system rules and allows such things as manipulating pointers directly.
 
+\subsubsection{Changes}
+
+This lecture combines the original \textit{go performance}, \textit{benchmarks}, \textit{lesson5}, and \textit{lesson9} lectures. Most notably, all of the benchmarks and slides covering the most commonly encountered performance errors were reused. However, the benchmark and all of their result were rerun with a newer version of Go. The version of Go and the machine used is now directly stated in the slides.
+
+The new additions to this lecture include the reflect and unsafe packages that were previously not covered. Like with the testing and fuzzing type, it newly also explored the benchmarking B type in-depth. Also, a much better and more thorough introduction is given to the pprof profiling and the various types of performance profiles Go supports.
+
 \subsection{Exercise 06}
 
 This exercise presents students with a webserver that endlessly consumes memory resources. The students then must use the pprof profiling tool to examine the application's performance. They must generate the performance profiles using the exposed HTTP endpoints and visualize them using the appropriate graphs.
 
 \section{Lecture 07: REST APIs}
 
-Starting from this lecture, all of the materials are completely new additions to the course. It is worth noting that the previous course did cover HTTP routing in one of its lectures, but it was outdated, and the new course does not build on top of those materials.
+Starting from this lecture, all of the materials are completely new additions to the course. It is worth noting that the previous course did cover HTTP routing in one of its lectures, but it was outdated, like in the case of the fourth lecture described in \cref{lecture-concurrency}, and the new course does not build on top of those materials.
 
 This lecture is dedicated to REST API design and to implementing such APIs in Go. The lecture covers the common fundamentals required to implement such APIs while also covering Go specifics and related technologies. 
 
