@@ -350,8 +350,6 @@ The students start by forking the original homework assignment repository, makin
 
 Starting from the third week, the assignments are published with a ten-day deadline followed by a four-day review period. The review period is designed to give students feedback that they will later incorporate into their solutions.
 
-No sample solutions for the homework assignments currently exist. However, they are planned to be implemented before the commencement of the semester to further verify the assignment's clarity and overall feasibility.
-
 \subsection{Projects}\label{design-projects}
 
 The projects are the final part of the course. They are estimated to take fifty to sixty hours\footnote{This requirement will need to be decreased to twenty-five to thirty hours if the course is to be run under the Domain-specific Development course. This is done solely to match the course extent.} for each student. The size of the projects should approximately match that estimation.
@@ -486,6 +484,12 @@ Event-driven communication solves multiple problems imposed by today's world of 
 \subsection{DevOps/Ops overlap}\label{devops-overlap}
 
 Some of the lectures, namely Containerization, Infrastructure, and Observability (all covered in depth in \cref{lecture-containers,lecture-infrastructure,lecture-observability} respectively) overlap with the DevOps/Ops field. Although the lectures provide Go examples and try to apply the general knowledge to Go, these topics are not, in broad, Go specific and could be extracted to an additional course in the future. This would free up space for other topics, such as those previously mentioned. However, no such course currently exists.
+
+\subsection{Homework}
+
+No sample solutions for the homework assignments currently exist. However, they are planned to be implemented before the commencement of the semester to further verify the assignment's clarity and overall feasibility. Furthermore, the sample solutions must be implemented for students who miss one of the ReelGoofy assignments described in \cref{reelgoofy-api,reelgoofy-db,reelgoofy-metrics}. If such cases occur, they will be given the sample solution to continue with the following assignment.
+
+Additionally, no automated test suites are currently prepared for the homework assignments. This quite limits the scalability of the course, as all homework submissions will have to be manually reviewed. It is currently not a big problem as we intend to open the course to only twenty students, but it should be considered if the number is to be increased. Some homework assignments, the second one described in \cref{homework-barbershop} the most, can also vary quite heavily in their solutions, and the tests could create boundaries. On the other hand, I personally believe that not giving students tests upfront motivates them to create their own suite of tests to verify their solution. This will have to be further discussed.
 
 \section{Licensing}
 
@@ -748,7 +752,7 @@ Newly, the generics include slides about map and slice utility functions. After 
 
 This exercise lets students implement a generic data structure of their choice, followed by the creation of multiple unit tests using the Go test suite. It also guides the student through creating a coverage profile and how it can be inspected using the go cover tool.
 
-\section{Homework 02: Barbershop}
+\section{Homework 02: Barbershop}\label{homework-barbershop}
 
 The second homework lets students implement a solution to the Sleeping barber problem described by Edsger W. Dijkstra in his Cooperating sequential processes publication\cite{ewd-csp}. The problem is described as a set of rules with a diagram showcased in \cref{fig:barbershop} to better visualize the problem.
 
@@ -837,7 +841,7 @@ The last section explores the Go's built-in templating engine and showcases its 
 
 This exercise starts with implementing an application that is further used in exercises described in \cref{exercise-08,exercise-09,exercise-11}. The application is a simple ToDo Create-Read-Update-Remove (CRUD) app with no complex business logic. The OpenAPI\cite{open-api} specification describes the application's API that the students will implement in this exercise.
 
-\section{Homework 03: ReelGoofy REST API \& Testing}
+\section{Homework 03: ReelGoofy REST API \& Testing}\label{reelgoofy-api}
 
 The third homework introduces the ReelGoofy application that students will implement throughout this and the next two following homework. The ReelGoofy application is a movie recommendation service. This homework aims to implement a REST API to expose four endpoints for ingesting data and recommending content. The API specification is given in the form of an OpenAPI specification.
 
@@ -1035,7 +1039,7 @@ Tasks:
     \item The second task involves running the OpenTelemetry Demo and interacting with the system. The system consists of multiple microservices implemented in multiple programming languages and instrumented with various types of telemetry while using the OpenTelemetry SDKs. This demo serves as a nice introduction to the OpenTelemetry ecosystem and also includes all of the presented technologies except for Loki, which is replaced with OpenSearch\cite{opensearch}.
 \end{itemize}
 
-\section{Homework 05: ReelGoofy CI/CD \& Metrics}
+\section{Homework 05: ReelGoofy CI/CD \& Metrics}\label{reelgoofy-metrics}
 
 The fifth and final homework finishes the ReelGoofy service implemented throughout the two previous assignments. This assignment aims to create a CI/CD pipeline using GitHub Actions, instrument the ReelGoofy application with Prometheus metrics, and visualize these metrics using Grafana.
 
