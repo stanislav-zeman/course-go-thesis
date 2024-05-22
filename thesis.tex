@@ -793,7 +793,7 @@ This exercise starts with implementing an application that is further used in ex
 
 The third homework introduces the ReelGoofy application that students will implement throughout this and the next two following homework. The ReelGoofy application is a movie recommendation service. This homework aims to implement a REST API to expose four endpoints for ingesting data and recommending content. The API specification is given in the form of an OpenAPI specification.
 
-The motivation behind the ReelGoofy application as a whole is to simulate building a realistic application from scratch. This first homework gives students a lot of flexibility. They can choose a router or a web framework themselves. This gives them an opportunity to explore the Go ecosystem. After they choose a library, they are required to provide reasons for their choice in the form of a small text directly in the repository. This should prompt the students to think through their decisions as developers and the potential benefits or impacts of such choices. The implementation of the recommendation algorithm is, again, completely up to the students. This represents a form of a creative process. The students are also forced to study the OpenAPI specification that is often used in practice to document REST APIs.
+The motivation behind the ReelGoofy application as a whole is to simulate building a realistic application from scratch. This first ReelGoofy homework gives students a lot of flexibility. They can choose a router or a web framework themselves. This gives them an opportunity to explore the Go ecosystem. After they choose a library, they are required to provide reasons for their choice in the form of a small text directly in the repository. This should prompt the students to think through their decisions as developers and the potential benefits or impacts of such choices. The implementation of the recommendation algorithm is, again, completely up to the students. This represents a form of a creative process. The students are also forced to study the OpenAPI specification that is often used in practice to document REST APIs.
 
 The submitted solution must comply with the OpenAPI specification and implement the recommendation behavior. No complex algorithms are expected. The choice of the routing technology must be documented.
 
@@ -864,7 +864,13 @@ standard library's support and introduces compatible database drivers. As the st
 
 The exercise builds upon the Todo application started in the previous exercise presented in \cref{exercise-07}. The application in the assignment currently uses an in-memory repository. The exercise aims to extend the existing Docker compose file with a PostgreSQL\cite{postgres} database and rewrite the repository to persist its data using the database instance.
 
-\section{Homework 04: ReelGoofy Containarization \& Persistance}
+\section{Homework 04: ReelGoofy Containarization \& Persistence}
+
+The fourth homework builds upon the ReelGoofy API implemented in the previous assignment. This assignment aims to containerize the application using Docker and implement a persistence layer using RDBMS and a library of choice.
+
+The motivation is to futher simulate building a realistic application. This second ReelGoofy homework also gives students plenty of flexibility. Instead of a routing technology, they will now choose a library for interacting with the database system. This gives them an additional opportunity to explore the Go ecosystem. The choice will again have to be documented in the specified file. The choice of the relational database system is also given. However, PostgreSQL is recommended directly in the assignment, so it should not be expected that the students will deviate from this option.
+
+The submitted solution must be runnable using the created Docker Compose file and must persist all of its data. Propper handling of the database connections and errors is also expected.
 
 \section{Lecture 10: Infrastructure}\label{lecture-infrastructure}
 
