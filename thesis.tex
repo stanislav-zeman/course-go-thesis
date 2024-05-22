@@ -461,6 +461,12 @@ Bonus points can be gained by performing additional actions such as deploying th
 
 Additional bonus points can be acquired by being active during lectures and exercises or submitting exceptional solutions for homework and projects. This rewards engaged students and promotes further activity during the lectures.
 
+\section{Prerequisites}
+
+The course is designed to be accessible to both master's and bachelor's degree students. However, it is certainly unsuitable for freshman-year students as a couple of prerequisites are expected throughout the course.
+
+The students need to have programming fundamentals as they are not explored in-depth. The course instead gives an overview of things like control flow, etc. Students are also expected to be proficient in SQL and how databases work in general, as it is required for the database lecture described in \cref{lecture-databases} and in the fourth homework described in \cref{reelgoofy-db}. Lastly, fundamentals of networking and virtualization are also both required for Containerization and Infrastructure lectures described in \cref{lecture-containers,lecture-infrastructure} and their related exercises and homework.
+
 \section{Limitations}\label{design-limitations}
 
 This section describes some possible inefficiencies that were later perceived but were currently not incorporated into the course. Some of these will be considered as additions to the course in the future.
@@ -908,7 +914,7 @@ standard library's support and introduces compatible database drivers. As the st
 
 The exercise builds upon the ToDo application started in the previous exercise presented in \cref{exercise-07}. The application in the assignment currently uses an in-memory repository. The exercise aims to extend the existing Docker compose file with a PostgreSQL\cite{postgres} database and rewrite the repository to persist its data using the database instance.
 
-\section{Homework 04: ReelGoofy Containarization \& Persistence}
+\section{Homework 04: ReelGoofy Containarization \& Persistence}\label{reelgoofy-db}
 
 The fourth homework builds upon the ReelGoofy API implemented in the previous assignment. This assignment aims to containerize the application using Docker and implement a persistence layer using RDBMS and a library of choice.
 
